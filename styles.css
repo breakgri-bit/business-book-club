@@ -1996,6 +1996,14 @@ tr:hover .table-book-thumb {
 }
 
 @media (max-width: 768px) {
+    .header-container {
+        height: 70px;
+    }
+    
+    .logo-link {
+        height: 42px;
+    }
+    
     .grid-2, .grid-3 {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -2030,10 +2038,10 @@ tr:hover .table-book-thumb {
     
     .nav-menu {
         position: fixed;
-        top: 90px;
+        top: 70px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 90px);
+        height: calc(100vh - 70px);
         background: var(--bg-color);
         z-index: 999;
         transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
