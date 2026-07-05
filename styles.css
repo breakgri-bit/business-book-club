@@ -133,6 +133,10 @@ img {
     text-align: center;
 }
 
+.mobile-only {
+    display: none !important;
+}
+
 .text-muted {
     color: var(--text-muted);
 }
@@ -2192,6 +2196,10 @@ tr:hover .table-book-thumb {
     
     .footer-logo img {
         margin: 0 auto;
+    }
+    
+    .mobile-only {
+        display: inline !important;
     }
 }
 
