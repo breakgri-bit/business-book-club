@@ -1,0 +1,4172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>비즈니스 북클럽 | CEO 실천 경영 전략 포럼</title>
+    <meta name="description" content="명지대 객원교수 이동우 북멘토와 최고의 강사진이 함께하는 비즈니스 리더들을 위한 프리미엄 독서 모임. 경제/경영 명저에서 실행 가능한 비즈니스 전략을 도출합니다.">
+    <meta name="keywords" content="북클럽, 비즈니스 북클럽, 비즈니스독서모임, 이동우, 직장인독서모임, 스타트업네트워킹, 경영세미나, 자기계발">
+    
+    <!-- Open Graph (SNS 공유 최적화) -->
+    <meta property="og:title" content="비즈니스 북클럽 | CEO 실천 경영 전략 포럼">
+    <meta property="og:description" content="경제/경영 명저에서 최적의 비즈니스 실행 전략을 얻으세요. 명지대 객원교수 이동우 북멘토가 함께합니다.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+/* ==========================================================================
+   Design System Variables & Theme Setup
+   ========================================================================== */
+:root {
+    /* Fonts */
+    --font-heading: 'Montserrat', 'Noto Sans KR', sans-serif;
+    --font-body: 'Noto Sans KR', sans-serif;
+
+    /* Transitions */
+    --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, #002c5f, #004b93);
+    --gradient-gold: linear-gradient(135deg, #d4af37, #f3e5ab);
+    --gradient-accent: linear-gradient(135deg, #002c5f, #d4af37);
+    --gradient-dark: linear-gradient(135deg, #0f172a, #1e293b);
+
+    /* Shadows */
+    --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.25);
+    --shadow-glow-hover: 0 0 30px rgba(212, 175, 55, 0.45);
+}
+
+/* Dark Theme (Default) */
+body.dark-theme {
+    --bg-color: #080a10;
+    --bg-secondary: #0e121e;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --card-bg: rgba(18, 24, 40, 0.7);
+    --card-bg-hover: rgba(26, 34, 56, 0.85);
+    --card-border: rgba(255, 255, 255, 0.06);
+    --card-border-hover: rgba(212, 175, 55, 0.3);
+    --nav-bg: rgba(8, 10, 16, 0.85);
+    --accent: #d4af37;
+    --accent-rgb: 212, 175, 55;
+    --input-bg: rgba(255, 255, 255, 0.04);
+    --input-border: rgba(255, 255, 255, 0.08);
+    --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.4);
+    --shadow-header: 0 4px 30px rgba(0, 0, 0, 0.3);
+    --logo-color: #f1f5f9;
+}
+
+/* Light Theme */
+body.light-theme {
+    --bg-color: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-bg-hover: rgba(255, 255, 255, 0.95);
+    --card-border: rgba(15, 23, 42, 0.08);
+    --card-border-hover: rgba(0, 44, 95, 0.4);
+    --nav-bg: rgba(248, 250, 252, 0.9);
+    --accent: #002c5f;
+    --accent-rgb: 0, 44, 95;
+    --input-bg: #ffffff;
+    --input-border: rgba(15, 23, 42, 0.12);
+    --shadow-card: 0 12px 40px rgba(15, 23, 42, 0.06);
+    --shadow-header: 0 4px 30px rgba(15, 23, 42, 0.03);
+    --logo-color: #002c5f;
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: var(--theme-transition);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Grid & Layout Utilities */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+    align-items: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.glass-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+    transition: var(--theme-transition);
+}
+
+.glass-panel:hover {
+    border-color: var(--card-border-hover);
+    background: var(--card-bg-hover);
+}
+
+/* ==========================================================================
+   Typography & Badges
+   ========================================================================== */
+.section-header {
+    margin-bottom: 56px;
+}
+
+.section-subtitle {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: #d4af37;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+.section-desc {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: 16px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: keep-all;
+}
+
+.badge {
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.cta-btn {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-btn {
+    background: var(--gradient-brand);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 44, 95, 0.4);
+    background: #003a7c;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 2px solid var(--card-border-hover);
+    color: var(--text-primary);
+}
+
+.secondary-btn:hover {
+    background: var(--card-bg-hover);
+    border-color: #d4af37;
+    transform: translateY(-3px);
+}
+
+.btn-glow {
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-glow:hover {
+    box-shadow: var(--shadow-glow-hover);
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--card-border);
+    box-shadow: var(--shadow-header);
+    transition: var(--theme-transition);
+}
+
+.header-container {
+    display: flex;
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-link {
+    display: block;
+    height: 60px;
+    color: var(--logo-color);
+    transition: color 0.3s;
+}
+
+.logo-svg {
+    height: 100%;
+    width: auto;
+}
+
+.logo-img {
+    height: 100%;
+    width: auto;
+    display: block;
+    box-sizing: border-box;
+}
+
+.nav-list {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-item {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: color 0.3s, transform 0.2s;
+    padding: 8px 4px;
+    display: block;
+}
+
+.nav-item:hover {
+    color: #d4af37;
+    transform: translateY(-1px);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--input-border);
+}
+
+.theme-toggle-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+body.dark-theme .sun-icon,
+body.light-theme .moon-icon {
+    display: block;
+}
+
+body.dark-theme .moon-icon,
+body.light-theme .sun-icon {
+    display: none;
+}
+
+.header-apply-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    padding: 180px 0 100px 0;
+    overflow: hidden;
+    background: radial-gradient(circle at 75% 30%, rgba(212, 175, 55, 0.08), transparent 45%);
+}
+
+.hero-container {
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: center;
+    gap: 48px;
+}
+
+@media (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: clamp(2rem, 3.2vw, 2.5rem);
+    line-height: 1.35;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    word-break: keep-all;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 800px;
+    word-break: keep-all;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.hero-image-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.book-card-3d-wrapper {
+    position: relative;
+    perspective: 1000px;
+}
+
+.book-card-3d {
+    width: 280px;
+    height: 400px;
+    border-radius: 12px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-15deg) rotateX(10deg);
+    box-shadow: -20px 20px 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s ease;
+}
+
+.book-card-3d:hover {
+    transform: rotateY(-5deg) rotateX(5deg) scale(1.02);
+}
+
+.book-image-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.book-card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.35);
+    border-radius: 12px;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.hero-season-tag {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-gold);
+    color: #002c5f;
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 8px 18px;
+    border-radius: 30px;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================================================
+   Sections common
+   ========================================================================== */
+section {
+    padding: 100px 0;
+}
+
+/* ==========================================================================
+   Book Mentor Section
+   ========================================================================== */
+.mentor-profile-card {
+    padding: 48px;
+    align-items: center;
+}
+
+.mentor-visual {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.mentor-avatar-box {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mentor-avatar-glow {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.7;
+    animation: rotateGlow 8s linear infinite;
+}
+
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.mentor-avatar-placeholder {
+    width: 236px;
+    height: 236px;
+    background: var(--bg-secondary);
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--card-border);
+}
+
+.mentor-profile-img {
+    width: 236px;
+    height: 236px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    border: 2px solid var(--card-border);
+}
+
+.mentor-images-wrap {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+}
+
+.mentor-book-featured {
+    position: relative;
+    width: 140px;
+    height: 196px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.mentor-book-featured:hover {
+    transform: translateY(-8px) rotate(2deg);
+}
+
+.mentor-book-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-book-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #d4af37;
+    color: #002c5f;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    z-index: 5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+    .mentor-images-wrap {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+
+.mentor-name-big {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mentor-title-small {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+.mentor-name-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mentor-name-title span {
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.mentor-bio {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+}
+
+.credentials-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.credential-badge {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.badge-active {
+    background: #002c5f;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.badge-past {
+    background: #475569;
+}
+
+.credential-text {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Publications (Books list)
+   ========================================================================== */
+.mentor-books-section {
+    background-color: var(--bg-secondary);
+}
+
+.pub-card {
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pub-badge {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.pub-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-top: 10px;
+}
+
+.pub-publisher {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.pub-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.col-span-all {
+    grid-column: 1 / -1;
+    padding: 32px;
+}
+
+.col-span-all h4 {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    border-left: 3px solid #d4af37;
+    padding-left: 12px;
+}
+
+.pub-list-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pub-tag {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--card-border);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    transition: var(--theme-transition);
+}
+
+.pub-tag:hover {
+    background: rgba(212, 175, 55, 0.08);
+    border-color: rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+}
+
+/* ==========================================================================
+   History Timeline
+   ========================================================================== */
+.history-timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.history-timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: rgba(212, 175, 55, 0.2);
+}
+
+.history-card {
+    padding: 32px 32px 32px 80px;
+    position: relative;
+}
+
+.history-card::before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 40px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 4px solid var(--text-muted);
+    z-index: 2;
+    transition: all 0.3s;
+}
+
+.history-card.active::before {
+    border-color: #d4af37;
+    box-shadow: 0 0 10px #d4af37;
+    background: #d4af37;
+}
+
+.history-period {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #d4af37;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.history-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+.history-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Operational details & Timetable
+   ========================================================================== */
+.operational-details-section {
+    background-color: var(--bg-secondary);
+}
+
+.operational-card, .op-features-card {
+    padding: 40px;
+    height: 100%;
+}
+
+.operational-card h3, .op-features-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 16px;
+}
+
+.op-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.op-time-item {
+    display: flex;
+    gap: 20px;
+}
+
+.op-time {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: #d4af37;
+    background: rgba(212, 175, 55, 0.08);
+    padding: 6px 14px;
+    border-radius: 6px;
+    height: fit-content;
+    white-space: nowrap;
+}
+
+.op-detail h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.op-detail p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.op-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.op-feature-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-bottom: 1px dashed var(--card-border);
+    padding-bottom: 14px;
+}
+
+.op-feature-list li:last-child {
+    border: none;
+    padding: 0;
+}
+
+.op-feat-title {
+    font-weight: 700;
+    color: #d4af37;
+    font-size: 0.95rem;
+}
+
+.op-feat-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   10-Week list table
+   ========================================================================== */
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.schedule-table th {
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 20px 24px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    border-bottom: 2px solid var(--card-border);
+}
+
+.schedule-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--card-border);
+    transition: var(--theme-transition);
+    word-break: keep-all;
+}
+
+.schedule-table td:last-child {
+    white-space: nowrap;
+}
+
+.schedule-table tbody tr {
+    transition: var(--theme-transition);
+    cursor: pointer;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: rgba(212, 175, 55, 0.03);
+}
+
+.schedule-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-week-num {
+    font-weight: 800;
+    color: #d4af37;
+    white-space: nowrap;
+}
+
+.table-date {
+    font-family: var(--font-heading);
+    color: var(--text-secondary);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table-book-title-cell {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 700;
+}
+
+.table-book-thumb {
+    width: 45px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+tr:hover .table-book-thumb {
+    transform: scale(1.1);
+}
+
+.table-lecturer {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table-summary-btn {
+    background: transparent;
+    border: 1px solid var(--card-border-hover);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.table-summary-btn:hover {
+    background: #002c5f;
+    border-color: #002c5f;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Lecturer cards
+   ========================================================================== */
+.lecturers-section {
+    background-color: var(--bg-secondary);
+}
+
+.lecturer-card {
+    padding: 32px;
+}
+
+.lecturer-head {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.lecturer-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.purple-gradient { background: linear-gradient(135deg, #7c3aed, #c084fc); }
+.blue-gradient { background: linear-gradient(135deg, #2563eb, #60a5fa); }
+.pink-gradient { background: linear-gradient(135deg, #db2777, #f472b6); }
+.gold-gradient { background: linear-gradient(135deg, #d97706, #fbbf24); }
+
+.lecturer-info h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.lecturer-tag {
+    font-size: 0.75rem;
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.lecturer-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Insitify Section
+   ========================================================================== */
+.insitify-box {
+    padding: 48px;
+    align-items: center;
+}
+
+.insitify-text h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.insitify-text p {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    font-size: 1.05rem;
+}
+
+.insitify-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.insitify-mockup-screen {
+    width: 100%;
+    max-width: 360px;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.mockup-header {
+    background: #1e293b;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mockup-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ef4444;
+    display: inline-block;
+}
+
+.mockup-dot:nth-child(2) { background: #eab308; }
+.mockup-dot:nth-child(3) { background: #22c55e; }
+
+.mockup-title {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+}
+
+.mockup-body {
+    padding: 24px;
+}
+
+.mockup-body h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.mockup-body p {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.mockup-input-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+}
+
+.mockup-btn {
+    width: 100%;
+    background: var(--gradient-gold);
+    color: #002c5f;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   Columns list
+   ========================================================================== */
+.columns-section {
+    background-color: var(--bg-secondary);
+}
+
+.column-card {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.column-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.column-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.column-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.column-read-btn {
+    margin-top: auto;
+    font-weight: 600;
+    color: #d4af37;
+    font-size: 0.9rem;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.column-read-btn:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Video section (Sketch)
+   ========================================================================== */
+.video-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 10, 16, 0.7);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.video-overlay:hover {
+    background: rgba(8, 10, 16, 0.55);
+}
+
+.play-button-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.video-overlay:hover .play-button-box {
+    transform: scale(1.1);
+}
+
+.play-icon {
+    width: 32px;
+    height: 32px;
+    color: #002c5f;
+    margin-left: 4px;
+}
+
+.video-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.video-player-mock {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('assets/banquet_video_thumbnail.png') center/cover;
+    transform: scale(1.01);
+}
+
+/* ==========================================================================
+   Pricing Section
+   ========================================================================== */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.pricing-card {
+    width: 100%;
+    padding: 48px 32px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure equal height with flex items */
+.pricing-card .payment-info-box {
+    margin-top: auto;
+}
+
+.card-badge {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--card-border);
+}
+
+.featured-badge {
+    background: var(--gradient-gold);
+    color: #002c5f;
+    font-weight: 800;
+    border: none;
+}
+
+.plan-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.plan-price {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 16px;
+}
+
+.plan-price span {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.plan-desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 32px;
+}
+
+.plan-divider {
+    border: none;
+    border-top: 1px solid var(--card-border);
+    margin-bottom: 32px;
+}
+
+.plan-features {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.plan-features li {
+    display: flex;
+    gap: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.check-icon {
+    color: #d4af37;
+    font-weight: 800;
+}
+
+.discount-banner {
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px dashed rgba(212, 175, 55, 0.4);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+}
+
+.payment-info-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.payment-info-box h4 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #d4af37;
+    border-left: 3px solid #d4af37;
+    padding-left: 10px;
+}
+
+.payment-info-box p {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.payment-info-box p:last-child {
+    margin: 0;
+}
+
+.plan-btn {
+    width: 100%;
+}
+
+/* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+.faq-section {
+    background-color: var(--bg-secondary);
+}
+
+.faq-accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    overflow: hidden;
+    transition: var(--theme-transition);
+}
+
+.faq-item:hover {
+    border-color: var(--card-border-hover);
+}
+
+.faq-trigger {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 20px 24px;
+    text-align: left;
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question {
+    padding-right: 16px;
+    line-height: 1.5;
+}
+
+.faq-icon-arrow {
+    font-size: 1.2rem;
+    color: #d4af37;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon-arrow {
+    transform: rotate(45deg);
+}
+
+.faq-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer {
+    padding: 0 24px 20px 24px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding-top: 16px;
+}
+
+/* ==========================================================================
+   Admin Section
+   ========================================================================== */
+.admin-box {
+    padding: 40px;
+}
+
+.admin-login-box {
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.admin-login-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.admin-login-box p {
+    margin-bottom: 32px;
+}
+
+.login-error-msg {
+    color: #ef4444;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: -8px;
+    text-align: left;
+}
+
+.table-footnote {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 16px;
+    text-align: left;
+    opacity: 0.8;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 16px;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+}
+
+.admin-tab-btn {
+    background: transparent;
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--theme-transition);
+}
+
+.admin-tab-btn:hover {
+    border-color: #d4af37;
+    color: var(--text-primary);
+}
+
+.admin-tab-btn.active {
+    background: var(--gradient-gold);
+    color: #002c5f;
+    border-color: #d4af37;
+}
+
+.admin-tab-content {
+    display: none;
+}
+
+.admin-tab-content.active {
+    display: block;
+}
+
+.admin-tab-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.admin-tab-content p {
+    margin-bottom: 28px;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-row label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-row input, .form-row select, .form-row textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--theme-transition);
+}
+
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+    border-color: #d4af37;
+    outline: none;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+.upload-zone {
+    border: 2px dashed var(--input-border);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--theme-transition);
+    position: relative;
+}
+
+.upload-zone:hover {
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.02);
+}
+
+.file-input-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-preview-img {
+    max-height: 120px;
+    margin: 16px auto 0 auto;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+}
+
+.col-span-2 {
+    grid-column: span 2;
+}
+
+.waitlist-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.waitlist-table th, .waitlist-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.waitlist-table th {
+    background: rgba(255, 255, 255, 0.02);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.main-footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--card-border);
+    padding: 80px 0 40px 0;
+}
+
+.footer-container {
+    margin-bottom: 48px;
+}
+
+.footer-logo {
+    display: block;
+    height: 60px;
+    color: var(--logo-color);
+    margin-bottom: 20px;
+}
+
+.logo-svg-footer {
+    height: 100%;
+    width: auto;
+}
+
+.footer-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    color: #d4af37;
+    border-color: #d4af37;
+    transform: translateY(-2px);
+}
+
+.footer-links h4, .footer-contact h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+}
+
+.footer-contact p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.footer-contact a {
+    color: #d4af37;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--card-border);
+    padding-top: 32px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Modals
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    animation: modalSlide 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes modalSlide {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.modal-close-btn:hover {
+    color: #ef4444;
+}
+
+.modal-header {
+    margin-bottom: 28px;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.modal-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--theme-transition);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #d4af37;
+    outline: none;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.checkbox-group input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-weight: 400;
+}
+
+/* Success Modal */
+.success-modal-content {
+    max-width: 500px;
+}
+
+.success-icon-box {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.15);
+    border: 2px solid #22c55e;
+    color: #22c55e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+}
+
+.success-icon-box svg {
+    width: 36px;
+    height: 36px;
+}
+
+.success-message {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.success-bank-info {
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+.success-bank-info p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.success-bank-info p:last-child {
+    margin: 0;
+}
+
+/* Book Detail Modal */
+.summary-modal-content {
+    max-width: 850px;
+}
+
+.summary-modal-visual {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.summary-modal-visual img {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.summary-modal-text-content {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 12px;
+}
+
+.summary-modal-text-content h4 {
+    font-size: 1.1rem;
+    margin: 20px 0 8px 0;
+    color: #d4af37;
+}
+
+.summary-modal-text-content h4:first-of-type {
+    margin-top: 0;
+}
+
+.summary-modal-text-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.summary-modal-text-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-left: 18px;
+    list-style-type: disc;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 32px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Responsive adjustments
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .hero-section {
+        padding: 130px 0 60px 0;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+    
+    .book-card-3d {
+        width: 220px;
+        height: 310px;
+    }
+    
+    .mentor-profile-card {
+        padding: 24px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 90px);
+        background: var(--bg-color);
+        z-index: 999;
+        transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border-top: 1px solid var(--card-border);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        padding: 40px 24px;
+        gap: 20px;
+    }
+    
+    .nav-item {
+        font-size: 1.1rem;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    .mobile-menu-btn span {
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-primary);
+        transition: all 0.3s;
+        transform-origin: left;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg);
+    }
+    
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+    
+    .pricing-card {
+        padding: 24px;
+    }
+
+    /* Mobile Table Card transformation */
+    .schedule-table thead {
+        display: none;
+    }
+    
+    .schedule-table, 
+    .schedule-table tbody, 
+    .schedule-table tr, 
+    .schedule-table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .schedule-table tr {
+        background: rgba(255, 255, 255, 0.015);
+        border: 1px solid var(--card-border);
+        border-radius: 14px;
+        margin-bottom: 20px;
+        padding: 16px 20px;
+    }
+    
+    .schedule-table td {
+        padding: 10px 0;
+        border-bottom: 1px dashed rgba(255,255,255,0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        font-size: 0.9rem;
+    }
+    
+    .schedule-table td:last-child {
+        border-bottom: none;
+        padding-top: 14px;
+        margin-top: 6px;
+        justify-content: center;
+    }
+    
+    .schedule-table td.table-week-num {
+        font-size: 1.15rem;
+        font-weight: 900;
+        color: #d4af37;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        padding-bottom: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .schedule-table td.table-week-num::before {
+        content: "회차";
+        font-weight: 700;
+        color: var(--text-muted);
+    }
+    
+    .schedule-table td.table-date::before {
+        content: "일정";
+        font-weight: 700;
+        color: var(--text-muted);
+    }
+    
+    .schedule-table td:nth-child(3)::before {
+        content: "주제 도서";
+        font-weight: 700;
+        color: var(--text-muted);
+    }
+    
+    .schedule-table td:nth-child(4)::before {
+        content: "출판사";
+        font-weight: 700;
+        color: var(--text-muted);
+    }
+    
+    .schedule-table td:nth-child(5)::before {
+        content: "저자";
+        font-weight: 700;
+        color: var(--text-muted);
+    }
+    
+    .schedule-table td.table-lecturer::before {
+        content: "강연자";
+        font-weight: 700;
+        color: var(--text-muted);
+    }
+    
+    .schedule-table .table-book-title-cell {
+        justify-content: flex-end;
+        max-width: 70%;
+    }
+}
+
+/* ==========================================================================
+   Custom Scrollbar
+   ========================================================================== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--card-border-hover);
+    border-radius: 5px;
+    border: 2px solid var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d4af37;
+}
+
+/* ==========================================================================
+   Legal Modals (Terms & Conditions)
+   ========================================================================== */
+.legal-modal-content {
+    max-width: 800px;
+    width: 95%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+}
+
+.legal-modal-body {
+    overflow-y: auto;
+    padding-right: 12px;
+    margin: 20px 0;
+    text-align: left;
+    max-height: 50vh;
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.legal-modal-body h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.legal-modal-body h3:first-of-type {
+    margin-top: 0;
+}
+
+.legal-modal-body p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.legal-modal-body ol, 
+.legal-modal-body ul {
+    padding-left: 20px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.legal-modal-body li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.legal-modal-body strong {
+    color: var(--text-primary);
+}
+
+</style>
+</head>
+<body class="dark-theme">
+    <!-- Header / Nav -->
+    <header class="main-header" id="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo-link" aria-label="비즈니스 북클럽 홈">
+                <img src="assets/logo_dark.png" alt="비즈니스 북클럽 로고" class="logo-img">
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-item">북멘토 소개</a></li>
+                    <li><a href="#schedule" class="nav-item">도서 라인업</a></li>
+                    <li><a href="#lecturers" class="nav-item">강사진</a></li>
+                    <li><a href="#pricing" class="nav-item">멤버십</a></li>
+                    <li><a href="#faq" class="nav-item">자주 묻는 질문</a></li>
+                    <li><a href="#admin-panel" class="nav-item admin-nav-link">관리자 모드</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="테마 전환">
+                    <!-- Sun Icon (visible in dark mode) -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM6.161 5.1a.75.75 0 0 1 1.06 0l1.59 1.59a.75.75 0 1 1-1.06 1.061L6.16 6.16a.75.75 0 0 1 0-1.06Zm11.678 0a.75.75 0 0 1 0 1.06l-1.59 1.59a.75.75 0 1 1-1.061-1.06l1.59-1.59a.75.75 0 0 1 1.06 0ZM21.75 12a.75.75 0 0 1-.75.75H18.75a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM3 12a.75.75 0 0 1-.75.75H0a.75.75 0 0 1 0-1.5H2.25A.75.75 0 0 1 3 12ZM12 18.75a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75ZM7.221 15.18a.75.75 0 0 1 0 1.06l-1.59 1.59a.75.75 0 1 1-1.061-1.06l1.59-1.59a.75.75 0 0 1 1.06 0Zm11.678 0a.75.75 0 0 1 1.061 1.06l-1.59 1.59a.75.75 0 1 1-1.06-1.06l1.59-1.59a.75.75 0 0 1 0-1.06ZM12 6.75a5.25 5.25 0 1 0 0 10.5 5.25 5.25 0 0 0 0-10.5Z" />
+                    </svg>
+                    <!-- Moon Icon (visible in light mode) -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 10.503 0 1 1-16.949-11.84.75.75 0 0 1 .833-.131Z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <button class="cta-btn header-apply-btn" id="nav-apply-btn">멤버십 가입 신청</button>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container hero-container grid-2">
+                <div class="hero-content">
+                    <span class="badge fade-in-up">PREMIUM BUSINESS BOOK CLUB</span>
+                    <h1 class="hero-title fade-in-up">성공하는 CEO들의 의사결정과<br>기업 성장을 이끄는<br>실천적 경영 전략 포럼</h1>
+                    <p class="hero-description fade-in-up">
+                        경쟁을 넘어 독점을 꿈꾸는 경영자와 창업가를 위한<br>프라이빗 오프라인 북클럽.<br><br>
+                        명지대 독서코칭학과 이동우 교수 및 업계 최고 전문가들과 함께<br>경제·경영·테크 분야 최고의 명저를 완독하고 비즈니스 액션 플랜을 수립합니다.
+                    </p>
+                    <div class="hero-actions fade-in-up">
+                        <button class="cta-btn primary-btn btn-glow" id="hero-apply-btn">멤버십 가입 신청</button>
+                        <a href="#schedule" class="cta-btn secondary-btn" id="hero-book-btn">도서 라인업 보기</a>
+                    </div>
+                </div>
+                <div class="hero-image-area fade-in-up">
+                    <div class="book-card-3d-wrapper">
+                        <div class="book-card-3d">
+                            <!-- Show the first book (The Goal 3) -->
+                            <img src="assets/the_goal_3.jpg" alt="더 골 3 도서 표지" class="book-image-main" id="hero-book-cover">
+                            <div class="book-card-glow"></div>
+                        </div>
+                        <div class="hero-season-tag">연회원제 상시 모집 중</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book Mentor Intro Section -->
+        <section class="value-section" id="about">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">BOOK MENTOR</span>
+                    <h2 class="section-title">북멘토 이동우 교수 소개</h2>
+                    <p class="section-desc">SERICEO에서 다년간 검증된 지적 통찰력으로 비즈니스 리더들의 독서 로드맵을 설계합니다.</p>
+                </div>
+                
+                <div class="mentor-profile-card glass-panel grid-2">
+                    <div class="mentor-visual">
+                        <div class="mentor-images-wrap">
+                            <div class="mentor-avatar-box">
+                                <div class="mentor-avatar-glow"></div>
+                                <img class="mentor-profile-img" src="assets/mentor_profile.jpg" alt="이동우 북멘토">
+                            </div>
+                            <div class="mentor-book-featured">
+                                <span class="featured-book-badge">대표 저서</span>
+                                <img class="mentor-book-img" src="assets/mentor_signature_book.jpg" alt="대표 저서 리더의 교양">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mentor-details">
+                        <h3 class="mentor-name-title">이동우 <span class="title-sub text-muted">객원교수 / 전문코치</span></h3>
+                        <p class="mentor-bio">
+                            이동우 북멘토는 깊이 있는 분석과 명확한 솔루션으로 수많은 기업 CEO와 임원들의 경영 멘토 역할을 수행해 왔습니다. SERICEO 비즈니스 북클럽 등 다양한 플랫폼에서 트렌드를 리드하는 도서들을 큐레이션하고 해제해 오며, 리더들에게 당장 실행할 수 있는 비즈니스 가이드를 제시합니다.
+                        </p>
+                        
+                        <div class="credentials-list">
+                            <div class="credential-item">
+                                <span class="credential-badge badge-active">현</span>
+                                <span class="credential-text">명지대학교 교육대학원 독서코칭교육학과 객원교수</span>
+                            </div>
+                            <div class="credential-item">
+                                <span class="credential-badge badge-active">현</span>
+                                <span class="credential-text">한국코치협회 인증코치 (KAC)</span>
+                            </div>
+                            <div class="credential-item">
+                                <span class="credential-badge badge-past">전</span>
+                                <span class="credential-text">SERICEO 비즈니스 북클럽 북멘토 (2023.4 ~ 2026.4)</span>
+                            </div>
+                            <div class="credential-item">
+                                <span class="credential-badge badge-past">전</span>
+                                <span class="credential-text">고려대학교 고령사회연구원 특임교수</span>
+                            </div>
+                            <div class="credential-item">
+                                <span class="credential-badge badge-past">전</span>
+                                <span class="credential-text">경희대학교 경영대학원 스타트업 MBA 교수</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Mentor's Publications integrated directly in About section -->
+                <div class="mentor-books-subsection" style="margin-top: 60px; border-top: 1px solid var(--card-border); padding-top: 60px;">
+                    <div class="section-header text-center" style="margin-bottom: 40px;">
+                        <span class="section-subtitle">PUBLICATIONS</span>
+                        <h3 class="section-title" style="font-size: 1.75rem;">북멘토 저서 리스트</h3>
+                        <p class="section-desc">비즈니스 리더십, 트렌드, 독서법 분야에서 정평이 나 있는 이동우 교수의 대표 저서들입니다.</p>
+                    </div>
+                    
+                    <div class="publications-grid grid-3" id="publications-grid">
+                        <div class="pub-card glass-panel">
+                            <div class="pub-badge">대표 저서</div>
+                            <h3 class="pub-title">리더의 교양</h3>
+                            <p class="pub-publisher">인플루엔셜</p>
+                            <p class="pub-desc">불확실한 비즈니스 환경 속에서 탁월한 결정을 내릴 수 있도록 리더의 생각의 지평을 넓혀주는 도서.</p>
+                        </div>
+                        <div class="pub-card glass-panel">
+                            <div class="pub-badge">세종도서 선정</div>
+                            <h3 class="pub-title">그리드를 파괴하라</h3>
+                            <p class="pub-publisher">세종서적</p>
+                            <p class="pub-desc">2016 세종도서 선정작. 정형화된 틀을 깨고 비즈니스 혁신을 이뤄내는 디자인 싱킹 프레임워크.</p>
+                        </div>
+                        <div class="pub-card glass-panel">
+                            <div class="pub-badge">세종도서 선정</div>
+                            <h3 class="pub-title">디스턴스</h3>
+                            <p class="pub-publisher">웅진 엘도라도</p>
+                            <p class="pub-desc">2014 세종도서 선정작. 비즈니스 성과와 조직 소통을 개선하기 위한 심리적 거리 조절법.</p>
+                        </div>
+                        <div class="pub-card glass-panel col-span-all">
+                            <h4>그 외 주요 출간 도서</h4>
+                            <div class="pub-list-wrap">
+                                <span class="pub-tag">&lt;세계는 울퉁불퉁하다&gt; 민음사</span>
+                                <span class="pub-tag">&lt;밸런스독서법&gt; 21세기북스</span>
+                                <span class="pub-tag">&lt;앱티즌&gt; 21세기북스</span>
+                                <span class="pub-tag">&lt;아이프레임&gt; 더난출판</span>
+                                <span class="pub-tag">&lt;혼자 일하는 즐거움&gt; 웅진 알프레드</span>
+                                <span class="pub-tag">&lt;이동우의 10분 독서 101&gt; 이동우콘텐츠연구소</span>
+                                <span class="pub-tag">&lt;미래를 읽는 기술&gt; 비즈니스북스</span>
+                                <span class="pub-tag">&lt;나는 심플하게 말한다&gt; 다산북스</span>
+                                <span class="pub-tag">&lt;대한민국이 열광할 시니어 트렌드 2022&gt; 비즈니스북스</span>
+                                <span class="pub-tag">&lt;파이브 포인트&gt; 한국경제신문</span>
+                                <span class="pub-tag">&lt;액땜이론&gt; 세종서적</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERICEO History Timeline -->
+        <section class="timeline-section" id="history">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">SERICEO HISTORY</span>
+                    <h2 class="section-title">비즈니스 북클럽 히스토리</h2>
+                    <p class="section-desc">지속되어 온 북멘토와 비즈니스 북클럽의 검증된 역사입니다.</p>
+                </div>
+                
+                <div class="history-timeline-container">
+                    <div class="history-card glass-panel">
+                        <span class="history-period">2023.04 ~ 2026.04</span>
+                        <h3>SERICEO 비즈니스 북클럽 공식 북멘토</h3>
+                        <p>
+                            3년간 대한민국 최고의 지식 비즈니스 리더들을 위해 SERICEO 플랫폼에서 다양한 트렌드 및 경영 도서들의 해제를 제공하며, 수많은 리더들의 아침을 깨우고 경영 아이디어를 전파하였습니다.
+                        </p>
+                    </div>
+                    <div class="history-card glass-panel active">
+                        <span class="history-period">2026.07 ~ Current</span>
+                        <h3>비즈니스 북클럽 공식 론칭</h3>
+                        <p>
+                            그간의 온라인 해제 분석과 오프라인의 생생한 연대를 통합한 독자적인 프리미엄 북클럽인 '비즈니스 북클럽'을 론칭하여, 연회원제 및 월회원제 회원제로 상시 정규 운영을 시작했습니다.
+                        </p>
+                    </div>
+                    <div class="history-card glass-panel">
+                        <span class="history-period">Future Plan</span>
+                        <h3>멤버십 전용 프리미엄 라운지 및 정기 포럼 확장</h3>
+                        <p>
+                            연회원 리더님들을 모시고 더 혁신적인 경영전략 워크숍, 프리미엄 네트워킹 저녁 만찬회, 그리고 독점적 가치 창출을 위한 전용 라운지 정기 포럼 공간을 확장 운영할 예정입니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operational Time & Operational Details -->
+        <section class="operational-details-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">TIMETABLE</span>
+                    <h2 class="section-title">목요일 오전 운영 시간 및 일정</h2>
+                    <p class="section-desc">바쁜 비즈니스 하루가 시작되기 전, 고품질 조찬과 지적 몰입으로 아침을 시작합니다.</p>
+                </div>
+                
+                <div class="operational-grid grid-2">
+                    <div class="glass-panel operational-card">
+                        <h3>정규 세션 타임라인</h3>
+                        <div class="op-timeline">
+                            <div class="op-time-item">
+                                <div class="op-time">06:45 ~ 07:00</div>
+                                <div class="op-detail">
+                                    <h4>안내 및 티타임</h4>
+                                    <p>프리미엄 빵과 따뜻한 커피가 기본 제공되며, 강연 시작 전 리더님들과 가벼운 인사를 나눕니다.</p>
+                                </div>
+                            </div>
+                            <div class="op-time-item">
+                                <div class="op-time">07:00 ~ 08:20</div>
+                                <div class="op-detail">
+                                    <h4>북클럽 강의</h4>
+                                    <p>북멘토 또는 초빙 강연자가 도서의 핵심 전략 분석과 비즈니스 통찰을 강연합니다.</p>
+                                </div>
+                            </div>
+                            <div class="op-time-item">
+                                <div class="op-time">08:20 ~ 08:30</div>
+                                <div class="op-detail">
+                                    <h4>질의 응답 및 자유 토론</h4>
+                                    <p>강의에 대해 리더님들의 의문점을 해소하고 각 기업의 적용 방안에 대해 치열한 의견을 나눕니다.</p>
+                                </div>
+                            </div>
+                            <div class="op-time-item">
+                                <div class="op-time">08:30 ~ </div>
+                                <div class="op-detail">
+                                    <h4>공식 세션 종료 및 개별 티타임</h4>
+                                    <p>일정이 허락하시는 리더분들은 커피를 곁들인 심도 있는 개별 네트워킹 시간을 이어갑니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-panel op-features-card">
+                        <h3>멤버십 기본 정보</h3>
+                        <ul class="op-feature-list">
+                            <li>
+                                <span class="op-feat-title">모임 요일</span>
+                                <span class="op-feat-desc">매주 목요일 오전 (공휴일 및 명절 당일은 휴무)</span>
+                            </li>
+                            <li>
+                                <span class="op-feat-title">진행 기간</span>
+                                <span class="op-feat-desc">연간 상시 운영 (매주 정규 강연 및 워크숍)</span>
+                            </li>
+                            <li>
+                                <span class="op-feat-title">모임 장소</span>
+                                <span class="op-feat-desc">앰배서더 서울 풀만 호텔 (강남 인근 앰배서더 제휴 라운지)</span>
+                            </li>
+                            <li>
+                                <span class="op-feat-title">요약본 & 도서</span>
+                                <span class="op-feat-desc">매주 도서 실물 무료 배송 + 핵심 요약본 PDF 파일 다운로드 제공</span>
+                            </li>
+                            <li>
+                                <span class="op-feat-title">특별 혜택</span>
+                                <span class="op-feat-desc">회원을 위한 스페셜 네트워킹 만찬 개최 및 인사이티파이 서비스 연동</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curated Book List Table Section -->
+        <section class="book-month-section" id="schedule">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">RECOMMENDED PROGRAM</span>
+                    <h2 class="section-title">비즈니스 북클럽 추천 도서 라인업</h2>
+                    <p class="section-desc">일정을 마우스로 가리키거나 터치하면 도서의 핵심 설명 및 발제 요약을 즉시 확인할 수 있습니다.</p>
+                </div>
+                
+                <div class="table-responsive glass-panel">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>회차</th>
+                                <th>일정</th>
+                                <th>주제 도서</th>
+                                <th>출판사</th>
+                                <th>저자</th>
+                                <th>강연자</th>
+                                <th>요약본</th>
+                            </tr>
+                        </thead>
+                        <tbody id="schedule-table-body">
+                            <!-- Dynamically Rendered by JS to allow cover image changes and edits -->
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table-footnote">※ 도서 라인업 및 상세 일정은 강사의 사정 혹은 출판사 일정에 따라 변동될 수 있습니다.</p>
+            </div>
+        </section>
+
+        <!-- Lecturer List Section -->
+        <section class="lecturers-section" id="lecturers">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">LECTURERS</span>
+                    <h2 class="section-title">비즈니스 북클럽 최고의 강사진</h2>
+                    <p class="section-desc">학술적 신뢰와 업계 실전 경험을 모두 갖춘 최고의 강사진이 독점 비즈니스를 가이드합니다.</p>
+                </div>
+                
+                <div class="lecturers-grid grid-3">
+                    <div class="lecturer-card glass-panel">
+                        <div class="lecturer-head">
+                            <div class="lecturer-avatar purple-gradient">이동우</div>
+                            <div class="lecturer-info">
+                                <h3>이동우 북멘토</h3>
+                                <span class="lecturer-tag">교육/코칭 전문가</span>
+                            </div>
+                        </div>
+                        <p class="lecturer-desc">명지대학교 교육대학원 독서코칭학과 겸임교수로서 리더를 위한 도서 큐레이션 및 독서전략 지도를 담당합니다.</p>
+                    </div>
+                    
+                    <div class="lecturer-card glass-panel">
+                        <div class="lecturer-head">
+                            <div class="lecturer-avatar blue-gradient">조민호</div>
+                            <div class="lecturer-info">
+                                <h3>조민호 대표</h3>
+                                <span class="lecturer-tag">미디어/편집자</span>
+                            </div>
+                        </div>
+                        <p class="lecturer-desc">유튜브 채널 &lt;쇼미더북&gt; 운영자이자 베테랑 편집자로서 비즈니스 독서의 미디어적 가치와 핵심 해제를 전달합니다.</p>
+                    </div>
+                    
+                    <div class="lecturer-card glass-panel">
+                        <div class="lecturer-head">
+                            <div class="lecturer-avatar pink-gradient">장유신</div>
+                            <div class="lecturer-info">
+                                <h3>장유신 전무</h3>
+                                <span class="lecturer-tag">글로벌 테크 C-Level</span>
+                            </div>
+                        </div>
+                        <p class="lecturer-desc">구글클라우드코리아 전무로서 최첨단 테크 트렌드와 글로벌 클라우드 비즈니스 실행 전략을 강연합니다.</p>
+                    </div>
+                    
+                    <div class="lecturer-card glass-panel">
+                        <div class="lecturer-head">
+                            <div class="lecturer-avatar gold-gradient">김건우</div>
+                            <div class="lecturer-info">
+                                <h3>김건우 교수</h3>
+                                <span class="lecturer-tag">KT AX 컨설턴트</span>
+                            </div>
+                        </div>
+                        <p class="lecturer-desc">KT AX 컨설턴트, 가톨릭대학교 인공지능학과 겸임교수이자 &lt;AI 전환 절대 공식&gt; 저자로서 AI 비즈니스 응용을 리드합니다.</p>
+                    </div>
+                    
+                    <div class="lecturer-card glass-panel">
+                        <div class="lecturer-head">
+                            <div class="lecturer-avatar purple-gradient">김광석</div>
+                            <div class="lecturer-info">
+                                <h3>김광석 실장</h3>
+                                <span class="lecturer-tag">경제전문가</span>
+                            </div>
+                        </div>
+                        <p class="lecturer-desc">'경제읽어주는남자'로 널리 알려진 한국경제산업연구원 실장, &lt;스테이블코인 전쟁 2026년 경제전망&gt; 저자입니다.</p>
+                    </div>
+                    
+                    <div class="lecturer-card glass-panel">
+                        <div class="lecturer-head">
+                            <div class="lecturer-avatar blue-gradient">김용수</div>
+                            <div class="lecturer-info">
+                                <h3>김용수 단장</h3>
+                                <span class="lecturer-tag">양자기술 권위자</span>
+                            </div>
+                        </div>
+                        <p class="lecturer-desc">KIST 양자기술연구단장이자 &lt;양자컴퓨터 레시피&gt; 저자로서 차세대 양자 테크놀로지의 비즈니스 함의를 분석합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insitify Service Introduction -->
+        <section class="insitify-section">
+            <div class="container">
+                <div class="insitify-box glass-panel grid-2">
+                    <div class="insitify-text">
+                        <span class="badge">EXCLUSIVE SERVICE</span>
+                        <h2>인사이티파이(Insitify) 프리미엄 서비스 제공</h2>
+                        <p>
+                            비즈니스 북클럽 회원분들을 위해 프리미엄 지식 컨설팅 플랫폼 **'인사이티파이(Insitify)'** 서비스가 기본 탑재됩니다. 
+                            세션 외에도 리더들의 현업 비즈니스 이슈에 맞는 논문, 글로벌 레포트 해제, 커스텀 북 큐레이션 및 AI 비즈니스 컨설팅 서비스를 상시 이용하실 수 있습니다.
+                        </p>
+                        <div class="insitify-buttons">
+                            <a href="#" class="cta-btn primary-btn btn-glow download-proposal-btn">서비스 제안서 다운로드</a>
+                        </div>
+                    </div>
+                    <div class="insitify-visual">
+                        <div class="insitify-mockup-screen">
+                            <div class="mockup-header">
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-dot"></span>
+                                <span class="mockup-title">Insitify Premium</span>
+                            </div>
+                            <div class="mockup-body">
+                                <h3>[멤버십 전용] AI 비즈니스 어드바이저</h3>
+                                <p class="text-muted">귀사의 비즈니스 도메인과 당면 과제를 입력해 주세요.</p>
+                                <div class="mockup-input-box">
+                                    <span>초기 스타트업의 SaaS 퍼널 최적화 방안...</span>
+                                </div>
+                                <button class="mockup-btn" disabled>TOC(제약이론) 기반 분석 리포트 생성</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Pricing Section -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">MEMBERSHIP PLAN</span>
+                    <h2 class="section-title">비즈니스 성장에 동참할 멤버십 플랜</h2>
+                    <p class="section-desc">매주 고품격 오프라인 강연 참석과 도서 무료 제공이 포함된 프리미엄 멤버십입니다.</p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <!-- Card 1: Monthly Membership -->
+                    <div class="pricing-card glass-panel">
+                        <div class="card-badge">월별 가입</div>
+                        <h3 class="plan-name">월회원 멤버십</h3>
+                        <div class="plan-price">₩600,000<span>/월 (VAT 별도)</span></div>
+                        <p class="plan-desc">매달 유연하게 참여하며 핵심 전략 도서 학습 및 리더 교류를 이어가는 플랜</p>
+                        <hr class="plan-divider">
+                        <ul class="plan-features">
+                            <li><span class="check-icon">✓</span> 매월 오프라인 강연 및 정규 모임 전체 참석권</li>
+                            <li><span class="check-icon">✓</span> 매주 모임 중 최고급 빵과 드립 커피/에스프레소 무제한 제공</li>
+                            <li><span class="check-icon">✓</span> 매월 정규 선정 도서 실물 무료 제공 및 배송</li>
+                            <li><span class="check-icon">✓</span> 매주 핵심 내용 요약 및 해제 PDF 분석 노트 제공</li>
+                            <li><span class="check-icon">✓</span> 모임 종료 후 강연자 및 회원들과의 프라이빗 티타임</li>
+                            <li><span class="check-icon">✓</span> 인사이티파이(Insitify) 프리미엄 서비스 멤버십 연동</li>
+                        </ul>
+                        
+                        <div class="payment-info-box">
+                            <h4>법인 결제 계좌 안내</h4>
+                            <p>계좌번호: <strong>KDB산업은행 022-7650-0642-708</strong></p>
+                            <p class="text-muted">※ 예금주: 주식회사 이동우콘텐츠연구소 | 세금계산서 발행</p>
+                        </div>
+                        
+                        <button class="cta-btn primary-btn plan-btn btn-glow apply-membership-btn" data-plan="Monthly" id="apply-monthly-btn">월회원 가입 신청하기</button>
+                    </div>
+
+                    <!-- Card 2: Yearly Membership (Featured) -->
+                    <div class="pricing-card glass-panel featured-card">
+                        <div class="card-badge featured-badge">추천 • 2개월 혜택</div>
+                        <h3 class="plan-name">연회원 멤버십</h3>
+                        <div class="plan-price">₩6,000,000<span>/연 (VAT 별도)</span></div>
+                        <p class="plan-desc">월회비 대비 120만원 절감! 연 12개월 이용 시 2개월이 무료로 제공되는 가장 실속 있는 혜택</p>
+                        <hr class="plan-divider">
+                        <ul class="plan-features">
+                            <li><span class="check-icon">✓</span> 연간 오프라인 강연 및 정규 모임 전체 참석권</li>
+                            <li><span class="check-icon">✓</span> 매주 모임 중 최고급 빵과 드립 커피/에스프레소 무제한 제공</li>
+                            <li><span class="check-icon">✓</span> 연간 정규 선정 도서 전체 실물 무료 제공 및 배송</li>
+                            <li><span class="check-icon">✓</span> 매주 핵심 내용 요약 및 해제 PDF 분석 노트 제공</li>
+                            <li><span class="check-icon">✓</span> 모임 종료 후 강연자 및 회원들과의 프라이빗 티타임</li>
+                            <li><span class="check-icon">✓</span> 인사이티파이(Insitify) 프리미엄 서비스 연간 무료 연동</li>
+                            <li><span class="check-icon">✓</span> 연간 개최되는 프리미엄 네트워킹 저녁 만찬회 무료 초대권</li>
+                            <li><span class="check-icon">✓</span> 분기별 도서 핵심 요약집 실물 제공</li>
+                        </ul>
+                        
+                        <div class="payment-info-box">
+                            <h4>법인 결제 계좌 안내</h4>
+                            <p>계좌번호: <strong>KDB산업은행 022-7650-0642-708</strong></p>
+                            <p class="text-muted">※ 예금주: 주식회사 이동우콘텐츠연구소 | 세금계산서 발행</p>
+                        </div>
+                        
+                        <button class="cta-btn primary-btn plan-btn btn-glow apply-membership-btn" data-plan="Yearly" id="apply-yearly-btn">연회원 가입 신청하기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">FAQ</span>
+                    <h2 class="section-title">자주 묻는 질문 (FAQ)</h2>
+                    <p class="section-desc">비즈니스 북클럽 가입 및 세션 운영에 대한 리더님들의 궁금증을 친절하게 해결해 드립니다.</p>
+                </div>
+                
+                <div class="faq-accordion-container">
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 비즈니스 북클럽은 주로 언제 진행되나요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                비즈니스 북클럽은 <strong>매주 목요일 아침 7시</strong>에 세션을 시작합니다. 바쁜 비즈니스 하루가 본격적으로 시작되기 전 맑은 아침 정신으로 최고의 전략 지식을 습득하고 하루를 알차게 시작하실 수 있도록 시간을 조율하였습니다.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 북클럽은 쉬는 날이 없나요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                <strong>국가공휴일(법정공휴일) 및 명절 연휴 기간에는 세션을 운영하지 않고 쉽니다.</strong> 회원 리더님들의 소중한 개인 시간 및 비즈니스 재충전을 보장하기 위해 국가공휴일에는 휴무로 진행하오니 너른 양해 부탁드립니다.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 비즈니스 북클럽의 가입 방식과 멤버십 이용 기간은 어떻게 되나요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                저희 북클럽은 기수 제한 없이 상시로 운영되는 <strong>연회원제 및 월회원제 멤버십</strong> 형태로 진행됩니다. 회원분들의 참석 주기와 비즈니스 라이프스타일에 맞게 월별로 결제하는 <strong>월회원제(월 60만원, 부가세 별도)</strong>와, 1년 단위로 가입하는 <strong>연회원제(연 600만원, 부가세 별도)</strong> 중 자유롭게 선택하실 수 있습니다. 연회원으로 가입하시면 10달 요금으로 12달을 이용하실 수 있어 **2개월 무료 혜택(120만원 할인)**을 받으시는 효과가 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 일정이 바빠 매주 정기적인 참석이 어려운데, 유연하게 참여할 수 있는 방법이 있나요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                네, 그렇기 때문에 **월회원 멤버십**이 완벽한 대안입니다! 매주 참석이 어려운 바쁜 대표님들이나 임원진분들의 일정을 적극 배려하여, 월별 스케줄에 맞춰 유연하게 유지하거나 중단할 수 있는 월회원권 제도를 운영하고 있습니다. 다만, 보다 깊이 있고 강력한 커뮤니티 네트워킹과 꾸준한 성장을 원하시는 분들께는 장기적 참여와 추가 혜택이 주어지는 **연회원 가입**을 추천해 드립니다.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 신용카드 결제나 세금계산서 발행이 가능한가요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                결제는 법인 및 개인 <strong>계좌 이체(KDB산업은행 022-7650-0642-708, 예금주: 주식회사 이동우콘텐츠연구소)</strong>로 처리되고 있으며, 요청하시는 즉시 세무용 법인 전자세금계산서를 발급해 드립니다. 신용카드 결제 연동은 현재 개발 및 도입 준비 중이며, 완료되는 즉시 멤버십 페이지를 통해 안내드리겠습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 기재되어 있는 강연 일정과 도서는 절대 변동이 없는 확정 사항인가요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                멤버십의 도서 및 강연 일정은 미리 계획되어 배포되지만, 초빙 강연자분들의 <strong>해외 출장, 정부 및 대기업 주요 학술회 긴급 참석, 혹은 연사의 불가피한 일정 변동에 따라 강의 순서나 일정이 예외적으로 일부 조정되거나 변경될 수 있습니다.</strong> 변경이 필요할 시에는 사전에 참석 회원님들께 가장 빠르게 정중히 공지해 드린 후, 학습 흐름에 지장이 없도록 유연하게 연동하겠습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 시간이 모자라 도서를 미리 읽어가지 못하면 어쩌죠? 요약본이 제공되나요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                네, 염려하지 않으셔도 괜찮습니다! 바쁘신 업무로 도서를 다 읽지 못하시는 리더님들을 위해, 모임 시작 전 <strong>책의 핵심 뼈대와 실무 전략이 고스란히 압축된 고품질 비즈니스 핵심 요약본(PDF)이 매주 모바일 및 이메일로 발송</strong>됩니다. 강연 시작 전 15~20분 정도만 요약본을 훑어보셔도 당일 강의와 피어 토론에 완벽히 동참하고 깊은 비즈니스 통찰을 충분히 얻으실 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 연회원과 월회원 모두 도서가 무료로 제공되나요? 책은 직접 사야 하나요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                아니요, 직접 구매하실 필요가 전혀 없습니다! <strong>연회원과 월회원 모두 구분 없이 가입하신 회원분들에게는 매주 다루는 선정 도서 실물이 무료 제공 및 발송</strong>됩니다. 도서 구입의 번거로움 없이 오롯이 독서와 네트워킹, 비즈니스 성장에만 집중하실 수 있도록 도서 일체를 무료로 제공해 드리고 있습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 이른 아침 모임인데, 회원 리더분들과 별도로 교류할 네트워킹 시간이 충분한가요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                이른 아침 모임의 특성상 세션 당일 오전에는 비즈니스 복귀 일정이 겹쳐 길고 깊이 있는 네트워킹 시간을 갖는 데 제한이 있을 수 있습니다. 따라서 회원 리더님들 간의 탄탄하고 끈끈한 비즈니스 협력 및 인맥 형성을 지원하고자, <strong>학기 중 프리미엄 저녁 만찬 일정을 특별히 별도로 편성</strong>해 운영하고 있습니다. 만찬 영상에서 보시듯 격조 높고 밀도 높은 교류가 이뤄집니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 오전 8시 30분에 강의가 종료된 후, 추가 미팅이나 대화를 나눌 수 있는 티타임이 있나요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                <strong>네, 당연히 준비되어 있습니다!</strong> 매주 공식 세션이 종료되는 오전 8시 30분 이후, 강연자와 동료 회원분들과 편안한 소통을 이어가실 수 있도록 <strong>따뜻한 드립 커피와 티가 준비된 프라이빗 티타임 리셉션 공간을 제공</strong>해 드립니다. 바쁜 출근 시간 전 연사에게 직접 질문을 던지거나 리더님들끼리 귀중한 협업 아이디어를 발굴할 수 있는 훌륭한 창구입니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="faq-question">Q. 연회원 멤버십만의 독점적인 추가 혜택이나 특전이 더 있나요?</span>
+                            <span class="faq-icon-arrow">+</span>
+                        </button>
+                        <div class="faq-panel">
+                            <p class="faq-answer">
+                                네, 연회원 리더님들께는 월회원 혜택 외에 다음과 같은 특별 독점 혜택이 제공됩니다. 첫째, <strong>매 분기마다 다룬 명저들의 핵심 에센스와 비즈니스 통찰을 집대성한 실물 제본 '분기별 요약집'</strong>이 무료 발송됩니다. 둘째, 연간 개최되는 프리미엄 네트워킹 저녁 만찬회 무료 초대권이 부여됩니다. 셋째, 10달 비용으로 12달을 이용하시는 효과(120만원 비용 절감)를 온전히 누리실 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard Section -->
+        <section class="admin-section" id="admin-panel">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">ADMIN PANEL</span>
+                    <h2 class="section-title">북클럽 실시간 관리자 모드</h2>
+                    <p class="section-desc">도서 표지 업데이트와 예약 신청자 명단을 실시간으로 관리하는 페이지입니다.</p>
+                </div>
+                
+                <div class="admin-box glass-panel">
+                    <!-- Admin Login Box -->
+                    <div id="admin-login-box" class="admin-login-box">
+                        <h3>관리자 로그인</h3>
+                        <p class="text-muted">관리자 기능을 이용하려면 아이디와 비밀번호를 입력해 주세요.</p>
+                        <form id="admin-login-form" class="admin-form" style="max-width: 400px; margin: 0 auto;">
+                            <div class="form-row">
+                                <label for="admin-id">아이디</label>
+                                <input type="text" id="admin-id" placeholder="아이디 입력" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="admin-pw">비밀번호</label>
+                                <input type="password" id="admin-pw" placeholder="비밀번호 입력" required>
+                            </div>
+                            <div id="login-error-msg" class="login-error-msg" style="display: none; color: #ef4444; font-size: 0.85rem; margin-bottom: 12px;"></div>
+                            <button type="submit" class="cta-btn primary-btn btn-glow" style="width: 100%;">로그인</button>
+                        </form>
+                    </div>
+
+                    <!-- Admin Dashboard Content (Hidden by default) -->
+                    <div id="admin-dashboard-content" style="display: none;">
+                        <div class="admin-tabs">
+                            <button class="admin-tab-btn active" data-tab="covers">표지 파일 올리기 & 수정</button>
+                            <button class="admin-tab-btn" data-tab="add-book">도서 라인업 추가</button>
+                            <button class="admin-tab-btn" data-tab="waitlist">신청 예약자 명단</button>
+                        </div>
+                        
+                        <div class="admin-tab-content active" id="tab-covers">
+                            <h3>멤버십 도서 표지 수정</h3>
+                            <p class="text-muted">수정할 회차를 선택하고 새로운 표지 파일 URL(또는 이미지 파일 업로드)을 입력하면 추천 도서 라인업에 즉시 반영됩니다.</p>
+                            
+                            <form id="admin-cover-form" class="admin-form">
+                                <div class="form-row grid-3">
+                                    <div>
+                                        <label for="cover-week-select">회차 선택</label>
+                                        <select id="cover-week-select" required>
+                                            <!-- Dynamically Populated by JS -->
+                                        </select>
+                                    </div>
+                                    <div class="col-span-2">
+                                        <label for="cover-image-url">새 이미지 주소 (URL)</label>
+                                        <input type="text" id="cover-image-url" placeholder="예: https://image.aladin.co.kr/..." required>
+                                    </div>
+                                </div>
+                                <div class="form-row file-upload-row">
+                                    <label>또는 로컬 표지 이미지 파일 업로드</label>
+                                    <div class="upload-zone" id="cover-upload-zone">
+                                        <input type="file" id="cover-file-input" accept="image/*" class="file-input-hidden">
+                                        <p id="upload-zone-text">여기로 이미지를 드래그하거나 클릭하여 로컬 파일을 선택하세요.</p>
+                                        <img id="upload-preview" class="upload-preview-img" alt="미리보기" style="display:none;">
+                                    </div>
+                                </div>
+                                <button type="submit" class="cta-btn primary-btn btn-glow">표지 정보 저장 & 즉시 수정하기</button>
+                            </form>
+                        </div>
+
+                        <div class="admin-tab-content" id="tab-add-book" style="display: none;">
+                            <h3>추천 도서 라인업 추가</h3>
+                            <p class="text-muted">연간회원을 위해 새로운 일정의 세션 도서를 추가 등록합니다. 등록 후 표지 이미지 및 요약본 발제도 실시간으로 반영됩니다.</p>
+                            
+                            <form id="admin-add-book-form" class="admin-form">
+                                <div class="form-row grid-3">
+                                    <div>
+                                        <label for="add-book-week">회차 번호</label>
+                                        <input type="number" id="add-book-week" min="1" placeholder="예: 11" required>
+                                    </div>
+                                    <div>
+                                        <label for="add-book-date">세션 일정</label>
+                                        <input type="text" id="add-book-date" placeholder="예: 11/12" required>
+                                    </div>
+                                    <div>
+                                        <label for="add-book-title">주제 도서명</label>
+                                        <input type="text" id="add-book-title" placeholder="예: 제로 투 원" required>
+                                    </div>
+                                </div>
+                                <div class="form-row grid-3">
+                                    <div>
+                                        <label for="add-book-publisher">출판사</label>
+                                        <input type="text" id="add-book-publisher" placeholder="예: 한국경제신문" required>
+                                    </div>
+                                    <div>
+                                        <label for="add-book-author">저자</label>
+                                        <input type="text" id="add-book-author" placeholder="예: 피터 틸" required>
+                                    </div>
+                                    <div>
+                                        <label for="add-book-lecturer">강연자</label>
+                                        <input type="text" id="add-book-lecturer" placeholder="예: 이동우" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label for="add-book-cover">표지 이미지 주소 (URL)</label>
+                                    <input type="text" id="add-book-cover" placeholder="예: https://image.aladin.co.kr/product/cover500/..." required>
+                                </div>
+                                <div class="form-row">
+                                    <label for="add-book-summary">발제 핵심 내용 및 요약 (HTML 사용 가능)</label>
+                                    <textarea id="add-book-summary" rows="4" placeholder="예: &lt;p&gt;피터 틸의 저서로 창조적 독점에 대한...&lt;/p&gt;"></textarea>
+                                </div>
+                                <button type="submit" class="cta-btn primary-btn btn-glow">새로운 도서 라인업 등록하기</button>
+                            </form>
+                        </div>
+                        
+                        <div class="admin-tab-content" id="tab-waitlist">
+                            <h3>예약 및 신청 희망자 현황</h3>
+                            <p class="text-muted">홈페이지 신청 양식을 통해 대기자로 신청한 리더님들의 세부 접수 정보 리스트입니다.</p>
+                            
+                            <div class="table-responsive">
+                                <table class="waitlist-table">
+                                    <thead>
+                                        <tr>
+                                            <th>이름</th>
+                                            <th>연락처</th>
+                                            <th>이메일</th>
+                                            <th>회사 및 직책</th>
+                                            <th>선택 코스</th>
+                                            <th>등록 일시</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-waitlist-body">
+                                        <!-- Populated by JS from localStorage -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container grid-4">
+            <div class="footer-about">
+                <span class="footer-logo">
+                    <img src="assets/logo_dark.png" alt="비즈니스 북클럽 로고" class="logo-img">
+                </span>
+                <p class="footer-desc">경영자와 핵심 인재들의 집단 지성 살롱. 독점적 비즈니스 가치를 찾기 위한 프리미엄 리더십 배움터를 만듭니다.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram">
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>프로그램</h4>
+                <ul>
+                    <li><a href="#about">북멘토 소개</a></li>
+                    <li><a href="#schedule">도서 라인업</a></li>
+                    <li><a href="#lecturers">최강 강사진</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>이용안내</h4>
+                <ul>
+                    <li><a href="#faq">자주 묻는 질문</a></li>
+                    <li><a href="#pricing">멤버십 요금 및 계좌</a></li>
+                    <li><a href="#" id="open-terms-btn">이용약관</a></li>
+                    <li><a href="#" id="open-privacy-btn">개인정보처리방침</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>비즈니스 북클럽 안내 및 문의</h4>
+                <p>법인명: 주식회사 이동우콘텐츠연구소</p>
+                <p>사업자등록번호: 101-86-41778</p>
+                <p>이메일: <a href="mailto:pascallab@naver.com">pascallab@naver.com</a></p>
+                <p>대표전화: 010-3738-3206</p>
+            </div>
+        </div>
+        <div class="container footer-bottom text-center">
+            <p>&copy; 2026 주식회사 이동우콘텐츠연구소. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Membership Application Modal (Waitlist Form) -->
+    <div class="modal-overlay" id="apply-modal">
+        <div class="modal-content glass-panel">
+            <button class="modal-close-btn" id="modal-close" aria-label="모달 닫기">&times;</button>
+            <div class="modal-header">
+                <h2>비즈니스 북클럽 신청 등록</h2>
+                <p>비즈니스 북클럽은 고밀도 네트워킹과 몰입도 높은 대화를 보장하기 위해 사전 심사 및 회원 승인제로 운영됩니다.</p>
+            </div>
+            
+            <form class="modal-form" id="apply-form">
+                <div class="form-group grid-2">
+                    <div>
+                        <label for="user-name-input">이름 *</label>
+                        <input type="text" id="user-name-input" required placeholder="홍길동">
+                    </div>
+                    <div>
+                        <label for="user-phone-input">연락처 *</label>
+                        <input type="tel" id="user-phone-input" required placeholder="010-3738-3206">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-email-input">이메일 주소 *</label>
+                    <input type="email" id="user-email-input" required placeholder="leader@example.com">
+                </div>
+                
+                <div class="form-group grid-2">
+                    <div>
+                        <label for="user-company-input">회사명 *</label>
+                        <input type="text" id="user-company-input" required placeholder="스타트업 주식회사">
+                    </div>
+                    <div>
+                        <label for="user-role-input">직책 *</label>
+                        <input type="text" id="user-role-input" required placeholder="대표이사 / COO / 마케팅 이사">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="membership-select">가입 희망 멤버십 *</label>
+                    <select id="membership-select" required>
+                        <option value="" disabled selected>멤버십을 선택해 주세요</option>
+                        <option value="Yearly">연회원 멤버십 (연 600만원 + VAT / 2개월 혜택)</option>
+                        <option value="Monthly">월회원 멤버십 (월 60만원 + VAT)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-msg-textarea">비즈니스 북클럽에 참여하고자 하는 관심 비즈니스 분야 혹은 고민을 작성해 주세요. *</label>
+                    <textarea id="user-msg-textarea" required rows="3" placeholder="예: 인공지능 트렌드와 기업의 생존전략 수립에 관심이 있으며, 다양한 B2B 사업 제휴를 모색하고 있습니다."></textarea>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="privacy-agree" required>
+                    <label for="privacy-agree">개인정보 수집 및 동의에 동의합니다. (필수)</label>
+                </div>
+                
+                <button type="submit" class="cta-btn primary-btn btn-glow submit-form-btn">멤버십 가입 신청하기</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Application Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content glass-panel text-center success-modal-content">
+            <div class="success-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+            </div>
+            <h2>신청 및 예약이 성공적으로 등록되었습니다!</h2>
+            <p class="success-message">
+                비즈니스 북클럽 사전 가입 신청이 성공적으로 저장되었습니다.<br>
+                입력하신 정보(<span id="submitted-email"></span>)를 바탕으로 사무국에서 검토한 후, **48시간 이내**에 개별 유선 연락 및 입금 승인 메일을 드리겠습니다.
+            </p>
+            
+            <div class="success-bank-info glass-panel">
+                <p>계좌 입금(계산서 발행)을 선택하신 리더님들께서는 아래 계좌로 입금해 주시기 바랍니다.</p>
+                <p><strong>KDB산업은행 022-7650-0642-708</strong> (주식회사 이동우콘텐츠연구소)</p>
+            </div>
+            <button class="cta-btn primary-btn" id="success-close-btn">확인</button>
+        </div>
+    </div>
+
+    <!-- Book Detail Modal -->
+    <div class="modal-overlay" id="summary-modal">
+        <div class="modal-content glass-panel summary-modal-content">
+            <button class="modal-close-btn" id="summary-close" aria-label="모달 닫기">&times;</button>
+            <div class="modal-header">
+                <span class="badge" id="summary-badge">추천 도서 상세 요약</span>
+                <h2 id="summary-title">도서명</h2>
+                <p id="summary-subtitle">부제목 및 작가</p>
+            </div>
+            <div class="summary-body-text grid-2">
+                <div class="summary-modal-visual">
+                    <img id="summary-modal-img" src="" alt="도서 표지">
+                </div>
+                <div class="summary-modal-text-content" id="summary-content">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cta-btn primary-btn" id="summary-apply-btn">이 세션 멤버십 신청하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="modal-overlay" id="terms-modal">
+        <div class="modal-content glass-panel legal-modal-content">
+            <button class="modal-close-btn" id="terms-close" aria-label="모달 닫기">&times;</button>
+            <div class="modal-header">
+                <span class="badge">이용안내</span>
+                <h2>비즈니스 북클럽 이용약관</h2>
+            </div>
+            <div class="legal-modal-body">
+                <h3>제1조 (목적)</h3>
+                <p>본 약관은 주식회사 이동우콘텐츠연구소(이하 "회사")가 운영하는 비즈니스 북클럽 멤버십 서비스(이하 "서비스")의 이용조건, 가입 절차, 회원의 권리 및 의무 등 기본적인 사항을 규정함을 목적으로 합니다.</p>
+
+                <h3>제2조 (용어의 정의)</h3>
+                <p>본 약관에서 사용하는 용어의 정의는 다음과 같습니다.</p>
+                <ol>
+                    <li><strong>"회원"</strong>이라 함은 본 약관에 동의하고 회사에 멤버십 회비를 납부하여 서비스를 이용할 자격을 부여받은 개인 또는 법인을 의미합니다.</li>
+                    <li><strong>"연회원"</strong>이라 함은 1년 단위의 멤버십 계약을 체결하고 연회비를 일시 납부한 회원을 의미합니다.</li>
+                    <li><strong>"월회원"</strong>이라 함은 1개월 단위의 멤버십 계약을 체결하고 매월 회비를 납부하는 회원을 의미합니다.</li>
+                    <li><strong>"콘텐츠"</strong>라 함은 회사가 제공하는 오프라인 강연, 네트워킹 모임, 도서 요약본 PDF, 추천 도서 실물 등을 포함한 모든 유·무형의 정보 서비스를 말합니다.</li>
+                </ol>
+
+                <h3>제3조 (약관의 효력 및 변경)</h3>
+                <ol>
+                    <li>본 약관은 서비스 웹사이트에 게시하거나 기타의 방법으로 회원에게 공지함으로써 효력이 발생합니다.</li>
+                    <li>회사는 관련 법령을 위배하지 않는 범위 내에서 본 약관을 개정할 수 있으며, 약관이 변경되는 경우 적용일자 7일 전(회원에게 불리하거나 중요한 변경의 경우 30일 전)에 공지합니다.</li>
+                </ol>
+
+                <h3>제4조 (회원가입 및 이용신청 승인)</h3>
+                <ol>
+                    <li>멤버십 가입 신청자는 회사가 제공하는 신청 양식을 작성하고 가입 유형(연회원 또는 월회원)에 따른 회비를 지정된 법인 계좌로 납부함으로써 신청을 완료합니다.</li>
+                    <li>회사는 입금 확인 및 심사를 거쳐 서비스 이용을 승인하며, 승인 시점부터 회원 자격이 발효됩니다.</li>
+                </ol>
+
+                <h3>제5조 (회비 및 회원 혜택)</h3>
+                <ol>
+                    <li>멤버십 회비는 다음과 같습니다 (부가세 별도).
+                        <ul>
+                            <li><strong>연회비</strong>: 6,000,000원 (연 12개월 제공, 2개월 혜택 분 포함)</li>
+                            <li><strong>월회비</strong>: 600,000원 (매월 자동 결제 또는 지정일 납부)</li>
+                        </ul>
+                    </li>
+                    <li>회원에게는 정규 오프라인 강연 및 친교 모임 참석권, 매주 주제 도서 실물 무료 발송 및 핵심 요약본 PDF 제공, 네트워킹 특전 등이 제공됩니다.</li>
+                </ol>
+
+                <h3>제6조 (환불 규정)</h3>
+                <p>본 서비스는 도서 발송 및 정보 콘텐츠 제공, 오프라인 좌석 배정이 즉시 이루어지는 멤버십 서비스로, 환불은 다음 기준에 따라 처리됩니다.</p>
+                <ol>
+                    <li><strong>이용 개시 전</strong>: 회비 납부 후 첫 강연 시작일 또는 첫 도서 발송일 중 빠른 날짜 이전에 해지를 요청할 경우, 납부한 회비 전액을 환불합니다.</li>
+                    <li><strong>이용 개시 후 (월회원)</strong>: 모임 및 도서 배송이 개시된 당월 회비는 환불이 불가능합니다. 차월 결제 취소는 결제 예정일 7일 전까지 신청해야 합니다.</li>
+                    <li><strong>이용 개시 후 (연회원)</strong>: 계약 기간 중도 해지 시, 이용한 개월 수에 해당하는 정가 월회비(월 600,000원 기준, 부가세 별도) 및 이미 발송된 도서 대금, 제반 수수료를 공제한 잔액을 환불합니다. 공제 금액이 납부한 연회비를 초과할 경우 환불액이 없을 수 있습니다.</li>
+                </ol>
+
+                <h3>제7조 (저작권 및 정보 이용 제한)</h3>
+                <ol>
+                    <li>회사가 제공하는 강연 자료, 요약본 PDF 파일 등 모든 콘텐츠에 대한 저작권 및 지식재산권은 회사에 귀속됩니다.</li>
+                    <li>회원은 서비스를 이용하며 얻은 정보를 회사의 사전 서면 승낙 없이 복제, 송신, 출판, 배포, 방송 기타 방법에 의하여 영리 목적으로 이용하거나 제3자에게 무단 배포 또는 양도하여서는 안 됩니다. 위반 시 지식재산권 침해에 따른 민형사상 법적 책임이 발생할 수 있습니다.</li>
+                </ol>
+
+                <h3>제8조 (계약 해지 및 이용 제한)</h3>
+                <p>회원은 모임 진행 시 다른 회원의 학습을 방해하거나, 상업적 광고 행위, 모임의 성격에 맞지 않는 부적절한 행위로 친목을 해치는 경우 회사의 직권으로 회원 자격이 박탈되거나 일시 정지될 수 있으며, 이 경우 잔여 회비는 환불되지 않습니다.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="cta-btn primary-btn" id="terms-confirm-btn">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal-overlay" id="privacy-modal">
+        <div class="modal-content glass-panel legal-modal-content">
+            <button class="modal-close-btn" id="privacy-close" aria-label="모달 닫기">&times;</button>
+            <div class="modal-header">
+                <span class="badge">이용안내</span>
+                <h2>개인정보처리방침</h2>
+            </div>
+            <div class="legal-modal-body">
+                <h3>제1조 (개인정보의 처리 목적)</h3>
+                <p>주식회사 이동우콘텐츠연구소(이하 "회사")는 회원제 서비스 제공에 따른 가입 의사 확인, 본인 식별·인증, 회원 자격 유지·관리, 도서 실물 배송, 핵심 요약본 발송 등 다음의 목적을 위해 최소한의 개인정보를 처리합니다.</p>
+
+                <h3>제2조 (처리하는 개인정보의 항목)</h3>
+                <p>회사는 서비스 신청 및 진행을 위해 아래와 같은 개인정보 항목을 수집 및 처리합니다.</p>
+                <ul>
+                    <li><strong>필수 수집항목</strong>: 성명, 휴대전화번호, 이메일 주소, 가입 유형(연회원/월회원), 도서 배송지 주소, 결제/입금자명</li>
+                    <li><strong>자동 수집항목</strong>: 서비스 이용 기록, 접속 IP 정보, 쿠키(Cookie)</li>
+                </ul>
+
+                <h3>제3조 (개인정보의 처리 및 보유 기간)</h3>
+                <ol>
+                    <li>회사는 회원이 서비스를 이용하는 기간 동안 개인정보를 보유하며, 회원 탈퇴 시 또는 목적 달성 시 즉시 파기합니다.</li>
+                    <li>단, 관계 법령(전자상거래 등에서의 소비자보호에 관한 법률 등)의 규정에 의하여 보존할 필요가 있는 경우, 법령이 정한 보존 기간 동안 안전하게 보관합니다.
+                        <ul>
+                            <li>계약 또는 청약철회 등에 관한 기록: 5년</li>
+                            <li>대금결제 및 재화 등의 공급에 관한 기록: 5년</li>
+                            <li>소비자의 불만 또는 분쟁처리에 관한 기록: 3년</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>제4조 (개인정보의 제3자 제공 및 위탁)</h3>
+                <ol>
+                    <li>회사는 원칙적으로 회원의 개인정보를 제3자에게 제공하지 않습니다.</li>
+                    <li>다만, 선정 도서 배송 등 원활한 서비스 제공을 위해 아래와 같이 개인정보 처리를 위탁하고 있습니다.
+                        <ul>
+                            <li><strong>위탁 대상자</strong>: 우체국택배 / 대한통운 (도서 발송 택배사)</li>
+                            <li><strong>위탁 업무 내용</strong>: 도서 실물 배송을 위한 이름, 주소, 연락처 전달</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>제5조 (정보주체의 권리·의무 및 그 행사방법)</h3>
+                <p>회원은 회사에 대해 언제든지 개인정보 열람·정정·삭제·처리정지 요구 등의 권리를 행사할 수 있으며, 이메일 또는 전화를 통해 신청하시면 본인 확인 절차를 거쳐 지체 없이 조치하겠습니다.</p>
+
+                <h3>제6조 (개인정보의 파기절차 및 방법)</h3>
+                <p>회사는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체 없이 해당 개인정보를 복구할 수 없는 기술적 방법으로 파기합니다.</p>
+
+                <h3>제7조 (개인정보 보호책임자)</h3>
+                <p>회사는 회원의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
+                <ul>
+                    <li><strong>개인정보 보호책임자</strong>: 이동우 (주식회사 이동우콘텐츠연구소 대표)</li>
+                    <li><strong>이메일</strong>: <a href="mailto:pascallab@naver.com">pascallab@naver.com</a></li>
+                    <li><strong>연락처</strong>: 010-3738-3206</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="cta-btn primary-btn" id="privacy-confirm-btn">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // ==========================================================================
+    // 1. Theme Toggle (Dark / Light Mode)
+    // ==========================================================================
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Helper to update logo image source based on active theme with cache busting
+    const updateLogoForTheme = (theme) => {
+        const logoImages = document.querySelectorAll('.logo-img');
+        const cacheBuster = Date.now();
+        logoImages.forEach(img => {
+            if (theme === 'light') {
+                img.src = `assets/logo_light.png?v=${cacheBuster}`;
+            } else {
+                img.src = `assets/logo_dark.png?v=${cacheBuster}`;
+            }
+        });
+    };
+
+    // Load saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+        updateLogoForTheme('light');
+    } else {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+        updateLogoForTheme('dark');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        if (body.classList.contains('dark-theme')) {
+            body.classList.remove('dark-theme');
+            body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+            updateLogoForTheme('light');
+        } else {
+            body.classList.remove('light-theme');
+            body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+            updateLogoForTheme('dark');
+        }
+    });
+
+    // ==========================================================================
+    // 2. Mobile Nav Menu Toggle
+    // ==========================================================================
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !mobileMenuBtn.contains(e.target)) {
+            mobileMenuBtn.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+
+    // Header scroll background padding change
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.padding = '5px 0';
+            header.querySelector('.header-container').style.height = '70px';
+        } else {
+            header.style.padding = '0';
+            header.querySelector('.header-container').style.height = '90px';
+        }
+    });
+
+    // ==========================================================================
+    // 3. LocalStorage Database Setup for Book Club
+    // ==========================================================================
+    const defaultSchedule = [
+        { week: 1, date: "8/27", id: "the_goal_3", book: "더골3 흐름의 법칙", publisher: "동양북스", author: "에프랏 골드렛 아쉬라그", lecturer: "이동우", cover: "assets/the_goal_3.jpg" },
+        { week: 2, date: "9/3", id: "ai_origin", book: "AI 신의 탄생 인간의 종말", publisher: "상상스퀘어", author: "엘리에저 유드코스키, 네이트 소아레스", lecturer: "이동우", cover: "assets/ai_origin.jpg" },
+        { week: 3, date: "9/10", id: "pseudo_labor", book: "가짜 노동", publisher: "자음과모음", author: "데니스 뇌르마르크, 아네르스 포그 옌센", lecturer: "장유신", cover: "assets/pseudo_labor.jpg" },
+        { week: 4, date: "9/17", id: "think_like_giant", book: "거인처럼 생각하라", publisher: "비즈니스북스", author: "피터 홀린스", lecturer: "조민호", cover: "assets/think_like_giant.jpg" },
+        { week: 5, date: "10/1", id: "addiction_design", book: "중독의 설계", publisher: "한국문화사", author: "나타샤 다우", lecturer: "이동우", cover: "assets/addiction_design.jpg" },
+        { week: 6, date: "10/8", id: "undecided_6", book: "6회차 도서 미정 (강연자 준비 중)", publisher: "미정", author: "미정", lecturer: "김건우", cover: "assets/zero_to_one_cover.jpg" },
+        { week: 7, date: "10/15", id: "quantum_recipe", book: "양자컴퓨터 레시피", publisher: "세종서적", author: "김용수 외", lecturer: "김용수", cover: "assets/quantum_recipe.jpg" },
+        { week: 8, date: "10/22", id: "endure_mind", book: "끝까지 해내는 마음은 어떻게 탄생하는가", publisher: "현대지성", author: "웬디 그롤닉, 벤저민 헤디, 프랭크 워렐", lecturer: "이동우", cover: "assets/endure_mind.jpg" },
+        { week: 9, date: "10/29", id: "storm_coming", book: "폭풍이 온다", publisher: "21세기북스", author: "오드 아르네 베스타", lecturer: "김광석", cover: "assets/storm_coming.jpg" },
+        { week: 10, date: "11/5", id: "tech_illusion", book: "기술이 인류를 구원한다는 착각", publisher: "동아시아", author: "애덤 베커", lecturer: "이동우", cover: "assets/tech_illusion.jpg" }
+    ];
+
+    const defaultColumns = [
+        { 
+            id: 1, 
+            title: "흐름의 법칙과 멀티태스킹의 함정", 
+            author: "이동우 북멘토", 
+            summary: "지식노동과 복합 프로젝트 환경에서 생산성을 갉아먹는 진짜 범인은 무엇인지 처방합니다.", 
+            date: "2026.07.02",
+            content: "현대 비즈니스 환경에서 실무자들은 여러 태스크를 동시에 처리하는 멀티태스킹을 찬양하지만, 이는 지식 노동 생산성을 획기적으로 낮추는 주범입니다. 엘리 골드렛의 흐름의 법칙에 따르면 전체 시스템의 성과는 리소스 효율성(개인이 계속 바쁜 것)이 아닌 흐름 효율성(업무가 지체 없이 흘러가는 것)에 달려 있습니다. 한 가지 핵심 문제에 집중하여 빠르게 마무리 짓는 시스템을 설계하는 법을 공유합니다."
+        },
+        { 
+            id: 2, 
+            title: "인공지능의 정렬 문제와 인간의 종말", 
+            author: "김건우 교수", 
+            summary: "실리콘밸리의 석학 엘리에저 유드코스키가 경고하는 초지능 정렬 문제와 비즈니스 함의.", 
+            date: "2026.06.25",
+            content: "인류가 만들어 낸 인공지능이 인간의 제어 범위를 벗어나는 시점, 즉 초지능의 탄생에 대해 유드코스키는 차갑고 경고조의 메시지를 던집니다. AI의 목표를 인류의 복지와 일치시키는 '정렬 문제(Alignment Problem)'가 선제 해결되지 않는다면 혁신 기술은 재앙이 될 수 있습니다. 우리 비즈니스 리더들이 AX(AI 전환)를 외칠 때, 윤리적 기준과 통제 설계를 왜 1순위로 두어야 하는지 다룹니다."
+        },
+        { 
+            id: 3, 
+            title: "양자 컴퓨터 기술이 유발할 산업 패러다임 시프트", 
+            author: "김용수 단장", 
+            summary: "양자 비트 연산이 미래 핀테크, 물류, 제약 분야의 전략적 판도를 어떻게 바꿀지 분석합니다.", 
+            date: "2026.06.18",
+            content: "슈퍼컴퓨터로 수만 년 걸릴 연산을 수분 만에 해치우는 양자 컴퓨터는 공상과학이 아닌 현실의 영역으로 다가오고 있습니다. 암호학의 붕괴, 신약 및 신소재 스크리닝 가속화, 금융 포트폴리오 최적화 등 거의 모든 고가치 산업이 양자 기술 아래 재정렬될 예정입니다. 리더들이 지금부터 양자 기술 인프라를 이해하고 투자 방향을 조율해야 하는 이유를 설명합니다."
+        }
+    ];
+
+    // Initialize mock database
+    if (!localStorage.getItem('bbc_schedule')) {
+        localStorage.setItem('bbc_schedule', JSON.stringify(defaultSchedule));
+    }
+    if (!localStorage.getItem('bbc_columns')) {
+        localStorage.setItem('bbc_columns', JSON.stringify(defaultColumns));
+    }
+    if (!localStorage.getItem('bbc_waitlist')) {
+        localStorage.setItem('bbc_waitlist', JSON.stringify([]));
+    }
+    if (!localStorage.getItem('bbc_summaries')) {
+        localStorage.setItem('bbc_summaries', JSON.stringify({}));
+    }
+
+    // ==========================================================================
+    // 4. Dynamic Renderer (Schedule & Columns & Hero cover)
+    // ==========================================================================
+    const renderPageData = () => {
+        const schedule = JSON.parse(localStorage.getItem('bbc_schedule'));
+        const columns = JSON.parse(localStorage.getItem('bbc_columns'));
+        const waitlist = JSON.parse(localStorage.getItem('bbc_waitlist'));
+
+        // Render Schedule Table
+        const tableBody = document.getElementById('schedule-table-body');
+        if (tableBody) {
+            tableBody.innerHTML = '';
+            schedule.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.setAttribute('data-id', item.id);
+                
+                tr.innerHTML = `
+                    <td class="table-week-num">${item.week}회차</td>
+                    <td class="table-date">${item.date}</td>
+                    <td>
+                        <div class="table-book-title-cell">
+                            <img src="${item.cover}" alt="${item.book} 표지" class="table-book-thumb" onerror="this.src='assets/zero_to_one_cover.jpg'">
+                            <span>${item.book}</span>
+                        </div>
+                    </td>
+                    <td>${item.publisher}</td>
+                    <td>${item.author}</td>
+                    <td class="table-lecturer">${item.lecturer}</td>
+                    <td><button class="table-summary-btn" data-id="${item.id}">발제 요약</button></td>
+                `;
+                
+                // Add click event for details modal (clicking tr or button opens detail)
+                tr.addEventListener('click', (e) => {
+                    if (e.target.tagName !== 'BUTTON') {
+                        openBookDetail(item.id);
+                    }
+                });
+                
+                tableBody.appendChild(tr);
+            });
+
+            // Register summary button clicks
+            document.querySelectorAll('.table-summary-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const bookId = btn.getAttribute('data-id');
+                    openBookDetail(bookId);
+                });
+            });
+        }
+
+        // Populate Cover week select dropdown dynamically
+        const coverSelect = document.getElementById('cover-week-select');
+        if (coverSelect) {
+            const currentVal = coverSelect.value;
+            coverSelect.innerHTML = '';
+            schedule.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item.week;
+                opt.textContent = `${item.week}회차 (${item.book.substring(0, 15)})`;
+                coverSelect.appendChild(opt);
+            });
+            if (currentVal) coverSelect.value = currentVal;
+        }
+
+        // Render Columns
+        const columnsContainer = document.getElementById('columns-grid-container');
+        if (columnsContainer) {
+            columnsContainer.innerHTML = '';
+            columns.forEach(col => {
+                const card = document.createElement('div');
+                card.className = 'column-card glass-panel';
+                card.innerHTML = `
+                    <div class="column-meta">작성자: ${col.author} | 게재일: ${col.date}</div>
+                    <h3>${col.title}</h3>
+                    <p>${col.summary}</p>
+                    <div class="column-read-btn" data-id="${col.id}">전체 칼럼 읽기</div>
+                `;
+                columnsContainer.appendChild(card);
+            });
+
+            // Column read button click
+            document.querySelectorAll('.column-read-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const colId = parseInt(btn.getAttribute('data-id'), 10);
+                    const selectedCol = columns.find(c => c.id === colId);
+                    if (selectedCol) {
+                        showColumnModal(selectedCol);
+                    }
+                });
+            });
+        }
+
+        // Render Admin Waitlist
+        const waitlistBody = document.getElementById('admin-waitlist-body');
+        if (waitlistBody) {
+            waitlistBody.innerHTML = '';
+            if (waitlist.length === 0) {
+                waitlistBody.innerHTML = `<tr><td colspan="6" class="text-center text-muted">등록된 신청 대기자가 아직 없습니다.</td></tr>`;
+            } else {
+                waitlist.forEach(app => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td><strong>${app.name}</strong></td>
+                        <td>${app.phone}</td>
+                        <td>${app.email}</td>
+                        <td>${app.company} (${app.role})</td>
+                        <td><span class="badge" style="margin:0;">${app.plan}</span></td>
+                        <td>${app.timestamp}</td>
+                    `;
+                    waitlistBody.appendChild(tr);
+                });
+            }
+        }
+
+        // Update Hero Cover to first week
+        const heroCover = document.getElementById('hero-book-cover');
+        if (heroCover && schedule[0]) {
+            heroCover.src = schedule[0].cover;
+        }
+    };
+
+    // ==========================================================================
+    // 5. Book Summaries Database
+    // ==========================================================================
+    const summariesDb = {
+        'the_goal_3': {
+            title: '더골 3 : 흐름의 법칙 (40주년 기념판)',
+            subtitle: '에프랏 골드렛 아쉬라그 저 | 동양북스 | 강연: 이동우',
+            content: `
+                <h4>1. 미완의 유작, 마침내 베일을 벗다</h4>
+                <p>전 세계 기업 CEO들의 바이블로 군림해 온 '더 골(The Goal)'의 최종장입니다. 제약이론(TOC)의 창시자 엘리 골드렛이 서거하기 전까지 집필했으나 미완성으로 남았던 원고를 그의 딸이자 비즈니스 파트너인 에프랏 골드렛이 물려받아 완성했습니다.</p>
+                
+                <h4>2. 지식 노동 환경과 멀티태스킹의 배신</h4>
+                <p>과거의 공장 환경과 달리 현대 지식 근로와 멀티 프로젝트 업무에서는 각 리소스가 항상 바쁘게 움직이는 것(자원 효율성)이 오히려 프로젝트 지연의 주원인이 됩니다. 멀티태스킹은 끊임없는 지연과 컨텍스트 스위칭 비용을 유발합니다.</p>
+                
+                <h4>3. 흐름 효율성 (Rules of Flow)</h4>
+                <p>비즈니스 혁신의 진짜 해답은 개인이 바쁜 게 아니라, 전체 업무(Work in Progress)가 막힘없이 처음부터 끝까지 물 흐르듯 신속하게 처리되는 것입니다. 3회차에서는 이 '흐름의 법칙'을 현업 프로젝트 관리와 조직 설계에 직접 대입하는 원칙들을 학습합니다.</p>
+            `
+        },
+        'ai_origin': {
+            title: 'AI 신의 탄생 인간의 종말',
+            subtitle: '엘리에저 유드코스키, 네이트 소아레스 저 | 상상스퀘어 | 강연: 이동우',
+            content: `
+                <h4>1. 실리콘밸리 AI 안전 연구의 거장, 최초의 단행본</h4>
+                <p>챗GPT를 위시한 생성형 AI 붐의 한가운데서 가장 급진적으로 인공지능의 안전성을 경고해 온 기계지능연구소(MIRI) 창립자 엘리에저 유드코스키의 핵심 저작입니다.</p>
+                
+                <h4>2. AI 정렬 문제 (Alignment Problem)</h4>
+                <p>AI의 목표 함수가 단 1도라도 인류의 생존 이익과 어긋나게 설정된다면, 스스로 진화하는 인공지능은 그 미세한 틈을 극대화하여 인간을 파멸시킬 수 있습니다. 초지능이 인간보다 뛰어난 순수한 물리적 강제력을 지니기 전 인간의 가치를 주입하는 정렬 문제를 설계해야 합니다.</p>
+                
+                <h4>3. 리더들이 바라봐야 할 비즈니스 테크의 윤리</h4>
+                <p>본 강의는 기술적 적용을 넘어, 기업의 CEO로서 혁신적 도구(AI)를 현업에 접목할 때 안전과 윤리적 통제를 어떻게 시스템에 정렬할 수 있을지 심오하게 고민합니다.</p>
+            `
+        },
+        'pseudo_labor': {
+            title: '가짜 노동 (스스로 만드는 번아웃의 세계)',
+            subtitle: '데니스 뇌르마르크, 아네르스 포그 옌센 저 | 자음과모음 | 강연: 장유신 전무',
+            content: `
+                <h4>1. 우리는 왜 아무리 일해도 시간이 부족할까?</h4>
+                <p>분명 기술과 기계화는 발달하는데, 현대 직장인들은 여전히 장시간 노동과 번아웃에 시달립니다. 저자들은 직장 내부에서 실질적인 비즈니스 성과와는 하등 상관없는 보고서 작성, 무의미한 회의, 생존을 위한 '바쁜 척하기' 등에 막대한 시간이 소모되고 있다고 꼬집습니다.</p>
+                
+                <h4>2. 가짜 노동 (Pseudo Work)의 분류</h4>
+                <p>조직이 거대화될수록 스스로를 유지하기 위해 불필요한 관료주의와 가짜 노동이 자연 증식합니다. 이 세션에서는 우리의 부서와 일상 속에 조용히 스며든 '가짜 업무'들을 찾아내 도려내는 구체적인 조직 혁신 프레임워크를 나눕니다.</p>
+            `
+        },
+        'think_like_giant': {
+            title: '거인처럼 생각하라',
+            subtitle: '피터 홀린스 저 | 비즈니스북스 | 강연: 조민호 대표',
+            content: `
+                <h4>1. 프레임의 확장, 한계의 돌파</h4>
+                <p>최고의 리더들은 일반 실무자들과 다르게 사유합니다. 피터 홀린스는 인지 심리학을 기반으로 전 세계 역사와 비즈니스에서 압도적인 발자취를 남긴 '거인'들의 사고 작동 원리(Mental Model)를 과학적으로 파헤칩니다.</p>
+                
+                <h4>2. 인지적 편향 극복과 의사 결정의 공식</h4>
+                <p>불확실한 시장 상황에서 인간 본능이 초래하는 의사결정 편향을 어떻게 걷어내고, 장기적인 성공 확률이 극도로 높은 선택만을 걸러낼 수 있는지 그 멘탈 프레임을 세션 참가자의 경영 이슈에 직접 대입하여 코칭합니다.</p>
+            `
+        },
+        'addiction_design': {
+            title: '중독의 설계',
+            subtitle: '나타샤 다우 쉴 저 | 한국문화사 | 강연: 이동우',
+            content: `
+                <h4>1. 현대 플랫폼 기업들이 소비자를 붙잡아두는 비결</h4>
+                <p>인스타그램, 틱톡, 넷플릭스 등 성공한 디지털 비즈니스는 본질적으로 사용자의 뇌 과학적 중독 기전을 자극하도록 설계(Addiction Loop)되어 있습니다. 행동 중독의 역사와 카지노 머신, 소셜 미디어 알고리즘의 결합 구조를 상세히 파헤칩니다.</p>
+                
+                <h4>2. 가치와 윤리 사이의 비즈니스 퍼널</h4>
+                <p>소비자의 자발적 중독(지속성)을 만들어내는 매력적인 가치 사다리를 설계함과 동시에, 리더로서 비즈니스의 사회적 책무와 윈윈 모델을 어떻게 지켜낼 것인지 심층 토론을 진행합니다.</p>
+            `
+        },
+        'undecided_6': {
+            title: '6회차 강연 (김건우 교수 강의)',
+            subtitle: 'KT AX컨설턴트 김건우 교수 | 강연자 자체 큐레이션 예정',
+            content: `
+                <h4>1. AI 비즈니스 응용의 실전</h4>
+                <p>6회차 세션은 급변하는 IT/인공지능 비즈니스 마켓의 실시간 동향을 적극 수용하기 위해, 강연 전 시점에 맞춰 가장 파급력이 큰 주제의 최신 비즈니스 이슈 도서를 현장에서 선정하여 강연을 진행합니다.</p>
+                
+                <h4>2. Admin을 통한 실시간 정보 수정 가능</h4>
+                <p>도서가 최종 조율되는 대로, 하단의 <strong>관리자 모드 (Admin Panel)</strong>를 이용하여 리더님께서 직접 도서명과 표지 이미지를 홈페이지상에 실시간으로 업데이트해 보실 수 있는 유연한 설계가 적용되어 있습니다.</p>
+            `
+        },
+        'quantum_recipe': {
+            title: '양자컴퓨터 레시피',
+            subtitle: '김용수 외 저 | 세종서적 | 강연: 김용수 단장',
+            content: `
+                <h4>1. 큐비트(Qubit)가 여는 미래의 열쇠</h4>
+                <p>양자 얽힘과 중첩의 물리 원리를 이용하여 현존하는 디지털 컴퓨터의 한계를 조 단위로 넘어서는 차세대 컴퓨팅 혁명입니다. KIST 양자기술연구단장이 대중의 눈높이에 맞춰 기술적 장벽을 허물어 드립니다.</p>
+                
+                <h4>2. 양자 컴퓨팅의 주요 실전 분야</h4>
+                <p>보안/암호 시스템의 변혁, 화학 분자 시뮬레이션을 통한 배터리 및 신약 혁신, 복잡한 운송/물류 네트워크의 경로 최적화 등 10년 내에 비즈니스 지도를 영구히 바꿀 주요 기술적 기회를 탐색합니다.</p>
+            `
+        },
+        'endure_mind': {
+            title: '끝까지 해내는 마음은 어떻게 탄생하는가',
+            subtitle: '웬디 그롤닉, 벤저민 헤디, 프랭크 워렐 저 | 현대지성 | 강연: 이동우',
+            content: `
+                <h4>1. 외재적 동기와 보상의 역효과</h4>
+                <p>성과금, 칭찬, 채찍과 같은 외적 인센티브가 오히려 구성원들의 내재적 열망과 창의성을 억누르고 조직 성과를 저해한다는 최신 심리학적 근거를 설명합니다.</p>
+                
+                <h4>2. 자기결정성 이론 (Self-Determination Theory)</h4>
+                <p>인간이 스스로 열정을 불태워 끝까지 해내게 만드는 3대 심리 욕구인 <strong>'유능성, 자율성, 관계성'</strong>을 조직 문화와 개인의 일상에 어떻게 안전하게 이식할 수 있을지 배웁니다. 리더십의 근본 패러다임을 혁신합니다.</p>
+            `
+        },
+        'storm_coming': {
+            title: '폭풍이 온다',
+            subtitle: '오드 아르네 베스타 저 | 21세기북스 | 강연: 김광석 실장',
+            content: `
+                <h4>1. 패권 전쟁의 역사와 2026 경제 전망</h4>
+                <p>미중 갈등, 글로벌 공급망 분절, 지정학적 대충돌이 이뤄지는 작금의 현실은 역사적 반복입니다. 하버드대 역사학자 오드 아르네 베스타의 분석을 빌려 역사에서 경제 충돌의 징후를 진단합니다.</p>
+                
+                <h4>2. 리더를 위한 거시 경제의 생존 가이드</h4>
+                <p>고금리, 원자재 위기 속에서 한국 기업의 오너와 기획자들이 미래 3~5년의 거시 경제 흐름을 어떻게 거시적으로 조망하고, 외풍에 견딜 강건한 헤징 포트폴리오를 구성해야 하는지 다룹니다.</p>
+            `
+        },
+        'tech_illusion': {
+            title: '기술이 인류를 구원한다는 착각',
+            subtitle: '애덤 베커 저 | 동아시아 | 강연: 이동우',
+            content: `
+                <h4>1. 테크노-유토피아와 실리콘밸리 만능주의</h4>
+                <p>실리콘밸리의 기술 만능주의(Techno-optimism)와 초거대 기술 기업의 오너들이 주장하는 인류 구원의 담론 이면에 도사리고 있는 위험성을 진단합니다. 기후위기, 민주주의의 위협, 부의 격차를 단순히 '새로운 코드와 앱'이 극복할 수 없다는 비판적 지각을 제공합니다.</p>
+                
+                <h4>2. 리더의 인문학적 성찰</h4>
+                <p>우리는 비즈니스를 영위하면서 사회적 임팩트를 어떻게 조율할 것인가? 기술을 건강한 도구로 부리면서 사람의 얼굴을 한 경영 철학을 지킬 수 있는 깊이 있는 인문학적 결말을 제공합니다.</p>
+            `
+        }
+    };
+
+    // ==========================================================================
+    // 6. Modal Openers & Closers
+    // ==========================================================================
+    const applyModal = document.getElementById('apply-modal');
+    const successModal = document.getElementById('success-modal');
+    const summaryModal = document.getElementById('summary-modal');
+    const termsModal = document.getElementById('terms-modal');
+    const privacyModal = document.getElementById('privacy-modal');
+
+    const modalCloseBtn = document.getElementById('modal-close');
+    const successCloseBtn = document.getElementById('success-close-btn');
+    const summaryCloseBtn = document.getElementById('summary-close');
+    const termsCloseBtn = document.getElementById('terms-close');
+    const termsConfirmBtn = document.getElementById('terms-confirm-btn');
+    const openTermsBtn = document.getElementById('open-terms-btn');
+    const privacyCloseBtn = document.getElementById('privacy-close');
+    const privacyConfirmBtn = document.getElementById('privacy-confirm-btn');
+    const openPrivacyBtn = document.getElementById('open-privacy-btn');
+
+    const openModal = (modal) => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = (modal) => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', () => closeModal(applyModal));
+    if (successCloseBtn) successCloseBtn.addEventListener('click', () => closeModal(successModal));
+    if (summaryCloseBtn) summaryCloseBtn.addEventListener('click', () => closeModal(summaryModal));
+    if (termsCloseBtn) termsCloseBtn.addEventListener('click', () => closeModal(termsModal));
+    if (termsConfirmBtn) termsConfirmBtn.addEventListener('click', () => closeModal(termsModal));
+    if (privacyCloseBtn) privacyCloseBtn.addEventListener('click', () => closeModal(privacyModal));
+    if (privacyConfirmBtn) privacyConfirmBtn.addEventListener('click', () => closeModal(privacyModal));
+
+    if (openTermsBtn && termsModal) {
+        openTermsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(termsModal);
+        });
+    }
+
+    if (openPrivacyBtn && privacyModal) {
+        openPrivacyBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(privacyModal);
+        });
+    }
+
+    // Close modal on window background click
+    window.addEventListener('click', (e) => {
+        if (e.target === applyModal) closeModal(applyModal);
+        if (e.target === successModal) closeModal(successModal);
+        if (e.target === summaryModal) closeModal(summaryModal);
+        if (e.target === termsModal) closeModal(termsModal);
+        if (e.target === privacyModal) closeModal(privacyModal);
+        
+        // Hide column details modal if open
+        const colModal = document.getElementById('column-detail-modal');
+        if (e.target === colModal) {
+            colModal.remove();
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Event Trigger Buttons mapping
+    const triggerButtons = [
+        { el: document.getElementById('nav-apply-btn'), plan: null },
+        { el: document.getElementById('hero-apply-btn'), plan: null },
+        { el: document.getElementById('apply-monthly-btn'), plan: 'Monthly' },
+        { el: document.getElementById('apply-yearly-btn'), plan: 'Yearly' }
+    ];
+
+    triggerButtons.forEach(btnObj => {
+        if (btnObj.el) {
+            btnObj.el.addEventListener('click', (e) => {
+                e.preventDefault();
+                const select = document.getElementById('membership-select');
+                if (btnObj.plan) {
+                    select.value = btnObj.plan;
+                } else {
+                    select.selectedIndex = 0;
+                }
+                openModal(applyModal);
+            });
+        }
+    });
+
+    // Open Book details modal
+    const openBookDetail = (bookId) => {
+        const schedule = JSON.parse(localStorage.getItem('bbc_schedule')) || [];
+        const currentItem = schedule.find(item => item.id === bookId);
+        if (!currentItem) return;
+
+        const localSummaries = JSON.parse(localStorage.getItem('bbc_summaries') || '{}');
+        const data = localSummaries[bookId] || summariesDb[bookId];
+
+        const title = data ? data.title : currentItem.book;
+        const subtitle = data ? data.subtitle : `${currentItem.author} | ${currentItem.publisher}`;
+        const content = data ? data.content : `<p>이 책은 비즈니스 북클럽 멤버십의 추천 도서입니다. 상세한 발제문 및 핵심 요약본은 세션 시작 전에 회원 개별 이메일 및 모바일로 제공됩니다.</p>`;
+
+        document.getElementById('summary-title').textContent = title;
+        document.getElementById('summary-subtitle').textContent = subtitle;
+        document.getElementById('summary-content').innerHTML = content;
+        
+        const modalImg = document.getElementById('summary-modal-img');
+        if (modalImg) {
+            modalImg.src = currentItem.cover;
+        }
+
+        const applyBtn = document.getElementById('summary-apply-btn');
+        if (applyBtn) {
+            applyBtn.onclick = (e) => {
+                e.preventDefault();
+                closeModal(summaryModal);
+                const select = document.getElementById('membership-select');
+                select.value = 'Yearly';
+                openModal(applyModal);
+            };
+        }
+
+        openModal(summaryModal);
+    };
+
+    // Show dynamic Column full detail modal
+    const showColumnModal = (col) => {
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay active';
+        modal.id = 'column-detail-modal';
+        
+        modal.innerHTML = `
+            <div class="modal-content glass-panel">
+                <button class="modal-close-btn" onclick="document.getElementById('column-detail-modal').remove(); document.body.style.overflow = '';">&times;</button>
+                <div class="modal-header">
+                    <span class="badge">Column details</span>
+                    <h2>${col.title}</h2>
+                    <p>작성자: ${col.author} | 게재일: ${col.date}</p>
+                </div>
+                <div style="font-size:0.95rem; line-height:1.7; color:var(--text-secondary); max-height:55vh; overflow-y:auto; padding-right:12px;">
+                    <p style="white-space: pre-wrap;">${col.content}</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="cta-btn primary-btn" onclick="document.getElementById('column-detail-modal').remove(); document.body.style.overflow = '';">닫기</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        document.body.style.overflow = 'hidden';
+    };
+
+    // ==========================================================================
+    // 7. Form submissions (Waitlist apply)
+    // ==========================================================================
+    const applyForm = document.getElementById('apply-form');
+    if (applyForm) {
+        applyForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('user-name-input').value;
+            const phone = document.getElementById('user-phone-input').value;
+            const email = document.getElementById('user-email-input').value;
+            const company = document.getElementById('user-company-input').value;
+            const role = document.getElementById('user-role-input').value;
+            const planVal = document.getElementById('membership-select').value;
+            
+            let planText = "월회원 멤버십";
+            if (planVal === "Yearly") planText = "연회원 멤버십";
+
+            const applicant = {
+                name: name,
+                phone: phone,
+                email: email,
+                company: company,
+                role: role,
+                plan: planText,
+                timestamp: new Date().toLocaleString('ko-KR')
+            };
+
+            // Save to mock database
+            const waitlist = JSON.parse(localStorage.getItem('bbc_waitlist'));
+            waitlist.push(applicant);
+            localStorage.setItem('bbc_waitlist', JSON.stringify(waitlist));
+
+            // Refresh UI
+            renderPageData();
+
+            // Open success modal
+            closeModal(applyModal);
+            document.getElementById('submitted-email').textContent = email;
+            openModal(successModal);
+
+            applyForm.reset();
+        });
+    }
+
+    // ==========================================================================
+    // 8. FAQ Accordion Logic
+    // ==========================================================================
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const panel = item.querySelector('.faq-panel');
+
+        trigger.addEventListener('click', () => {
+            const isOpen = item.classList.contains('active');
+
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                    otherItem.querySelector('.faq-panel').style.maxHeight = null;
+                }
+            });
+
+            if (isOpen) {
+                item.classList.remove('active');
+                trigger.setAttribute('aria-expanded', 'false');
+                panel.style.maxHeight = null;
+            } else {
+                item.classList.add('active');
+                trigger.setAttribute('aria-expanded', 'true');
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
+        });
+    });
+
+    // ==========================================================================
+    // 9. Admin Login, Tab switching & Operations
+    // ==========================================================================
+    const loginBox = document.getElementById('admin-login-box');
+    const dashboardContent = document.getElementById('admin-dashboard-content');
+    const loginForm = document.getElementById('admin-login-form');
+    const loginErrorMsg = document.getElementById('login-error-msg');
+
+    const checkAdminAuth = () => {
+        if (sessionStorage.getItem('bbc_admin_logged_in') === 'true') {
+            if (loginBox) loginBox.style.display = 'none';
+            if (dashboardContent) dashboardContent.style.display = 'block';
+        } else {
+            if (loginBox) loginBox.style.display = 'block';
+            if (dashboardContent) dashboardContent.style.display = 'none';
+        }
+    };
+
+    checkAdminAuth();
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const idInput = document.getElementById('admin-id').value;
+            const pwInput = document.getElementById('admin-pw').value;
+
+            if (idInput === 'pascallab' && pwInput === 'remlee4152') {
+                sessionStorage.setItem('bbc_admin_logged_in', 'true');
+                if (loginErrorMsg) loginErrorMsg.style.display = 'none';
+                loginForm.reset();
+                checkAdminAuth();
+            } else {
+                if (loginErrorMsg) {
+                    loginErrorMsg.innerText = '아이디 또는 비밀번호가 올바르지 않습니다.';
+                    loginErrorMsg.style.display = 'block';
+                }
+            }
+        });
+    }
+
+    const adminTabBtns = document.querySelectorAll('.admin-tab-btn');
+    const adminTabContents = document.querySelectorAll('.admin-tab-content');
+
+    adminTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            adminTabBtns.forEach(b => b.classList.remove('active'));
+            adminTabContents.forEach(c => c.classList.remove('active'));
+
+            btn.classList.add('active');
+            const targetTab = btn.getAttribute('data-tab');
+            document.getElementById(`tab-${targetTab}`).classList.add('active');
+        });
+    });
+
+    // Admin Upload Cover Zone Interaction
+    const uploadZone = document.getElementById('cover-upload-zone');
+    const fileInput = document.getElementById('cover-file-input');
+    const preview = document.getElementById('upload-preview');
+    const zoneText = document.getElementById('upload-zone-text');
+    let uploadedDataUrl = "";
+
+    if (uploadZone && fileInput) {
+        uploadZone.addEventListener('click', () => fileInput.click());
+        
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    uploadedDataUrl = event.target.result;
+                    preview.src = uploadedDataUrl;
+                    preview.style.display = 'block';
+                    zoneText.style.display = 'none';
+                    // Populate input text too for convenience
+                    document.getElementById('cover-image-url').value = "[로컬 이미지 파일 사용됨]";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    // Cover image edit submission
+    const coverForm = document.getElementById('admin-cover-form');
+    if (coverForm) {
+        coverForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const weekNum = parseInt(document.getElementById('cover-week-select').value, 10);
+            const inputUrl = document.getElementById('cover-image-url').value;
+
+            let finalCoverSrc = inputUrl;
+            // If file was uploaded, use the Data URL instead of placeholder text
+            if (inputUrl === "[로컬 이미지 파일 사용됨]" && uploadedDataUrl) {
+                finalCoverSrc = uploadedDataUrl;
+            }
+
+            const schedule = JSON.parse(localStorage.getItem('bbc_schedule'));
+            const weekItem = schedule.find(item => item.week === weekNum);
+            if (weekItem) {
+                weekItem.cover = finalCoverSrc;
+                localStorage.setItem('bbc_schedule', JSON.stringify(schedule));
+                renderPageData();
+                alert(`${weekNum}회차 도서 표지가 성공적으로 수정되었습니다!`);
+                coverForm.reset();
+                if (preview) {
+                    preview.style.display = 'none';
+                    preview.src = '';
+                }
+                if (zoneText) zoneText.style.display = 'block';
+                uploadedDataUrl = "";
+            }
+        });
+    }
+
+    // Add Book Lineup form submission
+    const addBookForm = document.getElementById('admin-add-book-form');
+    if (addBookForm) {
+        // Auto-populate the next week number as a helper
+        const populateNextWeek = () => {
+            const schedule = JSON.parse(localStorage.getItem('bbc_schedule')) || [];
+            const nextWeekInput = document.getElementById('add-book-week');
+            if (nextWeekInput && schedule.length > 0) {
+                const maxWeek = Math.max(...schedule.map(item => item.week));
+                nextWeekInput.value = maxWeek + 1;
+            }
+        };
+
+        // Populate on page load or when form is active
+        populateNextWeek();
+
+        // Listen for tab click to recalculate the next week
+        adminTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.getAttribute('data-tab') === 'add-book') {
+                    populateNextWeek();
+                }
+            });
+        });
+
+        addBookForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const weekNum = parseInt(document.getElementById('add-book-week').value, 10);
+            const date = document.getElementById('add-book-date').value;
+            const bookTitle = document.getElementById('add-book-title').value;
+            const publisher = document.getElementById('add-book-publisher').value;
+            const author = document.getElementById('add-book-author').value;
+            const lecturer = document.getElementById('add-book-lecturer').value;
+            const cover = document.getElementById('add-book-cover').value;
+            const summaryHtml = document.getElementById('add-book-summary').value;
+
+            const newId = `book_dynamic_${Date.now()}`;
+
+            const newItem = {
+                week: weekNum,
+                date: date,
+                id: newId,
+                book: bookTitle,
+                publisher: publisher,
+                author: author,
+                lecturer: lecturer,
+                cover: cover
+            };
+
+            // Store in schedule database
+            const schedule = JSON.parse(localStorage.getItem('bbc_schedule')) || [];
+            schedule.push(newItem);
+            // Sort by week number so it displays in order!
+            schedule.sort((a, b) => a.week - b.week);
+            localStorage.setItem('bbc_schedule', JSON.stringify(schedule));
+
+            // Store in summaries database
+            if (summaryHtml) {
+                const localSummaries = JSON.parse(localStorage.getItem('bbc_summaries') || '{}');
+                localSummaries[newId] = {
+                    title: bookTitle,
+                    subtitle: `${author} | ${publisher}`,
+                    content: summaryHtml
+                };
+                localStorage.setItem('bbc_summaries', JSON.stringify(localSummaries));
+            }
+
+            renderPageData();
+            alert(`${weekNum}회차 도서 《${bookTitle}》가 성공적으로 라인업에 추가되었습니다!`);
+            addBookForm.reset();
+            populateNextWeek();
+        });
+    }
+
+    // Download Proposal file mock click
+    const downloadProposalBtns = document.querySelectorAll('.download-proposal-btn');
+    downloadProposalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert("인사이티파이(Insitify) 프리미엄 연동 서비스 소개서 다운로드가 임시 시작되었습니다. (제안서 파일 준비 완료)");
+        });
+    });
+
+    // Initialize all visual data rendering
+    renderPageData();
+});
+
+</script>
+</body>
+</html>

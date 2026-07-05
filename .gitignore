@@ -1,0 +1,11 @@
+# Compiled/packaged assets
+*.zip
+
+# System/OS files
+.DS_Store
+Thumbs.db
+
+# Antigravity/Agent temp files
+.system_generated/
+browser/
+scratch/
