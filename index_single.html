@@ -106,6 +106,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     transition: var(--theme-transition);
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 a {
@@ -2280,6 +2282,23 @@ tr:hover .table-book-thumb {
 
 .legal-modal-body strong {
     color: var(--text-primary);
+}
+
+/* Max-width 480px (Mobile-specific font adjustments) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.55rem;
+        line-height: 1.35;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+    }
+    
+    .plan-features li {
+        font-size: 0.85rem;
+        gap: 8px;
+    }
 }
 
 </style>
