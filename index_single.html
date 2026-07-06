@@ -3523,11 +3523,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Initialize mock database
-    if (!localStorage.getItem('bbc_schedule')) {
+    const DB_VERSION = 'v2.2';
+    if (localStorage.getItem('bbc_db_version') !== DB_VERSION) {
         localStorage.setItem('bbc_schedule', JSON.stringify(defaultSchedule));
-    }
-    if (!localStorage.getItem('bbc_columns')) {
         localStorage.setItem('bbc_columns', JSON.stringify(defaultColumns));
+        localStorage.setItem('bbc_db_version', DB_VERSION);
     }
     if (!localStorage.getItem('bbc_waitlist')) {
         localStorage.setItem('bbc_waitlist', JSON.stringify([]));
