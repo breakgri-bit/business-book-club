@@ -486,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const title = data ? data.title : currentItem.book;
         const subtitle = data ? data.subtitle : `${currentItem.author} | ${currentItem.publisher}`;
-        const content = data ? data.content : `<p>이 책은 비즈니스 북클럽 멤버십의 추천 도서입니다. 상세한 발제문 및 핵심 요약본은 세션 시작 전에 회원 개별 이메일 및 모바일로 제공됩니다.</p>`;
+        const content = data ? data.content : `<p>이 책은 이동우의 비즈니스 북클럽 멤버십의 추천 도서입니다. 상세한 발제문 및 핵심 요약본은 세션 시작 전에 회원 개별 이메일 및 모바일로 제공됩니다.</p>`;
 
         document.getElementById('summary-title').textContent = title;
         document.getElementById('summary-subtitle').textContent = subtitle;
