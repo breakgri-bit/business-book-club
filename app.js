@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { week: 6, date: "10/8", id: "dual_brain", book: "듀얼 브레인", publisher: "상상스퀘어", author: "이선 몰릭", lecturer: "김건우", cover: "assets/dual_brain.jpg" },
         { week: 7, date: "10/15", id: "quantum_recipe", book: "양자컴퓨터 레시피", publisher: "세종서적", author: "김용수 외", lecturer: "김용수", cover: "assets/quantum_recipe.jpg" },
         { week: 8, date: "10/22", id: "endure_mind", book: "끝까지 해내는 마음은 어떻게 탄생하는가", publisher: "현대지성", author: "웬디 그롤닉, 벤저민 헤디, 프랭크 워렐", lecturer: "이동우", cover: "assets/endure_mind.jpg" },
-        { week: 9, date: "10/29", id: "storm_coming", book: "폭풍이 온다", publisher: "21세기북스", author: "오드 아르네 베스타", lecturer: "김광석", cover: "assets/storm_coming.jpg" },
+        { week: 9, date: "10/29", id: "doom_loop", book: "둠루프", publisher: "21세기북스", author: "에스와르 S. 프라사드", lecturer: "김광석", cover: "assets/doom_loop.jpg" },
         { week: 10, date: "11/5", id: "tech_illusion", book: "기술이 인류를 구원한다는 착각", publisher: "동아시아", author: "애덤 베커", lecturer: "이동우", cover: "assets/tech_illusion.jpg" }
     ];
 
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Initialize mock database
-    const DB_VERSION = 'v2.2';
+    const DB_VERSION = 'v2.3';
     if (localStorage.getItem('bbc_db_version') !== DB_VERSION) {
         localStorage.setItem('bbc_schedule', JSON.stringify(defaultSchedule));
         localStorage.setItem('bbc_columns', JSON.stringify(defaultColumns));
@@ -361,15 +361,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>인간이 스스로 열정을 불태워 끝까지 해내게 만드는 3대 심리 욕구인 <strong>'유능성, 자율성, 관계성'</strong>을 조직 문화와 개인의 일상에 어떻게 안전하게 이식할 수 있을지 배웁니다. 리더십의 근본 패러다임을 혁신합니다.</p>
             `
         },
-        'storm_coming': {
-            title: '폭풍이 온다',
-            subtitle: '오드 아르네 베스타 저 | 21세기북스 | 강연: 김광석 실장',
+        'doom_loop': {
+            title: '둠루프',
+            subtitle: '에스와르 S. 프라사드 저 | 21세기북스 | 강연: 김광석 실장',
             content: `
-                <h4>1. 패권 전쟁의 역사와 2026 경제 전망</h4>
-                <p>미중 갈등, 글로벌 공급망 분절, 지정학적 대충돌이 이뤄지는 작금의 현실은 역사적 반복입니다. 하버드대 역사학자 오드 아르네 베스타의 분석을 빌려 역사에서 경제 충돌의 징후를 진단합니다.</p>
+                <h4>1. 경제, 정치, 지정학이 충돌하는 파멸의 고리</h4>
+                <p>미중 갈등, 지정학적 대분열, 자국 우선주의 정책이 얽히고설켜 세계 경제 질서를 어떻게 위기로 몰고 가는지 분석합니다. 패권 경쟁의 소용돌이 속에서 세계 질서가 무너져 가는 거대한 '둠루프(Doom Loop)' 기전을 상세히 들여다봅니다.</p>
                 
-                <h4>2. 리더를 위한 거시 경제의 생존 가이드</h4>
-                <p>고금리, 원자재 위기 속에서 한국 기업의 오너와 기획자들이 미래 3~5년의 거시 경제 흐름을 어떻게 거시적으로 조망하고, 외풍에 견딜 강건한 헤징 포트폴리오를 구성해야 하는지 다룹니다.</p>
+                <h4>2. 대격변의 시대, 대한민국 비즈니스의 탈출구</h4>
+                <p>정치적 갈등이 경제적 충돌로 비화되는 초불확실성 시대 속에서, 기업 리더들이 리스크를 분산하고 지속 가능한 비즈니스 모델을 유지하기 위해 당장 실행해야 할 생존 전략과 대응 시나리오를 공유합니다.</p>
             `
         },
         'tech_illusion': {
