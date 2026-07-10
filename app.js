@@ -719,6 +719,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const adminTabBtns = document.querySelectorAll('.admin-tab-btn');
+    const adminTabContents = document.querySelectorAll('.admin-tab-content');
+
     adminTabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             adminTabBtns.forEach(b => b.classList.remove('active'));
