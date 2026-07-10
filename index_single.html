@@ -2336,6 +2336,16 @@ tr:hover .table-book-thumb {
     }
 }
 
+/* Spinner for real-time loading UI */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.spinner {
+    display: inline-block;
+    animation: spin 1.2s linear infinite;
+}
+
 </style>
 </head>
 <body class="dark-theme">
@@ -3109,6 +3119,21 @@ tr:hover .table-book-thumb {
                         <div class="admin-tab-content" id="tab-waitlist">
                             <h3>예약 및 신청 희망자 현황</h3>
                             <p class="text-muted">홈페이지 신청 양식을 통해 대기자로 신청한 리더님들의 세부 접수 정보 리스트입니다.</p>
+
+                            <!-- Google Sheet Connection Configuration -->
+                            <div class="google-sheet-config-box" style="margin-bottom: 25px; padding: 20px; border-radius: 8px; border: 1px dashed var(--accent-gold); background: rgba(0, 44, 95, 0.3);">
+                                <h4 style="margin-top: 0; color: var(--accent-gold); display: flex; align-items: center; gap: 8px;">
+                                    <span style="font-size: 1.2rem;">🔗</span> 구글 스프레드시트 실시간 연동 설정 (관리자용)
+                                </h4>
+                                <p style="font-size: 0.85rem; margin-bottom: 15px; color: var(--text-muted); line-height: 1.5; word-break: keep-all;">
+                                    배포된 Google Apps Script Web App URL을 설정하여 실시간 데이터 저장 및 조회를 연동합니다. <br>
+                                    <strong style="color: var(--accent-gold);">※ 주의:</strong> 본 웹사이트 소스코드(<code>app.js</code>) 상단에 <code>GOOGLE_SCRIPT_URL</code>을 직접 설정하여 서버에 배포해야 모든 고객 브라우저에서 제출 시 구글 시트로 정상 전송됩니다. 이 입력창은 현재 관리자 브라우저에서의 실시간 조회 및 간단한 동작 테스트용입니다.
+                                </p>
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                    <input type="text" id="admin-sheet-url-input" placeholder="https://script.google.com/macros/s/.../exec" style="flex: 1; min-width: 250px; padding: 10px 12px; border-radius: 4px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: #fff;">
+                                    <button id="admin-save-sheet-url-btn" class="cta-btn primary-btn btn-glow" style="padding: 10px 20px; margin: 0; font-size: 0.9rem;">설정 저장 & 적용</button>
+                                </div>
+                            </div>
                             
                             <div class="table-responsive">
                                 <table class="waitlist-table">
@@ -3411,6 +3436,13 @@ tr:hover .table-book-thumb {
     <script>
 document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
+    // 0. Database / API Configuration
+    // ==========================================================================
+    // 구글 스프레드시트 연동용 Apps Script Web App URL 설정
+    // 배포한 Apps Script URL이 있다면 아래 공란에 'https://script.google.com/...' 형태로 입력해 두시면 됩니다.
+    const GOOGLE_SCRIPT_URL = localStorage.getItem('bbc_google_script_url') || '';
+
+    // ==========================================================================
     // 1. Theme Toggle (Dark / Light Mode)
     // ==========================================================================
     const themeToggleBtn = document.getElementById('theme-toggle');
@@ -3555,6 +3587,56 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 4. Dynamic Renderer (Schedule & Columns & Hero cover)
     // ==========================================================================
+    const renderWaitlistTable = (list, isGoogleSheet = false) => {
+        const waitlistBody = document.getElementById('admin-waitlist-body');
+        if (!waitlistBody) return;
+        
+        waitlistBody.innerHTML = '';
+        if (list.length === 0) {
+            waitlistBody.innerHTML = `<tr><td colspan="6" class="text-center text-muted">등록된 신청 대기자가 아직 없습니다.${isGoogleSheet ? ' (구글 시트 연동됨)' : ''}</td></tr>`;
+            return;
+        }
+        
+        list.forEach(app => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td><strong>${app.name}</strong></td>
+                <td>${app.phone}</td>
+                <td>${app.email}</td>
+                <td>${app.company} (${app.role})</td>
+                <td><span class="badge" style="margin:0; background: ${isGoogleSheet ? '#107c41' : 'var(--accent-gold)'}; color: #fff;">${app.plan}${isGoogleSheet ? ' (시트)' : ''}</span></td>
+                <td>${app.timestamp}</td>
+            `;
+            waitlistBody.appendChild(tr);
+        });
+    };
+
+    const fetchGoogleWaitlist = () => {
+        if (!GOOGLE_SCRIPT_URL) return;
+        
+        const waitlistBody = document.getElementById('admin-waitlist-body');
+        if (waitlistBody) {
+            waitlistBody.innerHTML = `<tr><td colspan="6" class="text-center" style="color: var(--accent-gold);"><span class="spinner" style="display:inline-block; margin-right:8px; animation: spin 1.2s linear infinite;">🔄</span> 구글 스프레드시트에서 실시간 목록을 가져오는 중...</td></tr>`;
+        }
+        
+        fetch(`${GOOGLE_SCRIPT_URL}?action=get_waitlist`)
+            .then(res => res.json())
+            .then(json => {
+                if (json.result === 'success' && json.data) {
+                    renderWaitlistTable(json.data, true);
+                } else {
+                    console.warn("Failed to get waitlist data from Google Apps Script:", json.message);
+                    const waitlist = JSON.parse(localStorage.getItem('bbc_waitlist')) || [];
+                    renderWaitlistTable(waitlist, false);
+                }
+            })
+            .catch(err => {
+                console.error("Google Sheets fetch error:", err);
+                const waitlist = JSON.parse(localStorage.getItem('bbc_waitlist')) || [];
+                renderWaitlistTable(waitlist, false);
+            });
+    };
+
     const renderPageData = () => {
         const schedule = JSON.parse(localStorage.getItem('bbc_schedule'));
         const columns = JSON.parse(localStorage.getItem('bbc_columns'));
@@ -3645,27 +3727,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Render Admin Waitlist
-        const waitlistBody = document.getElementById('admin-waitlist-body');
-        if (waitlistBody) {
-            waitlistBody.innerHTML = '';
-            if (waitlist.length === 0) {
-                waitlistBody.innerHTML = `<tr><td colspan="6" class="text-center text-muted">등록된 신청 대기자가 아직 없습니다.</td></tr>`;
-            } else {
-                waitlist.forEach(app => {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td><strong>${app.name}</strong></td>
-                        <td>${app.phone}</td>
-                        <td>${app.email}</td>
-                        <td>${app.company} (${app.role})</td>
-                        <td><span class="badge" style="margin:0;">${app.plan}</span></td>
-                        <td>${app.timestamp}</td>
-                    `;
-                    waitlistBody.appendChild(tr);
-                });
-            }
-        }
+        // Render Admin Waitlist (local storage fallback initially)
+        renderWaitlistTable(waitlist, false);
 
         // Update Hero Cover to first week
         const heroCover = document.getElementById('hero-book-cover');
@@ -3977,19 +4040,47 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // Save to mock database
-            const waitlist = JSON.parse(localStorage.getItem('bbc_waitlist'));
+            const waitlist = JSON.parse(localStorage.getItem('bbc_waitlist')) || [];
             waitlist.push(applicant);
             localStorage.setItem('bbc_waitlist', JSON.stringify(waitlist));
 
             // Refresh UI
             renderPageData();
 
-            // Open success modal
-            closeModal(applyModal);
-            document.getElementById('submitted-email').textContent = email;
-            openModal(successModal);
+            // Open success modal helper
+            const showSuccess = () => {
+                closeModal(applyModal);
+                document.getElementById('submitted-email').textContent = email;
+                openModal(successModal);
+                applyForm.reset();
+            };
 
-            applyForm.reset();
+            if (GOOGLE_SCRIPT_URL) {
+                // Show loading state
+                const submitBtn = applyForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = "신청서 전송 중...";
+
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(applicant)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('Google Sheet submission success:', data);
+                })
+                .catch(err => {
+                    console.error('Google Sheet submission failed:', err);
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                    showSuccess();
+                });
+            } else {
+                showSuccess();
+            }
         });
     }
 
@@ -4064,9 +4155,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const adminTabBtns = document.querySelectorAll('.admin-tab-btn');
-    const adminTabContents = document.querySelectorAll('.admin-tab-content');
-
     adminTabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             adminTabBtns.forEach(b => b.classList.remove('active'));
@@ -4075,8 +4163,26 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
             const targetTab = btn.getAttribute('data-tab');
             document.getElementById(`tab-${targetTab}`).classList.add('active');
+
+            if (targetTab === 'waitlist') {
+                fetchGoogleWaitlist();
+            }
         });
     });
+
+    // Admin Save Google Script URL
+    const saveSheetUrlBtn = document.getElementById('admin-save-sheet-url-btn');
+    const sheetUrlInput = document.getElementById('admin-sheet-url-input');
+    
+    if (saveSheetUrlBtn && sheetUrlInput) {
+        sheetUrlInput.value = GOOGLE_SCRIPT_URL;
+        saveSheetUrlBtn.addEventListener('click', () => {
+            const url = sheetUrlInput.value.trim();
+            localStorage.setItem('bbc_google_script_url', url);
+            alert('구글 스프레드시트 Web App URL 설정이 성공적으로 저장되었습니다.\n페이지를 새로고침하여 최종 적용해 주세요!');
+            location.reload();
+        });
+    }
 
     // Admin Upload Cover Zone Interaction
     const uploadZone = document.getElementById('cover-upload-zone');

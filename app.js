@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
+    // 0. Database / API Configuration
+    // ==========================================================================
+    // 구글 스프레드시트 연동용 Apps Script Web App URL 설정
+    // 배포한 Apps Script URL이 있다면 아래 공란에 'https://script.google.com/...' 형태로 입력해 두시면 됩니다.
+    const GOOGLE_SCRIPT_URL = localStorage.getItem('bbc_google_script_url') || '';
+
+    // ==========================================================================
     // 1. Theme Toggle (Dark / Light Mode)
     // ==========================================================================
     const themeToggleBtn = document.getElementById('theme-toggle');
@@ -144,6 +151,56 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 4. Dynamic Renderer (Schedule & Columns & Hero cover)
     // ==========================================================================
+    const renderWaitlistTable = (list, isGoogleSheet = false) => {
+        const waitlistBody = document.getElementById('admin-waitlist-body');
+        if (!waitlistBody) return;
+        
+        waitlistBody.innerHTML = '';
+        if (list.length === 0) {
+            waitlistBody.innerHTML = `<tr><td colspan="6" class="text-center text-muted">등록된 신청 대기자가 아직 없습니다.${isGoogleSheet ? ' (구글 시트 연동됨)' : ''}</td></tr>`;
+            return;
+        }
+        
+        list.forEach(app => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td><strong>${app.name}</strong></td>
+                <td>${app.phone}</td>
+                <td>${app.email}</td>
+                <td>${app.company} (${app.role})</td>
+                <td><span class="badge" style="margin:0; background: ${isGoogleSheet ? '#107c41' : 'var(--accent-gold)'}; color: #fff;">${app.plan}${isGoogleSheet ? ' (시트)' : ''}</span></td>
+                <td>${app.timestamp}</td>
+            `;
+            waitlistBody.appendChild(tr);
+        });
+    };
+
+    const fetchGoogleWaitlist = () => {
+        if (!GOOGLE_SCRIPT_URL) return;
+        
+        const waitlistBody = document.getElementById('admin-waitlist-body');
+        if (waitlistBody) {
+            waitlistBody.innerHTML = `<tr><td colspan="6" class="text-center" style="color: var(--accent-gold);"><span class="spinner" style="display:inline-block; margin-right:8px; animation: spin 1.2s linear infinite;">🔄</span> 구글 스프레드시트에서 실시간 목록을 가져오는 중...</td></tr>`;
+        }
+        
+        fetch(`${GOOGLE_SCRIPT_URL}?action=get_waitlist`)
+            .then(res => res.json())
+            .then(json => {
+                if (json.result === 'success' && json.data) {
+                    renderWaitlistTable(json.data, true);
+                } else {
+                    console.warn("Failed to get waitlist data from Google Apps Script:", json.message);
+                    const waitlist = JSON.parse(localStorage.getItem('bbc_waitlist')) || [];
+                    renderWaitlistTable(waitlist, false);
+                }
+            })
+            .catch(err => {
+                console.error("Google Sheets fetch error:", err);
+                const waitlist = JSON.parse(localStorage.getItem('bbc_waitlist')) || [];
+                renderWaitlistTable(waitlist, false);
+            });
+    };
+
     const renderPageData = () => {
         const schedule = JSON.parse(localStorage.getItem('bbc_schedule'));
         const columns = JSON.parse(localStorage.getItem('bbc_columns'));
@@ -234,27 +291,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Render Admin Waitlist
-        const waitlistBody = document.getElementById('admin-waitlist-body');
-        if (waitlistBody) {
-            waitlistBody.innerHTML = '';
-            if (waitlist.length === 0) {
-                waitlistBody.innerHTML = `<tr><td colspan="6" class="text-center text-muted">등록된 신청 대기자가 아직 없습니다.</td></tr>`;
-            } else {
-                waitlist.forEach(app => {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td><strong>${app.name}</strong></td>
-                        <td>${app.phone}</td>
-                        <td>${app.email}</td>
-                        <td>${app.company} (${app.role})</td>
-                        <td><span class="badge" style="margin:0;">${app.plan}</span></td>
-                        <td>${app.timestamp}</td>
-                    `;
-                    waitlistBody.appendChild(tr);
-                });
-            }
-        }
+        // Render Admin Waitlist (local storage fallback initially)
+        renderWaitlistTable(waitlist, false);
 
         // Update Hero Cover to first week
         const heroCover = document.getElementById('hero-book-cover');
@@ -566,19 +604,47 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // Save to mock database
-            const waitlist = JSON.parse(localStorage.getItem('bbc_waitlist'));
+            const waitlist = JSON.parse(localStorage.getItem('bbc_waitlist')) || [];
             waitlist.push(applicant);
             localStorage.setItem('bbc_waitlist', JSON.stringify(waitlist));
 
             // Refresh UI
             renderPageData();
 
-            // Open success modal
-            closeModal(applyModal);
-            document.getElementById('submitted-email').textContent = email;
-            openModal(successModal);
+            // Open success modal helper
+            const showSuccess = () => {
+                closeModal(applyModal);
+                document.getElementById('submitted-email').textContent = email;
+                openModal(successModal);
+                applyForm.reset();
+            };
 
-            applyForm.reset();
+            if (GOOGLE_SCRIPT_URL) {
+                // Show loading state
+                const submitBtn = applyForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = "신청서 전송 중...";
+
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(applicant)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('Google Sheet submission success:', data);
+                })
+                .catch(err => {
+                    console.error('Google Sheet submission failed:', err);
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                    showSuccess();
+                });
+            } else {
+                showSuccess();
+            }
         });
     }
 
@@ -653,9 +719,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const adminTabBtns = document.querySelectorAll('.admin-tab-btn');
-    const adminTabContents = document.querySelectorAll('.admin-tab-content');
-
     adminTabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             adminTabBtns.forEach(b => b.classList.remove('active'));
@@ -664,8 +727,26 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
             const targetTab = btn.getAttribute('data-tab');
             document.getElementById(`tab-${targetTab}`).classList.add('active');
+
+            if (targetTab === 'waitlist') {
+                fetchGoogleWaitlist();
+            }
         });
     });
+
+    // Admin Save Google Script URL
+    const saveSheetUrlBtn = document.getElementById('admin-save-sheet-url-btn');
+    const sheetUrlInput = document.getElementById('admin-sheet-url-input');
+    
+    if (saveSheetUrlBtn && sheetUrlInput) {
+        sheetUrlInput.value = GOOGLE_SCRIPT_URL;
+        saveSheetUrlBtn.addEventListener('click', () => {
+            const url = sheetUrlInput.value.trim();
+            localStorage.setItem('bbc_google_script_url', url);
+            alert('구글 스프레드시트 Web App URL 설정이 성공적으로 저장되었습니다.\n페이지를 새로고침하여 최종 적용해 주세요!');
+            location.reload();
+        });
+    }
 
     // Admin Upload Cover Zone Interaction
     const uploadZone = document.getElementById('cover-upload-zone');

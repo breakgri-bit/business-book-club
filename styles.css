@@ -2306,3 +2306,13 @@ tr:hover .table-book-thumb {
         gap: 8px;
     }
 }
+
+/* Spinner for real-time loading UI */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.spinner {
+    display: inline-block;
+    animation: spin 1.2s linear infinite;
+}

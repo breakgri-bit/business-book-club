@@ -799,6 +799,21 @@
                         <div class="admin-tab-content" id="tab-waitlist">
                             <h3>예약 및 신청 희망자 현황</h3>
                             <p class="text-muted">홈페이지 신청 양식을 통해 대기자로 신청한 리더님들의 세부 접수 정보 리스트입니다.</p>
+
+                            <!-- Google Sheet Connection Configuration -->
+                            <div class="google-sheet-config-box" style="margin-bottom: 25px; padding: 20px; border-radius: 8px; border: 1px dashed var(--accent-gold); background: rgba(0, 44, 95, 0.3);">
+                                <h4 style="margin-top: 0; color: var(--accent-gold); display: flex; align-items: center; gap: 8px;">
+                                    <span style="font-size: 1.2rem;">🔗</span> 구글 스프레드시트 실시간 연동 설정 (관리자용)
+                                </h4>
+                                <p style="font-size: 0.85rem; margin-bottom: 15px; color: var(--text-muted); line-height: 1.5; word-break: keep-all;">
+                                    배포된 Google Apps Script Web App URL을 설정하여 실시간 데이터 저장 및 조회를 연동합니다. <br>
+                                    <strong style="color: var(--accent-gold);">※ 주의:</strong> 본 웹사이트 소스코드(<code>app.js</code>) 상단에 <code>GOOGLE_SCRIPT_URL</code>을 직접 설정하여 서버에 배포해야 모든 고객 브라우저에서 제출 시 구글 시트로 정상 전송됩니다. 이 입력창은 현재 관리자 브라우저에서의 실시간 조회 및 간단한 동작 테스트용입니다.
+                                </p>
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                    <input type="text" id="admin-sheet-url-input" placeholder="https://script.google.com/macros/s/.../exec" style="flex: 1; min-width: 250px; padding: 10px 12px; border-radius: 4px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: #fff;">
+                                    <button id="admin-save-sheet-url-btn" class="cta-btn primary-btn btn-glow" style="padding: 10px 20px; margin: 0; font-size: 0.9rem;">설정 저장 & 적용</button>
+                                </div>
+                            </div>
                             
                             <div class="table-responsive">
                                 <table class="waitlist-table">
