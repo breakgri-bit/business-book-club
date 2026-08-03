@@ -95,8 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. LocalStorage Database Setup for Book Club
     // ==========================================================================
     const defaultSchedule = [
-        { week: 1, date: "8/27", id: "the_goal_3", book: "더골3 흐름의 법칙", publisher: "동양북스", author: "에프랏 골드렛 아쉬라그", lecturer: "이동우", cover: "assets/the_goal_3.jpg" },
-        { week: 2, date: "9/3", id: "ai_origin", book: "AI 신의 탄생 인간의 종말", publisher: "상상스퀘어", author: "엘리에저 유드코스키, 네이트 소아레스", lecturer: "이동우", cover: "assets/ai_origin.jpg" },
+        { week: 1, date: "8/27", id: "storm_coming", book: "폭풍이 온다", publisher: "21세기북스", author: "오드 아르네 베스타 (Odd Arne Westad)", lecturer: "이동우", cover: "assets/storm_coming.jpg" },
+        { week: 2, date: "9/3", id: "super_abundance", book: "초풍요의 시대", publisher: "비즈니스북스", author: "피터 디아만디스, 스티븐 코틀러", lecturer: "이동우", cover: "assets/super_abundance.jpg" },
         { week: 3, date: "9/10", id: "pseudo_labor", book: "가짜 노동", publisher: "자음과모음", author: "데니스 뇌르마르크, 아네르스 포그 옌센", lecturer: "장유신", cover: "assets/pseudo_labor.jpg" },
         { week: 4, date: "9/17", id: "think_like_giant", book: "거인처럼 생각하라", publisher: "비즈니스북스", author: "피터 홀린스", lecturer: "조민호", cover: "assets/think_like_giant.jpg" },
         { week: 5, date: "10/1", id: "addiction_design", book: "중독의 설계", publisher: "한국문화사", author: "나타샤 다우", lecturer: "이동우", cover: "assets/addiction_design.jpg" },
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Initialize mock database
-    const DB_VERSION = 'v2.3';
+    const DB_VERSION = 'v2.4';
     if (localStorage.getItem('bbc_db_version') !== DB_VERSION) {
         localStorage.setItem('bbc_schedule', JSON.stringify(defaultSchedule));
         localStorage.setItem('bbc_columns', JSON.stringify(defaultColumns));
@@ -294,10 +294,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Render Admin Waitlist (local storage fallback initially)
         renderWaitlistTable(waitlist, false);
 
-        // Update Hero Cover to first week
+        // Update Hero Cover to specific book (초풍요의 시대)
         const heroCover = document.getElementById('hero-book-cover');
-        if (heroCover && schedule[0]) {
-            heroCover.src = schedule[0].cover;
+        if (heroCover && schedule[1]) {
+            heroCover.src = schedule[1].cover;
         }
     };
 
@@ -305,32 +305,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Book Summaries Database
     // ==========================================================================
     const summariesDb = {
-        'the_goal_3': {
-            title: '더골 3 : 흐름의 법칙 (40주년 기념판)',
-            subtitle: '에프랏 골드렛 아쉬라그 저 | 동양북스 | 강연: 이동우',
+        'storm_coming': {
+            title: '폭풍이 온다',
+            subtitle: '오드 아르네 베스타 저 | 21세기북스 | 강연: 이동우',
             content: `
-                <h4>1. 미완의 유작, 마침내 베일을 벗다</h4>
-                <p>전 세계 기업 CEO들의 바이블로 군림해 온 '더 골(The Goal)'의 최종장입니다. 제약이론(TOC)의 창시자 엘리 골드렛이 서거하기 전까지 집필했으나 미완성으로 남았던 원고를 그의 딸이자 비즈니스 파트너인 에프랏 골드렛이 물려받아 완성했습니다.</p>
+                <h4>1. 세계사적 대전환기와 비즈니스의 지정학적 위기</h4>
+                <p>세계적인 역사학자이자 패권 분석의 권위자인 오드 아르네 베스타가 집필한 책으로, 인류 역사상 제국들의 격돌과 지정학적 대격변이 현대 글로벌 경제와 비즈니스 지형에 주는 거대한 메시지를 담고 있습니다.</p>
                 
-                <h4>2. 지식 노동 환경과 멀티태스킹의 배신</h4>
-                <p>과거의 공장 환경과 달리 현대 지식 근로와 멀티 프로젝트 업무에서는 각 리소스가 항상 바쁘게 움직이는 것(자원 효율성)이 오히려 프로젝트 지연의 주원인이 됩니다. 멀티태스킹은 끊임없는 지연과 컨텍스트 스위칭 비용을 유발합니다.</p>
+                <h4>2. 패권 전쟁과 경제적 충격의 역사적 교훈</h4>
+                <p>미국과 중국의 갈등, 그리고 우크라이나 및 중동 분쟁 등 현대의 지정학적 리스크는 과거 19세기 및 20세기 초의 패권 다툼 양상과 매우 흡사합니다. 역사의 패턴 속에서 기업이 살아남기 공급망 설계와 비즈니스 포지셔닝을 진단합니다.</p>
                 
-                <h4>3. 흐름 효율성 (Rules of Flow)</h4>
-                <p>비즈니스 혁신의 진짜 해답은 개인이 바쁜 게 아니라, 전체 업무(Work in Progress)가 막힘없이 처음부터 끝까지 물 흐르듯 신속하게 처리되는 것입니다. 3회차에서는 이 '흐름의 법칙'을 현업 프로젝트 관리와 조직 설계에 직접 대입하는 원칙들을 학습합니다.</p>
+                <h4>3. 불확실성 시대의 리더십과 시나리오 경영</h4>
+                <p>최고의 리더들은 맑은 날에 폭풍을 대비합니다. 역사적 폭풍 속에서 무너졌던 조직과 강인하게 살아남았던 비즈니스의 사유 체계를 통해, 현대 리더들이 수립해야 할 다차원적 전략 로드맵을 심층적으로 논의합니다.</p>
             `
         },
-        'ai_origin': {
-            title: 'AI 신의 탄생 인간의 종말',
-            subtitle: '엘리에저 유드코스키, 네이트 소아레스 저 | 상상스퀘어 | 강연: 이동우',
+        'super_abundance': {
+            title: '초풍요의 시대',
+            subtitle: '피터 디아만디스, 스티븐 코틀러 저 | 비즈니스북스 | 강연: 이동우',
             content: `
-                <h4>1. 실리콘밸리 AI 안전 연구의 거장, 최초의 단행본</h4>
-                <p>챗GPT를 위시한 생성형 AI 붐의 한가운데서 가장 급진적으로 인공지능의 안전성을 경고해 온 기계지능연구소(MIRI) 창립자 엘리에저 유드코스키의 핵심 저작입니다.</p>
+                <h4>1. 기술의 기하급수적 성장과 풍요의 로드맵</h4>
+                <p>싱듈래리티 대학교의 창립자 피터 디아만디스가 말하는 인류 문명의 위기 돌파구입니다. 에너지가 고갈되고 인구가 줄어드는 위기 속에서도, 기술의 폭발적 성장은 자원의 가치를 기하급수적으로 낮추어 역사상 유례없는 '초풍요'를 선사할 것임을 과학적 통계로 입증합니다.</p>
                 
-                <h4>2. AI 정렬 문제 (Alignment Problem)</h4>
-                <p>AI의 목표 함수가 단 1도라도 인류의 생존 이익과 어긋나게 설정된다면, 스스로 진화하는 인공지능은 그 미세한 틈을 극대화하여 인간을 파멸시킬 수 있습니다. 초지능이 인간보다 뛰어난 순수한 물리적 강제력을 지니기 전 인간의 가치를 주입하는 정렬 문제를 설계해야 합니다.</p>
+                <h4>2. AI, 센서, 네트워크가 이끄는 융합적 미래 비즈니스</h4>
+                <p>인공지능, 메타버스, 유전공학, 청정에너지가 서로를 촉진하며 융합하여 기하급수적 성장의 원동력이 됩니다. 이 세션에서는 리더가 맞이해야 할 차세대 비즈니스의 융합 시너지 설계 원칙을 학습합니다.</p>
                 
-                <h4>3. 리더들이 바라봐야 할 비즈니스 테크의 윤리</h4>
-                <p>본 강의는 기술적 적용을 넘어, 기업의 CEO로서 혁신적 도구(AI)를 현업에 접목할 때 안전과 윤리적 통제를 어떻게 시스템에 정렬할 수 있을지 심오하게 고민합니다.</p>
+                <h4>3. 결핍의 마인드셋에서 초풍요의 전략으로 전환</h4>
+                <p>자원의 희소성과 한계를 극복하려는 투쟁에서 벗어나, 기술이 주는 풍요를 기반으로 새로운 기회를 포착하는 '풍요 마인드셋'을 획득하고, 현업 비즈니스의 액션 플랜을 새롭게 포뮬러화합니다.</p>
             `
         },
         'pseudo_labor': {
