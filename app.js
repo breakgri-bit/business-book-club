@@ -99,11 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { week: 2, date: "9/3", id: "super_abundance", book: "초풍요의 시대", publisher: "비즈니스북스", author: "피터 디아만디스, 스티븐 코틀러", lecturer: "이동우", cover: "assets/super_abundance.jpg" },
         { week: 3, date: "9/10", id: "pseudo_labor", book: "가짜 노동", publisher: "자음과모음", author: "데니스 뇌르마르크, 아네르스 포그 옌센", lecturer: "장유신", cover: "assets/pseudo_labor.jpg" },
         { week: 4, date: "9/17", id: "think_like_giant", book: "거인처럼 생각하라", publisher: "비즈니스북스", author: "피터 홀린스", lecturer: "조민호", cover: "assets/think_like_giant.jpg" },
-        { week: 5, date: "10/1", id: "addiction_design", book: "중독의 설계", publisher: "한국문화사", author: "나타샤 다우", lecturer: "이동우", cover: "assets/addiction_design.jpg" },
+        { week: 5, date: "10/1", id: "doom_loop", book: "둠루프", publisher: "21세기북스", author: "에스와르 S. 프라사드", lecturer: "김광석", cover: "assets/doom_loop.jpg" },
         { week: 6, date: "10/8", id: "dual_brain", book: "듀얼 브레인", publisher: "상상스퀘어", author: "이선 몰릭", lecturer: "김건우", cover: "assets/dual_brain.jpg" },
         { week: 7, date: "10/15", id: "quantum_recipe", book: "양자컴퓨터 레시피", publisher: "세종서적", author: "김용수 외", lecturer: "김용수", cover: "assets/quantum_recipe.jpg" },
         { week: 8, date: "10/22", id: "endure_mind", book: "끝까지 해내는 마음은 어떻게 탄생하는가", publisher: "현대지성", author: "웬디 그롤닉, 벤저민 헤디, 프랭크 워렐", lecturer: "이동우", cover: "assets/endure_mind.jpg" },
-        { week: 9, date: "10/29", id: "doom_loop", book: "둠루프", publisher: "21세기북스", author: "에스와르 S. 프라사드", lecturer: "김광석", cover: "assets/doom_loop.jpg" },
+        { week: 9, date: "10/29", id: "addiction_design", book: "중독의 설계", publisher: "한국문화사", author: "나타샤 다우", lecturer: "이동우", cover: "assets/addiction_design.jpg" },
         { week: 10, date: "11/5", id: "tech_illusion", book: "기술이 인류를 구원한다는 착각", publisher: "동아시아", author: "애덤 베커", lecturer: "이동우", cover: "assets/tech_illusion.jpg" }
     ];
 
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Initialize mock database
-    const DB_VERSION = 'v2.4';
+    const DB_VERSION = 'v2.5';
     if (localStorage.getItem('bbc_db_version') !== DB_VERSION) {
         localStorage.setItem('bbc_schedule', JSON.stringify(defaultSchedule));
         localStorage.setItem('bbc_columns', JSON.stringify(defaultColumns));
