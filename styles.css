@@ -280,10 +280,33 @@ img {
 }
 
 .logo-link {
-    display: block;
+    display: flex;
+    align-items: center;
     height: 60px;
     color: var(--logo-color);
     transition: color 0.3s;
+    text-decoration: none;
+}
+
+.beta-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    background: rgba(var(--accent-rgb), 0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-transform: uppercase;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    pointer-events: none;
+    transition: var(--theme-transition);
 }
 
 .logo-svg {
@@ -1674,7 +1697,8 @@ tr:hover .table-book-thumb {
 }
 
 .footer-logo {
-    display: block;
+    display: flex;
+    align-items: center;
     height: 60px;
     color: var(--logo-color);
     margin-bottom: 20px;

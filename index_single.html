@@ -309,10 +309,33 @@ img {
 }
 
 .logo-link {
-    display: block;
+    display: flex;
+    align-items: center;
     height: 60px;
     color: var(--logo-color);
     transition: color 0.3s;
+    text-decoration: none;
+}
+
+.beta-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    background: rgba(var(--accent-rgb), 0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-transform: uppercase;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    pointer-events: none;
+    transition: var(--theme-transition);
 }
 
 .logo-svg {
@@ -1703,7 +1726,8 @@ tr:hover .table-book-thumb {
 }
 
 .footer-logo {
-    display: block;
+    display: flex;
+    align-items: center;
     height: 60px;
     color: var(--logo-color);
     margin-bottom: 20px;
@@ -2354,6 +2378,7 @@ tr:hover .table-book-thumb {
         <div class="container header-container">
             <a href="#" class="logo-link" aria-label="이동우의 비즈니스 북클럽 홈">
                 <img src="assets/logo_dark.png" alt="이동우의 비즈니스 북클럽 로고" class="logo-img">
+                <span class="beta-badge">BETA</span>
             </a>
             
             <nav class="nav-menu" id="nav-menu">
@@ -3223,6 +3248,7 @@ tr:hover .table-book-thumb {
             <div class="footer-about">
                 <span class="footer-logo">
                     <img src="assets/logo_dark.png" alt="이동우의 비즈니스 북클럽 로고" class="logo-img">
+                    <span class="beta-badge">BETA</span>
                 </span>
                 <p class="footer-desc">경영자와 핵심 인재들의 집단 지성 살롱. 독점적 비즈니스 가치를 찾기 위한 프리미엄 리더십 배움터를 만듭니다.</p>
 
