@@ -79,15 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Header scroll background padding change
+    // Header scroll height change
     const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.padding = '5px 0';
-            header.querySelector('.header-container').style.height = '70px';
-        } else {
-            header.style.padding = '0';
-            header.querySelector('.header-container').style.height = '90px';
+        const headerContainer = header ? header.querySelector('.header-container') : null;
+        if (headerContainer) {
+            if (window.scrollY > 50) {
+                headerContainer.style.height = '70px';
+            } else {
+                headerContainer.style.height = '90px';
+            }
         }
     });
 

@@ -257,6 +257,70 @@ img {
 
 /* ==========================================================================
    Header & Navigation
+/* ==========================================================================
+   Top Announcement Bar (Grand Open Banner)
+   ========================================================================== */
+.top-announcement-bar {
+    background: linear-gradient(90deg, #001736 0%, #002c5f 50%, #001736 100%);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 8px 0;
+    font-size: 0.85rem;
+    color: #f1f5f9;
+    text-align: center;
+    position: relative;
+    z-index: 1002;
+}
+
+body.light-theme .top-announcement-bar {
+    background: linear-gradient(90deg, #002c5f 0%, #004b93 50%, #002c5f 100%);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+    color: #ffffff;
+}
+
+.announcement-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.announcement-badge {
+    background: var(--gradient-gold);
+    color: #002c5f;
+    font-weight: 800;
+    font-size: 0.72rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.06em;
+    display: inline-flex;
+    align-items: center;
+}
+
+.announcement-text {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.announcement-text strong {
+    color: #f3e5ab;
+}
+
+.announcement-link {
+    color: #d4af37;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.announcement-link:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Header & Navigation
    ========================================================================== */
 .main-header {
     position: fixed;
@@ -406,6 +470,71 @@ body.light-theme .sun-icon {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+}
+
+.hero-badge-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.hero-badge-group .badge {
+    margin-bottom: 0;
+}
+
+.badge-grand-open {
+    background: rgba(212, 175, 55, 0.22);
+    border: 1px solid #d4af37;
+    color: #f3e5ab;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        border-color: rgba(212, 175, 55, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 22px rgba(212, 175, 55, 0.7);
+        border-color: #ffd700;
+    }
+}
+
+.hero-date-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 44, 95, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .hero-date-highlight {
+    background: rgba(0, 44, 95, 0.06);
+    border-color: rgba(0, 44, 95, 0.25);
+    box-shadow: 0 4px 15px rgba(0, 44, 95, 0.08);
+}
+
+.hero-date-highlight strong {
+    color: #d4af37;
+    font-weight: 800;
+}
+
+body.light-theme .hero-date-highlight strong {
+    color: #002c5f;
+}
+
+.calendar-icon {
+    font-size: 1.2rem;
 }
 
 .hero-title {
@@ -2025,6 +2154,16 @@ tr:hover .table-book-thumb {
 }
 
 @media (max-width: 768px) {
+    .top-announcement-bar {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        line-height: 1.4;
+    }
+    
+    .announcement-content {
+        gap: 6px;
+    }
+    
     .header-container {
         height: 70px;
     }
@@ -2039,8 +2178,20 @@ tr:hover .table-book-thumb {
     }
     
     .hero-section {
-        padding: 130px 0 60px 0;
+        padding: 160px 0 60px 0;
         text-align: center;
+    }
+    
+    .hero-badge-group {
+        justify-content: center;
+    }
+    
+    .hero-date-highlight {
+        font-size: 0.92rem;
+        padding: 10px 14px;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
     }
     
     .hero-title {
@@ -2071,10 +2222,10 @@ tr:hover .table-book-thumb {
     
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 106px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 106px);
         background: var(--bg-color);
         z-index: 999;
         transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);

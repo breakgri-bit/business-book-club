@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>이동우의 비즈니스 북클럽 | CEO 실천 경영 전략 포럼</title>
-    <meta name="description" content="명지대 객원교수 이동우 북멘토와 최고의 강사진이 함께하는 비즈니스 리더들을 위한 프리미엄 독서 모임. 경제/경영 명저에서 실행 가능한 비즈니스 전략을 도출합니다.">
-    <meta name="keywords" content="북클럽, 이동우의 비즈니스 북클럽, 비즈니스독서모임, 이동우, 직장인독서모임, 스타트업네트워킹, 경영세미나, 자기계발">
+    <title>이동우의 비즈니스 북클럽 (LBBC) | 2026.08.27 그랜드 오픈</title>
+    <meta name="description" content="[2026년 8월 27일 그랜드 오픈] 명지대 객원교수 이동우 북멘토와 최고의 강사진이 함께하는 비즈니스 리더들을 위한 프리미엄 독서 모임. LBBC 1기 멤버십 모집 중.">
+    <meta name="keywords" content="북클럽, 이동우의 비즈니스 북클럽, LBBC, 비즈니스독서모임, 이동우, 직장인독서모임, 스타트업네트워킹, 경영세미나, 자기계발">
     
     <!-- Open Graph (SNS 공유 최적화) -->
-    <meta property="og:title" content="이동우의 비즈니스 북클럽 | CEO 실천 경영 전략 포럼">
-    <meta property="og:description" content="경제/경영 명저에서 최적의 비즈니스 실행 전략을 얻으세요. 명지대 객원교수 이동우 북멘토가 함께합니다.">
+    <meta property="og:title" content="이동우의 비즈니스 북클럽 (LBBC) | 2026.08.27 그랜드 오픈">
+    <meta property="og:description" content="[2026년 8월 27일 그랜드 오픈] 경제/경영 명저에서 최적의 비즈니스 실행 전략을 얻으세요. 명지대 객원교수 이동우 북멘토가 함께합니다.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://breakgri-bit.github.io/business-book-club/">
     <meta property="og:image" content="https://breakgri-bit.github.io/business-book-club/assets/og_preview.png?v=3">
@@ -286,6 +286,70 @@ img {
 
 /* ==========================================================================
    Header & Navigation
+/* ==========================================================================
+   Top Announcement Bar (Grand Open Banner)
+   ========================================================================== */
+.top-announcement-bar {
+    background: linear-gradient(90deg, #001736 0%, #002c5f 50%, #001736 100%);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 8px 0;
+    font-size: 0.85rem;
+    color: #f1f5f9;
+    text-align: center;
+    position: relative;
+    z-index: 1002;
+}
+
+body.light-theme .top-announcement-bar {
+    background: linear-gradient(90deg, #002c5f 0%, #004b93 50%, #002c5f 100%);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+    color: #ffffff;
+}
+
+.announcement-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.announcement-badge {
+    background: var(--gradient-gold);
+    color: #002c5f;
+    font-weight: 800;
+    font-size: 0.72rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.06em;
+    display: inline-flex;
+    align-items: center;
+}
+
+.announcement-text {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.announcement-text strong {
+    color: #f3e5ab;
+}
+
+.announcement-link {
+    color: #d4af37;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.announcement-link:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Header & Navigation
    ========================================================================== */
 .main-header {
     position: fixed;
@@ -435,6 +499,71 @@ body.light-theme .sun-icon {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+}
+
+.hero-badge-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.hero-badge-group .badge {
+    margin-bottom: 0;
+}
+
+.badge-grand-open {
+    background: rgba(212, 175, 55, 0.22);
+    border: 1px solid #d4af37;
+    color: #f3e5ab;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        border-color: rgba(212, 175, 55, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 22px rgba(212, 175, 55, 0.7);
+        border-color: #ffd700;
+    }
+}
+
+.hero-date-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 44, 95, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .hero-date-highlight {
+    background: rgba(0, 44, 95, 0.06);
+    border-color: rgba(0, 44, 95, 0.25);
+    box-shadow: 0 4px 15px rgba(0, 44, 95, 0.08);
+}
+
+.hero-date-highlight strong {
+    color: #d4af37;
+    font-weight: 800;
+}
+
+body.light-theme .hero-date-highlight strong {
+    color: #002c5f;
+}
+
+.calendar-icon {
+    font-size: 1.2rem;
 }
 
 .hero-title {
@@ -2054,6 +2183,16 @@ tr:hover .table-book-thumb {
 }
 
 @media (max-width: 768px) {
+    .top-announcement-bar {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        line-height: 1.4;
+    }
+    
+    .announcement-content {
+        gap: 6px;
+    }
+    
     .header-container {
         height: 70px;
     }
@@ -2068,8 +2207,20 @@ tr:hover .table-book-thumb {
     }
     
     .hero-section {
-        padding: 130px 0 60px 0;
+        padding: 160px 0 60px 0;
         text-align: center;
+    }
+    
+    .hero-badge-group {
+        justify-content: center;
+    }
+    
+    .hero-date-highlight {
+        font-size: 0.92rem;
+        padding: 10px 14px;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
     }
     
     .hero-title {
@@ -2100,10 +2251,10 @@ tr:hover .table-book-thumb {
     
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 106px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 106px);
         background: var(--bg-color);
         z-index: 999;
         transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -2375,6 +2526,17 @@ tr:hover .table-book-thumb {
 <body class="dark-theme">
     <!-- Header / Nav -->
     <header class="main-header" id="main-header">
+        <!-- Top Grand Opening Announcement Bar -->
+        <div class="top-announcement-bar">
+            <div class="container announcement-content">
+                <span class="announcement-badge">GRAND OPEN</span>
+                <span class="announcement-text">
+                    <strong>이동우의 비즈니스 북클럽(LBBC)</strong> 2026년 8월 27일(목) 공식 그랜드 오픈! 1기 멤버십 사전 신청 접수 중
+                </span>
+                <a href="#pricing" class="announcement-link">사전 신청하기 &rarr;</a>
+            </div>
+        </div>
+
         <div class="container header-container">
             <a href="#" class="logo-link" aria-label="이동우의 비즈니스 북클럽 홈">
                 <img src="assets/logo_dark.png" alt="이동우의 비즈니스 북클럽 로고" class="logo-img">
@@ -2421,8 +2583,14 @@ tr:hover .table-book-thumb {
             <div class="hero-overlay"></div>
             <div class="container hero-container grid-2">
                 <div class="hero-content">
-                    <span class="badge fade-in-up">PREMIUM BUSINESS BOOK CLUB</span>
+                    <div class="hero-badge-group fade-in-up">
+                        <span class="badge badge-grand-open">✨ 2026. 08. 27 GRAND OPENING</span>
+                        <span class="badge">LBBC 1기 정규 멤버십 모집</span>
+                    </div>
                     <h1 class="hero-title fade-in-up">성공하는 CEO들의 의사결정과<br>기업 성장을 이끄는<br>실천적 경영 전략 포럼</h1>
+                    <div class="hero-date-highlight fade-in-up">
+                        <span class="calendar-icon">📅</span> <strong>2026년 8월 27일(목) 오전 7시</strong> 그랜드 오픈 첫 세션 시작!
+                    </div>
                     <p class="hero-description fade-in-up">
                         경쟁을 넘어 독점을 꿈꾸는 경영자와 창업가를 위한<br>프라이빗 오프라인 북클럽.<br><br>
                         명지대 독서코칭학과 이동우 교수 및 업계 최고 전문가들과 함께<br>경제·경영·테크 분야 최고의 명저를 완독하고 비즈니스 액션 플랜을 수립합니다.
@@ -2439,7 +2607,7 @@ tr:hover .table-book-thumb {
                             <img src="assets/super_abundance.jpg" alt="초풍요의 시대 도서 표지" class="book-image-main" id="hero-book-cover">
                             <div class="book-card-glow"></div>
                         </div>
-                        <div class="hero-season-tag">연회원제 상시 모집 중</div>
+                        <div class="hero-season-tag">2026. 08. 27 그랜드 오픈!</div>
                     </div>
                 </div>
             </div>
@@ -2622,10 +2790,10 @@ tr:hover .table-book-thumb {
                         </p>
                     </div>
                     <div class="history-card glass-panel active">
-                        <span class="history-period">2026.07 ~ Current</span>
-                        <h3>비즈니스 북클럽 공식 론칭</h3>
+                        <span class="history-period">2026.08.27 GRAND OPEN</span>
+                        <h3>이동우의 비즈니스 북클럽(LBBC) 공식 그랜드 오픈</h3>
                         <p>
-                            그간의 온라인 해제 분석과 오프라인의 생생한 연대를 통합한 독자적인 프리미엄 북클럽인 '비즈니스 북클럽'을 론칭하여, 연회원제 및 월회원제 회원제로 상시 정규 운영을 시작했습니다.
+                            그간의 온라인 해제 분석과 오프라인의 생생한 연대를 통합한 독자적인 프리미엄 북클럽인 '이동우의 비즈니스 북클럽(LBBC)'이 <strong>2026년 8월 27일(목) 대망의 그랜드 오픈</strong>과 함께 상시 정규 세션을 힘차게 시작합니다.
                         </p>
                     </div>
                     <div class="history-card glass-panel">
@@ -2716,9 +2884,9 @@ tr:hover .table-book-thumb {
         <section class="book-month-section" id="schedule">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="section-subtitle">RECOMMENDED PROGRAM</span>
+                    <span class="section-subtitle">2026.08.27 GRAND OPENING PROGRAM</span>
                     <h2 class="section-title">이동우의 <br class="mobile-only">비즈니스 북클럽 <br class="mobile-only">추천 도서 라인업</h2>
-                    <p class="section-desc">일정을 마우스로 가리키거나 터치하면 도서의 핵심 설명 및 발제 요약을 즉시 확인할 수 있습니다.</p>
+                    <p class="section-desc">2026년 8월 27일 그랜드 오픈 첫 세션 《폭풍이 온다》를 시작으로 펼쳐지는 10주간의 명저 라인업입니다. 일정을 마우스로 가리키거나 터치하면 도서의 핵심 설명 및 발제 요약을 즉시 확인할 수 있습니다.</p>
                 </div>
                 
                 <div class="table-responsive glass-panel">
@@ -2830,9 +2998,9 @@ tr:hover .table-book-thumb {
         <section class="pricing-section" id="pricing">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="section-subtitle">MEMBERSHIP PLAN</span>
+                    <span class="section-subtitle">2026.08.27 GRAND OPENING MEMBERSHIP</span>
                     <h2 class="section-title">비즈니스 성장에 동참할 <br class="mobile-only">멤버십 플랜</h2>
-                    <p class="section-desc">매주 고품격 오프라인 강연 참석과 도서 무료 제공이 포함된 프리미엄 멤버십입니다.</p>
+                    <p class="section-desc">2026년 8월 27일 그랜드 오픈과 함께 시작되는 이동우의 비즈니스 북클럽(LBBC) 1기 멤버십 플랜입니다. 매주 고품격 오프라인 강연 참석과 도서 무료 제공이 포함되어 있습니다.</p>
                 </div>
                 
                 <div class="pricing-grid">
@@ -2904,12 +3072,12 @@ tr:hover .table-book-thumb {
                 <div class="faq-accordion-container">
                     <div class="faq-item">
                         <button class="faq-trigger" aria-expanded="false">
-                            <span class="faq-question">Q. 이동우의 비즈니스 북클럽은 언제부터 시작하나요?</span>
+                            <span class="faq-question">Q. 이동우의 비즈니스 북클럽(LBBC)은 언제 그랜드 오픈하나요?</span>
                             <span class="faq-icon-arrow">+</span>
                         </button>
                         <div class="faq-panel">
                             <p class="faq-answer">
-                                이동우의 비즈니스 북클럽은 <strong>2026년 8월 27일(목) 오전 7시</strong>에 첫 정식 세션을 힘차게 시작합니다. 비즈니스 리더님들의 성공적인 경영 의사결정과 배움을 위해 최고의 강연과 정갈한 조찬 식사가 준비되오니, 첫 여정에 설레는 마음으로 동참해 주시기 바랍니다. 등록이 확정되신 회원님들께는 세부 일정 및 안내장을 개별 연락처로 다시 한번 정중히 안내해 드리겠습니다.
+                                이동우의 비즈니스 북클럽(LBBC)은 <strong>2026년 8월 27일(목) 오전 7시</strong>에 공식 그랜드 오픈(Grand Opening)하며 첫 정식 세션을 힘차게 시작합니다. 비즈니스 리더님들의 성공적인 경영 의사결정과 배움을 위해 최고의 강연과 정갈한 조찬 식사가 준비되오니, 첫 여정에 설레는 마음으로 동참해 주시기 바랍니다. 등록이 확정되신 회원님들께는 세부 일정 및 안내장을 개별 연락처로 다시 한번 정중히 안내해 드리겠습니다.
                             </p>
                         </div>
                     </div>
@@ -3291,8 +3459,9 @@ tr:hover .table-book-thumb {
         <div class="modal-content glass-panel">
             <button class="modal-close-btn" id="modal-close" aria-label="모달 닫기">&times;</button>
             <div class="modal-header">
+                <span class="badge badge-grand-open" style="margin-bottom: 8px;">2026.08.27 GRAND OPENING</span>
                 <h2>이동우의 <br class="mobile-only">비즈니스 북클럽 <br class="mobile-only">신청 등록</h2>
-                <p>이동우의 비즈니스 북클럽은 고밀도 네트워킹과 몰입도 높은 대화를 보장하기 위해 사전 심사 및 회원 승인제로 운영됩니다.</p>
+                <p>2026년 8월 27일 그랜드 오픈하는 이동우의 비즈니스 북클럽(LBBC)은 고밀도 네트워킹과 몰입도 높은 대화를 보장하기 위해 사전 심사 및 회원 승인제로 운영됩니다.</p>
             </div>
             
             <form class="modal-form" id="apply-form">
@@ -3599,15 +3768,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Header scroll background padding change
+    // Header scroll height change
     const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.padding = '5px 0';
-            header.querySelector('.header-container').style.height = '70px';
-        } else {
-            header.style.padding = '0';
-            header.querySelector('.header-container').style.height = '90px';
+        const headerContainer = header ? header.querySelector('.header-container') : null;
+        if (headerContainer) {
+            if (window.scrollY > 50) {
+                headerContainer.style.height = '70px';
+            } else {
+                headerContainer.style.height = '90px';
+            }
         }
     });
 
