@@ -137,6 +137,16 @@ img {
     display: none !important;
 }
 
+.desktop-only {
+    display: inline !important;
+}
+
+.keep-phrase {
+    display: inline-block;
+    word-break: keep-all;
+    vertical-align: baseline;
+}
+
 .text-muted {
     color: var(--text-muted);
 }
@@ -2154,6 +2164,14 @@ tr:hover .table-book-thumb {
 }
 
 @media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: inline !important;
+    }
+
     .top-announcement-bar {
         font-size: 0.75rem;
         padding: 6px 12px;
@@ -2169,6 +2187,21 @@ tr:hover .table-book-thumb {
     }
     
     .main-header .logo-link {
+        height: 34px;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .header-apply-btn {
+        padding: 7px 12px;
+        font-size: 0.78rem;
+        white-space: nowrap;
+    }
+
+    .theme-toggle-btn {
+        width: 34px;
         height: 34px;
     }
     
@@ -2195,14 +2228,18 @@ tr:hover .table-book-thumb {
     }
     
     .hero-title {
-        font-size: 2.2rem;
+        font-size: clamp(1.6rem, 5.5vw, 2.1rem);
+        line-height: 1.4;
     }
     
     .section-title {
         font-size: 1.8rem;
+        line-height: 1.35;
     }
     
     .hero-description {
+        font-size: 1rem;
+        line-height: 1.7;
         margin-left: auto;
         margin-right: auto;
     }
