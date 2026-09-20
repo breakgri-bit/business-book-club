@@ -1087,8 +1087,61 @@ section {
 }
 
 /* ==========================================================================
-   10-Week list table
+   Curated Schedule List & Filter Tabs
    ========================================================================== */
+.schedule-filter-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.schedule-filter-tabs {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--card-border);
+    padding: 6px;
+    border-radius: 40px;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-tab:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.filter-tab.active {
+    background: var(--accent-gold);
+    color: #0b0f19;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.filter-tab.tab-upcoming.active {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+}
+
+.filter-tab.tab-completed.active {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+}
+
 .table-responsive {
     overflow-x: auto;
     width: 100%;
@@ -1131,6 +1184,23 @@ section {
     background-color: rgba(212, 175, 55, 0.03);
 }
 
+.schedule-row.row-completed {
+    opacity: 0.9;
+}
+
+.schedule-row.row-completed:hover {
+    opacity: 1;
+    background-color: rgba(59, 130, 246, 0.03);
+}
+
+.schedule-row.row-upcoming {
+    background-color: rgba(16, 185, 129, 0.02);
+}
+
+.schedule-row.row-upcoming:hover {
+    background-color: rgba(16, 185, 129, 0.06);
+}
+
 .schedule-table tbody tr:last-child td {
     border-bottom: none;
 }
@@ -1139,6 +1209,28 @@ section {
     font-weight: 800;
     color: #d4af37;
     white-space: nowrap;
+}
+
+.table-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+}
+
+.badge-status-vol1 {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge-status-vol2 {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.35);
 }
 
 .table-date {
@@ -1190,6 +1282,65 @@ tr:hover .table-book-thumb {
     background: #002c5f;
     border-color: #002c5f;
     color: #ffffff;
+}
+
+/* November Curation Notice */
+.november-curation-notice {
+    margin-top: 28px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px dashed rgba(212, 175, 55, 0.4);
+    background: rgba(212, 175, 55, 0.04);
+    border-radius: 14px;
+}
+
+.notice-icon-box {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 175, 55, 0.12);
+    border-radius: 12px;
+}
+
+.notice-body {
+    flex: 1;
+}
+
+.notice-header-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+.notice-pill {
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.notice-status-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+    padding: 2px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.notice-desc {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* ==========================================================================
@@ -2400,6 +2551,12 @@ tr:hover .table-book-thumb {
         font-weight: 700;
         color: var(--text-muted);
     }
+
+    .schedule-table td.table-status-cell::before {
+        content: "구분/상태";
+        font-weight: 700;
+        color: var(--text-muted);
+    }
     
     .schedule-table td.table-date::before {
         content: "일정";
@@ -2407,19 +2564,19 @@ tr:hover .table-book-thumb {
         color: var(--text-muted);
     }
     
-    .schedule-table td:nth-child(3)::before {
+    .schedule-table td:nth-child(4)::before {
         content: "주제 도서";
         font-weight: 700;
         color: var(--text-muted);
     }
     
-    .schedule-table td:nth-child(4)::before {
+    .schedule-table td.table-publisher-cell::before {
         content: "출판사";
         font-weight: 700;
         color: var(--text-muted);
     }
     
-    .schedule-table td:nth-child(5)::before {
+    .schedule-table td.table-author-cell::before {
         content: "저자";
         font-weight: 700;
         color: var(--text-muted);
@@ -2590,6 +2747,24 @@ tr:hover .table-book-thumb {
     border-color: rgba(212, 175, 55, 0.5);
 }
 
+.booklet-card-vol1 {
+    border-color: rgba(59, 130, 246, 0.35);
+}
+
+.booklet-card-vol1:hover {
+    border-color: rgba(59, 130, 246, 0.65);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(59, 130, 246, 0.25);
+}
+
+.booklet-card-vol2 {
+    border-color: rgba(122, 154, 70, 0.4);
+}
+
+.booklet-card-vol2:hover {
+    border-color: rgba(122, 154, 70, 0.75);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(122, 154, 70, 0.25);
+}
+
 .booklet-badge {
     position: absolute;
     top: 18px;
@@ -2602,6 +2777,37 @@ tr:hover .table-book-thumb {
     border-radius: 20px;
     letter-spacing: 0.05em;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.badge-vol1 {
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    color: #ffffff;
+}
+
+.badge-vol2 {
+    background: linear-gradient(135deg, #4d6032, #7a9a46);
+    color: #ffffff;
+}
+
+.booklet-status-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.vol1-label {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.vol2-label {
+    background: rgba(122, 154, 70, 0.2);
+    color: #a3e635;
+    border: 1px solid rgba(122, 154, 70, 0.4);
 }
 
 .booklet-image-wrap {
@@ -2672,6 +2878,60 @@ tr:hover .table-book-thumb {
 .booklet-book-list li span {
     font-size: 0.78rem;
     color: var(--text-muted);
+}
+
+/* Vol. 3 Preview Box */
+.vol3-preview-box {
+    margin-top: 32px;
+    padding: 24px 30px;
+    text-align: center;
+    border: 1px dashed rgba(212, 175, 55, 0.35);
+    background: rgba(212, 175, 55, 0.03);
+    border-radius: 12px;
+}
+
+.preview-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #d4af37;
+    margin-bottom: 6px;
+}
+
+.vol3-preview-box h4 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.vol3-preview-box p {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Modal status badge */
+.modal-status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.badge-vol1-modal {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge-vol2-modal {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.35);
 }
 
 .booklet-features-row {
@@ -3112,14 +3372,24 @@ tr:hover .table-book-thumb {
                 <div class="section-header text-center">
                     <span class="section-subtitle">CURATED READING PROGRAM</span>
                     <h2 class="section-title"><span class="keep-phrase">이동우의</span> <span class="keep-phrase">비즈니스 북클럽</span> <span class="keep-phrase">추천 도서 라인업</span></h2>
-                    <p class="section-desc"><span class="keep-phrase">비즈니스 리더들을 위해 엄선된</span> <span class="keep-phrase">10주간의 명저 라인업입니다.</span> <span class="keep-phrase">일정을 마우스로 가리키거나 터치하면</span> <span class="keep-phrase">도서의 핵심 설명 및 발제 요약을 즉시 확인할 수 있습니다.</span></p>
+                    <p class="section-desc"><span class="keep-phrase">비즈니스 리더들을 위해 엄선된</span> <span class="keep-phrase">정규 세션 명저 라인업입니다.</span> <span class="keep-phrase">진행 완료 도서(Vol.1)와 10월 1일부터 매주 목요일 진행되는 도서(Vol.2)를 구분하여 확인하실 수 있습니다.</span></p>
                 </div>
                 
+                <!-- Filter Tabs for Book Status -->
+                <div class="schedule-filter-wrapper">
+                    <div class="schedule-filter-tabs">
+                        <button class="filter-tab active" data-filter="all">전체 도서 (8회차)</button>
+                        <button class="filter-tab tab-upcoming" data-filter="upcoming">🟢 10월 진행 예정 (Vol.2 · 10/1~)</button>
+                        <button class="filter-tab tab-completed" data-filter="completed">🔵 진행 완료 (Vol.1)</button>
+                    </div>
+                </div>
+
                 <div class="table-responsive glass-panel">
                     <table class="schedule-table">
                         <thead>
                             <tr>
                                 <th>회차</th>
+                                <th>구분/상태</th>
                                 <th>일정</th>
                                 <th>주제 도서</th>
                                 <th>출판사</th>
@@ -3133,6 +3403,21 @@ tr:hover .table-book-thumb {
                         </tbody>
                     </table>
                 </div>
+
+                <!-- 11월 도서 라인업 선정 중 안내 배너 -->
+                <div class="november-curation-notice glass-panel">
+                    <div class="notice-icon-box">📅</div>
+                    <div class="notice-body">
+                        <div class="notice-header-row">
+                            <span class="notice-pill">11월 정규 세션 라인업 (Week 9 ~ 12)</span>
+                            <span class="notice-status-tag">현재 엄선 중</span>
+                        </div>
+                        <p class="notice-desc">
+                            11월에 진행될 도서는 급변하는 글로벌 경영 환경과 최신 비즈니스 트렌드를 면밀히 반영하여 현재 엄선하고 있습니다. 확정되는 즉시 웹사이트를 통해 공지될 예정입니다.
+                        </p>
+                    </div>
+                </div>
+
                 <p class="table-footnote">※ 도서 라인업 및 상세 일정은 강사의 사정 혹은 출판사 일정에 따라 변동될 수 있습니다.</p>
             </div>
         </section>
@@ -3148,40 +3433,49 @@ tr:hover .table-book-thumb {
 
                 <div class="booklet-showcase-grid grid-2">
                     <!-- Vol.1 Card -->
-                    <div class="booklet-card glass-panel">
-                        <div class="booklet-badge">Vol. 1 발간본</div>
+                    <div class="booklet-card glass-panel booklet-card-vol1">
+                        <div class="booklet-badge badge-vol1">🔵 Vol. 1 완료 (파란색)</div>
                         <div class="booklet-image-wrap">
-                            <img src="assets/summary_booklet_vol1.png" alt="LBBC 요약본 Vol.1 표지" class="booklet-img">
+                            <img src="assets/summary_booklet_vol1.png" alt="LBBC 요약본 Vol.1 표지 (파란색)" class="booklet-img">
                         </div>
                         <div class="booklet-info">
+                            <div class="booklet-status-label vol1-label">진행 완료 도서</div>
                             <h3>LBBC Monthly Summary Vol.1</h3>
-                            <p class="booklet-sub">한 달간 다루는 명저 4권의 핵심 전략 완벽 수록</p>
+                            <p class="booklet-sub">지난 8~9월 세션 4권의 핵심 전략 완벽 수록</p>
                             <ul class="booklet-book-list">
-                                <li><strong>Book 1</strong> 폭풍이 온다 <span>(오드 아르네 베스타)</span></li>
-                                <li><strong>Book 2</strong> 초풍요의 시대 <span>(피터 디아만디스)</span></li>
-                                <li><strong>Book 3</strong> 가짜 노동 <span>(데니스 뇌르마르크)</span></li>
-                                <li><strong>Book 4</strong> 거인처럼 생각하라 <span>(피터 홀린스)</span></li>
+                                <li><strong>Book 1</strong> 폭풍이 온다 <span>(오드 아르네 베스타 / 21세기북스)</span></li>
+                                <li><strong>Book 2</strong> 초풍요의 시대 <span>(피터 디아만디스 / 비즈니스북스)</span></li>
+                                <li><strong>Book 3</strong> 가짜 노동 <span>(데니스 뇌르마르크 / 자음과모음)</span></li>
+                                <li><strong>Book 4</strong> 거인처럼 생각하라 <span>(피터 홀린스 / 비즈니스북스)</span></li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Vol.2 Card -->
-                    <div class="booklet-card glass-panel">
-                        <div class="booklet-badge">Vol. 2 발간본</div>
+                    <div class="booklet-card glass-panel booklet-card-vol2">
+                        <div class="booklet-badge badge-vol2">🟢 Vol. 2 10월 예정 (올리브그린)</div>
                         <div class="booklet-image-wrap">
-                            <img src="assets/summary_booklet_vol2.png" alt="LBBC 요약본 Vol.2 표지" class="booklet-img">
+                            <img src="assets/summary_booklet_vol2.png" alt="LBBC 요약본 Vol.2 표지 (올리브그린)" class="booklet-img">
                         </div>
                         <div class="booklet-info">
+                            <div class="booklet-status-label vol2-label">10월 1일(목) 개시 예정 도서</div>
                             <h3>LBBC Monthly Summary Vol.2</h3>
-                            <p class="booklet-sub">차세대 리더십과 테크·경영 혁신 프레임워크 수록</p>
+                            <p class="booklet-sub">10월 1일부터 매주 목요일 진행되는 핵심 명저 4권 수록</p>
                             <ul class="booklet-book-list">
-                                <li><strong>Book 5</strong> 독성 인간 <span>(리앤 텐 브링크)</span></li>
-                                <li><strong>Book 6</strong> 위대한 경영의 12가지 조건 <span>(갤럽)</span></li>
-                                <li><strong>Book 7</strong> 양자컴퓨터 레시피 <span>(김용수 외)</span></li>
-                                <li><strong>Book 8</strong> 둠루프 <span>(에스와르 S. 프라사드)</span></li>
+                                <li><strong>Book 5</strong> 독성 인간 <span>(리앤 텐 브링크 / 웅진지식하우스)</span></li>
+                                <li><strong>Book 6</strong> 위대한 경영의 12가지 조건 <span>(갤럽, 짐 하터 / 청림출판)</span></li>
+                                <li><strong>Book 7</strong> 양자컴퓨터 레시피 <span>(김용수 외 / 세종서적 · 강연: 김용수 단장)</span></li>
+                                <li><strong>Book 8</strong> 둠루프 <span>(에스와르 S. 프라사드 / 21세기북스 · 강연: 김광석 교수)</span></li>
                             </ul>
                         </div>
                     </div>
+                </div>
+
+                <!-- 11월 Vol.3 준비 안내 박스 -->
+                <div class="vol3-preview-box glass-panel">
+                    <span class="preview-tag">COMING IN NOVEMBER</span>
+                    <h4>LBBC Monthly Summary Vol.3</h4>
+                    <p>11월 4회차 세션 통합 요약본(Vol.3)은 11월 도서 라인업 확정과 함께 공개될 예정입니다.</p>
                 </div>
 
                 <!-- Booklet Value Highlights -->
@@ -4061,16 +4355,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. LocalStorage Database Setup for Book Club
     // ==========================================================================
     const defaultSchedule = [
-        { week: 1, date: "8/27", id: "storm_coming", book: "폭풍이 온다", publisher: "21세기북스", author: "오드 아르네 베스타 (Odd Arne Westad)", lecturer: "이동우", cover: "assets/storm_coming.jpg" },
-        { week: 2, date: "9/3", id: "super_abundance", book: "초풍요의 시대", publisher: "비즈니스북스", author: "피터 디아만디스, 스티븐 코틀러", lecturer: "이동우", cover: "assets/super_abundance.jpg" },
-        { week: 3, date: "9/10", id: "pseudo_labor", book: "가짜 노동", publisher: "자음과모음", author: "데니스 뇌르마르크, 아네르스 포그 옌센", lecturer: "이동우", cover: "assets/pseudo_labor.jpg" },
-        { week: 4, date: "9/17", id: "think_like_giant", book: "거인처럼 생각하라", publisher: "비즈니스북스", author: "피터 홀린스", lecturer: "조민호", cover: "assets/think_like_giant.jpg" },
-        { week: 5, date: "10/1", id: "doom_loop", book: "둠루프", publisher: "21세기북스", author: "에스와르 S. 프라사드", lecturer: "김광석", cover: "assets/doom_loop.jpg" },
-        { week: 6, date: "10/8", id: "great_managing", book: "위대한 경영의 12가지 조건", publisher: "청림출판", author: "갤럽, 짐 하터", lecturer: "이동우", cover: "assets/great_managing.jpg" },
-        { week: 7, date: "10/15", id: "quantum_recipe", book: "양자컴퓨터 레시피", publisher: "세종서적", author: "김용수 외", lecturer: "김용수", cover: "assets/quantum_recipe.jpg" },
-        { week: 8, date: "10/22", id: "toxic_people", book: "독성인간", publisher: "웅진지식하우스", author: "리앤 텐 브링크", lecturer: "이동우", cover: "assets/toxic_people.jpg" },
-        { week: 9, date: "10/29", id: "dual_brain", book: "듀얼 브레인", publisher: "상상스퀘어", author: "이선 몰릭", lecturer: "이동우", cover: "assets/dual_brain.jpg" },
-        { week: 10, date: "11/5", id: "tech_illusion", book: "기술이 인류를 구원한다는 착각", publisher: "동아시아", author: "애덤 베커", lecturer: "이동우", cover: "assets/tech_illusion.jpg" }
+        { week: 1, date: "8/27", id: "storm_coming", book: "폭풍이 온다", publisher: "21세기북스", author: "오드 아르네 베스타 (Odd Arne Westad)", lecturer: "이동우", cover: "assets/storm_coming.jpg", status: "completed", volume: 1 },
+        { week: 2, date: "9/3", id: "super_abundance", book: "초풍요의 시대", publisher: "비즈니스북스", author: "피터 디아만디스, 스티븐 코틀러", lecturer: "이동우", cover: "assets/super_abundance.jpg", status: "completed", volume: 1 },
+        { week: 3, date: "9/10", id: "pseudo_labor", book: "가짜 노동", publisher: "자음과모음", author: "데니스 뇌르마르크, 아네르스 포그 옌센", lecturer: "이동우", cover: "assets/pseudo_labor.jpg", status: "completed", volume: 1 },
+        { week: 4, date: "9/17", id: "think_like_giant", book: "거인처럼 생각하라", publisher: "비즈니스북스", author: "피터 홀린스", lecturer: "조민호", cover: "assets/think_like_giant.jpg", status: "completed", volume: 1 },
+        { week: 5, date: "10/1", id: "toxic_people", book: "독성인간", publisher: "웅진지식하우스", author: "리앤 텐 브링크", lecturer: "이동우", cover: "assets/toxic_people.jpg", status: "upcoming", volume: 2 },
+        { week: 6, date: "10/8", id: "great_managing", book: "위대한 경영의 12가지 조건", publisher: "청림출판", author: "갤럽, 짐 하터", lecturer: "이동우", cover: "assets/great_managing.jpg", status: "upcoming", volume: 2 },
+        { week: 7, date: "10/15", id: "quantum_recipe", book: "양자컴퓨터 레시피", publisher: "세종서적", author: "김용수 외", lecturer: "김용수 단장", cover: "assets/quantum_recipe.jpg", status: "upcoming", volume: 2 },
+        { week: 8, date: "10/22", id: "doom_loop", book: "둠루프", publisher: "21세기북스", author: "에스와르 S. 프라사드", lecturer: "김광석 교수", cover: "assets/doom_loop.jpg", status: "upcoming", volume: 2 }
     ];
 
     const defaultColumns = [
@@ -4101,7 +4393,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Initialize mock database
-    const DB_VERSION = 'v3.0';
+    const DB_VERSION = 'v4.0';
     if (localStorage.getItem('bbc_db_version') !== DB_VERSION) {
         localStorage.setItem('bbc_schedule', JSON.stringify(defaultSchedule));
         localStorage.setItem('bbc_columns', JSON.stringify(defaultColumns));
@@ -4177,20 +4469,28 @@ document.addEventListener('DOMContentLoaded', () => {
         if (tableBody) {
             tableBody.innerHTML = '';
             schedule.forEach(item => {
+                const isCompleted = item.status === 'completed' || item.volume === 1 || item.week <= 4;
                 const tr = document.createElement('tr');
                 tr.setAttribute('data-id', item.id);
+                tr.setAttribute('data-status', isCompleted ? 'completed' : 'upcoming');
+                tr.className = `schedule-row ${isCompleted ? 'row-completed' : 'row-upcoming'}`;
                 
+                const statusBadge = isCompleted 
+                    ? `<span class="table-badge badge-status-vol1">Vol.1 완료</span>`
+                    : `<span class="table-badge badge-status-vol2">Vol.2 예정 (10월)</span>`;
+
                 tr.innerHTML = `
                     <td class="table-week-num">${item.week}회차</td>
-                    <td class="table-date">${item.date}</td>
+                    <td class="table-status-cell">${statusBadge}</td>
+                    <td class="table-date">${item.date} (목)</td>
                     <td>
                         <div class="table-book-title-cell">
                             <img src="${item.cover}" alt="${item.book} 표지" class="table-book-thumb" onerror="this.src='assets/zero_to_one_cover.jpg'">
                             <span>${item.book}</span>
                         </div>
                     </td>
-                    <td>${item.publisher}</td>
-                    <td>${item.author}</td>
+                    <td class="table-publisher-cell">${item.publisher}</td>
+                    <td class="table-author-cell">${item.author}</td>
                     <td class="table-lecturer">${item.lecturer}</td>
                     <td><button class="table-summary-btn" data-id="${item.id}">발제 요약</button></td>
                 `;
@@ -4212,6 +4512,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     const bookId = btn.getAttribute('data-id');
                     openBookDetail(bookId);
                 });
+            });
+
+            // Setup Filter Tabs (bind once or rebind safely)
+            const filterTabs = document.querySelectorAll('.schedule-filter-tabs .filter-tab');
+            filterTabs.forEach(tab => {
+                tab.onclick = () => {
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    const filter = tab.getAttribute('data-filter');
+                    const rows = document.querySelectorAll('#schedule-table-body tr');
+                    rows.forEach(row => {
+                        const rowStatus = row.getAttribute('data-status');
+                        if (filter === 'all') {
+                            row.style.display = '';
+                        } else if (filter === rowStatus) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                };
             });
         }
 
@@ -4391,7 +4712,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'doom_loop': {
             title: '둠루프',
-            subtitle: '에스와르 S. 프라사드 저 | 21세기북스 | 강연: 김광석 실장',
+            subtitle: '에스와르 S. 프라사드 저 | 21세기북스 | 강연: 김광석 교수',
             content: `
                 <h4>1. 경제, 정치, 지정학이 충돌하는 파멸의 고리</h4>
                 <p>미중 갈등, 지정학적 대분열, 자국 우선주의 정책이 얽히고설켜 세계 경제 질서를 어떻게 위기로 몰고 가는지 분석합니다. 패권 경쟁의 소용돌이 속에서 세계 질서가 무너져 가는 거대한 '둠루프(Doom Loop)' 기전을 상세히 들여다봅니다.</p>
@@ -4512,11 +4833,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const localSummaries = JSON.parse(localStorage.getItem('bbc_summaries') || '{}');
         const data = localSummaries[bookId] || summariesDb[bookId];
 
+        const isCompleted = currentItem.status === 'completed' || currentItem.volume === 1 || currentItem.week <= 4;
+        const volumeBadgeHtml = isCompleted 
+            ? `<span class="modal-status-badge badge-vol1-modal">🔵 [Vol.1] 진행 완료 도서</span>`
+            : `<span class="modal-status-badge badge-vol2-modal">🟢 [Vol.2] 10월 1일(목) 개시 예정 도서</span>`;
+
         const title = data ? data.title : currentItem.book;
-        const subtitle = data ? data.subtitle : `${currentItem.author} | ${currentItem.publisher}`;
+        const subtitle = data ? data.subtitle : `${currentItem.author} | ${currentItem.publisher} | 강연: ${currentItem.lecturer}`;
         const content = data ? data.content : `<p>이 책은 이동우의 비즈니스 북클럽 멤버십의 추천 도서입니다. 매월 4회 세션을 통합한 실물 하드카피 요약본이 모임 현장에서 월 1회 무료 제공됩니다.</p>`;
 
-        document.getElementById('summary-title').textContent = title;
+        document.getElementById('summary-title').innerHTML = `${volumeBadgeHtml}<div style="margin-top:6px;">${title}</div>`;
         document.getElementById('summary-subtitle').textContent = subtitle;
         document.getElementById('summary-content').innerHTML = content;
         

@@ -398,14 +398,24 @@
                 <div class="section-header text-center">
                     <span class="section-subtitle">CURATED READING PROGRAM</span>
                     <h2 class="section-title"><span class="keep-phrase">이동우의</span> <span class="keep-phrase">비즈니스 북클럽</span> <span class="keep-phrase">추천 도서 라인업</span></h2>
-                    <p class="section-desc"><span class="keep-phrase">비즈니스 리더들을 위해 엄선된</span> <span class="keep-phrase">10주간의 명저 라인업입니다.</span> <span class="keep-phrase">일정을 마우스로 가리키거나 터치하면</span> <span class="keep-phrase">도서의 핵심 설명 및 발제 요약을 즉시 확인할 수 있습니다.</span></p>
+                    <p class="section-desc"><span class="keep-phrase">비즈니스 리더들을 위해 엄선된</span> <span class="keep-phrase">정규 세션 명저 라인업입니다.</span> <span class="keep-phrase">진행 완료 도서(Vol.1)와 10월 1일부터 매주 목요일 진행되는 도서(Vol.2)를 구분하여 확인하실 수 있습니다.</span></p>
                 </div>
                 
+                <!-- Filter Tabs for Book Status -->
+                <div class="schedule-filter-wrapper">
+                    <div class="schedule-filter-tabs">
+                        <button class="filter-tab active" data-filter="all">전체 도서 (8회차)</button>
+                        <button class="filter-tab tab-upcoming" data-filter="upcoming">🟢 10월 진행 예정 (Vol.2 · 10/1~)</button>
+                        <button class="filter-tab tab-completed" data-filter="completed">🔵 진행 완료 (Vol.1)</button>
+                    </div>
+                </div>
+
                 <div class="table-responsive glass-panel">
                     <table class="schedule-table">
                         <thead>
                             <tr>
                                 <th>회차</th>
+                                <th>구분/상태</th>
                                 <th>일정</th>
                                 <th>주제 도서</th>
                                 <th>출판사</th>
@@ -419,6 +429,21 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!-- 11월 도서 라인업 선정 중 안내 배너 -->
+                <div class="november-curation-notice glass-panel">
+                    <div class="notice-icon-box">📅</div>
+                    <div class="notice-body">
+                        <div class="notice-header-row">
+                            <span class="notice-pill">11월 정규 세션 라인업 (Week 9 ~ 12)</span>
+                            <span class="notice-status-tag">현재 엄선 중</span>
+                        </div>
+                        <p class="notice-desc">
+                            11월에 진행될 도서는 급변하는 글로벌 경영 환경과 최신 비즈니스 트렌드를 면밀히 반영하여 현재 엄선하고 있습니다. 확정되는 즉시 웹사이트를 통해 공지될 예정입니다.
+                        </p>
+                    </div>
+                </div>
+
                 <p class="table-footnote">※ 도서 라인업 및 상세 일정은 강사의 사정 혹은 출판사 일정에 따라 변동될 수 있습니다.</p>
             </div>
         </section>
@@ -434,40 +459,49 @@
 
                 <div class="booklet-showcase-grid grid-2">
                     <!-- Vol.1 Card -->
-                    <div class="booklet-card glass-panel">
-                        <div class="booklet-badge">Vol. 1 발간본</div>
+                    <div class="booklet-card glass-panel booklet-card-vol1">
+                        <div class="booklet-badge badge-vol1">🔵 Vol. 1 완료 (파란색)</div>
                         <div class="booklet-image-wrap">
-                            <img src="assets/summary_booklet_vol1.png" alt="LBBC 요약본 Vol.1 표지" class="booklet-img">
+                            <img src="assets/summary_booklet_vol1.png" alt="LBBC 요약본 Vol.1 표지 (파란색)" class="booklet-img">
                         </div>
                         <div class="booklet-info">
+                            <div class="booklet-status-label vol1-label">진행 완료 도서</div>
                             <h3>LBBC Monthly Summary Vol.1</h3>
-                            <p class="booklet-sub">한 달간 다루는 명저 4권의 핵심 전략 완벽 수록</p>
+                            <p class="booklet-sub">지난 8~9월 세션 4권의 핵심 전략 완벽 수록</p>
                             <ul class="booklet-book-list">
-                                <li><strong>Book 1</strong> 폭풍이 온다 <span>(오드 아르네 베스타)</span></li>
-                                <li><strong>Book 2</strong> 초풍요의 시대 <span>(피터 디아만디스)</span></li>
-                                <li><strong>Book 3</strong> 가짜 노동 <span>(데니스 뇌르마르크)</span></li>
-                                <li><strong>Book 4</strong> 거인처럼 생각하라 <span>(피터 홀린스)</span></li>
+                                <li><strong>Book 1</strong> 폭풍이 온다 <span>(오드 아르네 베스타 / 21세기북스)</span></li>
+                                <li><strong>Book 2</strong> 초풍요의 시대 <span>(피터 디아만디스 / 비즈니스북스)</span></li>
+                                <li><strong>Book 3</strong> 가짜 노동 <span>(데니스 뇌르마르크 / 자음과모음)</span></li>
+                                <li><strong>Book 4</strong> 거인처럼 생각하라 <span>(피터 홀린스 / 비즈니스북스)</span></li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Vol.2 Card -->
-                    <div class="booklet-card glass-panel">
-                        <div class="booklet-badge">Vol. 2 발간본</div>
+                    <div class="booklet-card glass-panel booklet-card-vol2">
+                        <div class="booklet-badge badge-vol2">🟢 Vol. 2 10월 예정 (올리브그린)</div>
                         <div class="booklet-image-wrap">
-                            <img src="assets/summary_booklet_vol2.png" alt="LBBC 요약본 Vol.2 표지" class="booklet-img">
+                            <img src="assets/summary_booklet_vol2.png" alt="LBBC 요약본 Vol.2 표지 (올리브그린)" class="booklet-img">
                         </div>
                         <div class="booklet-info">
+                            <div class="booklet-status-label vol2-label">10월 1일(목) 개시 예정 도서</div>
                             <h3>LBBC Monthly Summary Vol.2</h3>
-                            <p class="booklet-sub">차세대 리더십과 테크·경영 혁신 프레임워크 수록</p>
+                            <p class="booklet-sub">10월 1일부터 매주 목요일 진행되는 핵심 명저 4권 수록</p>
                             <ul class="booklet-book-list">
-                                <li><strong>Book 5</strong> 독성 인간 <span>(리앤 텐 브링크)</span></li>
-                                <li><strong>Book 6</strong> 위대한 경영의 12가지 조건 <span>(갤럽)</span></li>
-                                <li><strong>Book 7</strong> 양자컴퓨터 레시피 <span>(김용수 외)</span></li>
-                                <li><strong>Book 8</strong> 둠루프 <span>(에스와르 S. 프라사드)</span></li>
+                                <li><strong>Book 5</strong> 독성 인간 <span>(리앤 텐 브링크 / 웅진지식하우스)</span></li>
+                                <li><strong>Book 6</strong> 위대한 경영의 12가지 조건 <span>(갤럽, 짐 하터 / 청림출판)</span></li>
+                                <li><strong>Book 7</strong> 양자컴퓨터 레시피 <span>(김용수 외 / 세종서적 · 강연: 김용수 단장)</span></li>
+                                <li><strong>Book 8</strong> 둠루프 <span>(에스와르 S. 프라사드 / 21세기북스 · 강연: 김광석 교수)</span></li>
                             </ul>
                         </div>
                     </div>
+                </div>
+
+                <!-- 11월 Vol.3 준비 안내 박스 -->
+                <div class="vol3-preview-box glass-panel">
+                    <span class="preview-tag">COMING IN NOVEMBER</span>
+                    <h4>LBBC Monthly Summary Vol.3</h4>
+                    <p>11월 4회차 세션 통합 요약본(Vol.3)은 11월 도서 라인업 확정과 함께 공개될 예정입니다.</p>
                 </div>
 
                 <!-- Booklet Value Highlights -->

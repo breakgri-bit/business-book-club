@@ -96,16 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. LocalStorage Database Setup for Book Club
     // ==========================================================================
     const defaultSchedule = [
-        { week: 1, date: "8/27", id: "storm_coming", book: "폭풍이 온다", publisher: "21세기북스", author: "오드 아르네 베스타 (Odd Arne Westad)", lecturer: "이동우", cover: "assets/storm_coming.jpg" },
-        { week: 2, date: "9/3", id: "super_abundance", book: "초풍요의 시대", publisher: "비즈니스북스", author: "피터 디아만디스, 스티븐 코틀러", lecturer: "이동우", cover: "assets/super_abundance.jpg" },
-        { week: 3, date: "9/10", id: "pseudo_labor", book: "가짜 노동", publisher: "자음과모음", author: "데니스 뇌르마르크, 아네르스 포그 옌센", lecturer: "이동우", cover: "assets/pseudo_labor.jpg" },
-        { week: 4, date: "9/17", id: "think_like_giant", book: "거인처럼 생각하라", publisher: "비즈니스북스", author: "피터 홀린스", lecturer: "조민호", cover: "assets/think_like_giant.jpg" },
-        { week: 5, date: "10/1", id: "doom_loop", book: "둠루프", publisher: "21세기북스", author: "에스와르 S. 프라사드", lecturer: "김광석", cover: "assets/doom_loop.jpg" },
-        { week: 6, date: "10/8", id: "great_managing", book: "위대한 경영의 12가지 조건", publisher: "청림출판", author: "갤럽, 짐 하터", lecturer: "이동우", cover: "assets/great_managing.jpg" },
-        { week: 7, date: "10/15", id: "quantum_recipe", book: "양자컴퓨터 레시피", publisher: "세종서적", author: "김용수 외", lecturer: "김용수", cover: "assets/quantum_recipe.jpg" },
-        { week: 8, date: "10/22", id: "toxic_people", book: "독성인간", publisher: "웅진지식하우스", author: "리앤 텐 브링크", lecturer: "이동우", cover: "assets/toxic_people.jpg" },
-        { week: 9, date: "10/29", id: "dual_brain", book: "듀얼 브레인", publisher: "상상스퀘어", author: "이선 몰릭", lecturer: "이동우", cover: "assets/dual_brain.jpg" },
-        { week: 10, date: "11/5", id: "tech_illusion", book: "기술이 인류를 구원한다는 착각", publisher: "동아시아", author: "애덤 베커", lecturer: "이동우", cover: "assets/tech_illusion.jpg" }
+        { week: 1, date: "8/27", id: "storm_coming", book: "폭풍이 온다", publisher: "21세기북스", author: "오드 아르네 베스타 (Odd Arne Westad)", lecturer: "이동우", cover: "assets/storm_coming.jpg", status: "completed", volume: 1 },
+        { week: 2, date: "9/3", id: "super_abundance", book: "초풍요의 시대", publisher: "비즈니스북스", author: "피터 디아만디스, 스티븐 코틀러", lecturer: "이동우", cover: "assets/super_abundance.jpg", status: "completed", volume: 1 },
+        { week: 3, date: "9/10", id: "pseudo_labor", book: "가짜 노동", publisher: "자음과모음", author: "데니스 뇌르마르크, 아네르스 포그 옌센", lecturer: "이동우", cover: "assets/pseudo_labor.jpg", status: "completed", volume: 1 },
+        { week: 4, date: "9/17", id: "think_like_giant", book: "거인처럼 생각하라", publisher: "비즈니스북스", author: "피터 홀린스", lecturer: "조민호", cover: "assets/think_like_giant.jpg", status: "completed", volume: 1 },
+        { week: 5, date: "10/1", id: "toxic_people", book: "독성인간", publisher: "웅진지식하우스", author: "리앤 텐 브링크", lecturer: "이동우", cover: "assets/toxic_people.jpg", status: "upcoming", volume: 2 },
+        { week: 6, date: "10/8", id: "great_managing", book: "위대한 경영의 12가지 조건", publisher: "청림출판", author: "갤럽, 짐 하터", lecturer: "이동우", cover: "assets/great_managing.jpg", status: "upcoming", volume: 2 },
+        { week: 7, date: "10/15", id: "quantum_recipe", book: "양자컴퓨터 레시피", publisher: "세종서적", author: "김용수 외", lecturer: "김용수 단장", cover: "assets/quantum_recipe.jpg", status: "upcoming", volume: 2 },
+        { week: 8, date: "10/22", id: "doom_loop", book: "둠루프", publisher: "21세기북스", author: "에스와르 S. 프라사드", lecturer: "김광석 교수", cover: "assets/doom_loop.jpg", status: "upcoming", volume: 2 }
     ];
 
     const defaultColumns = [
@@ -136,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Initialize mock database
-    const DB_VERSION = 'v3.0';
+    const DB_VERSION = 'v4.0';
     if (localStorage.getItem('bbc_db_version') !== DB_VERSION) {
         localStorage.setItem('bbc_schedule', JSON.stringify(defaultSchedule));
         localStorage.setItem('bbc_columns', JSON.stringify(defaultColumns));
@@ -212,20 +210,28 @@ document.addEventListener('DOMContentLoaded', () => {
         if (tableBody) {
             tableBody.innerHTML = '';
             schedule.forEach(item => {
+                const isCompleted = item.status === 'completed' || item.volume === 1 || item.week <= 4;
                 const tr = document.createElement('tr');
                 tr.setAttribute('data-id', item.id);
+                tr.setAttribute('data-status', isCompleted ? 'completed' : 'upcoming');
+                tr.className = `schedule-row ${isCompleted ? 'row-completed' : 'row-upcoming'}`;
                 
+                const statusBadge = isCompleted 
+                    ? `<span class="table-badge badge-status-vol1">Vol.1 완료</span>`
+                    : `<span class="table-badge badge-status-vol2">Vol.2 예정 (10월)</span>`;
+
                 tr.innerHTML = `
                     <td class="table-week-num">${item.week}회차</td>
-                    <td class="table-date">${item.date}</td>
+                    <td class="table-status-cell">${statusBadge}</td>
+                    <td class="table-date">${item.date} (목)</td>
                     <td>
                         <div class="table-book-title-cell">
                             <img src="${item.cover}" alt="${item.book} 표지" class="table-book-thumb" onerror="this.src='assets/zero_to_one_cover.jpg'">
                             <span>${item.book}</span>
                         </div>
                     </td>
-                    <td>${item.publisher}</td>
-                    <td>${item.author}</td>
+                    <td class="table-publisher-cell">${item.publisher}</td>
+                    <td class="table-author-cell">${item.author}</td>
                     <td class="table-lecturer">${item.lecturer}</td>
                     <td><button class="table-summary-btn" data-id="${item.id}">발제 요약</button></td>
                 `;
@@ -247,6 +253,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     const bookId = btn.getAttribute('data-id');
                     openBookDetail(bookId);
                 });
+            });
+
+            // Setup Filter Tabs (bind once or rebind safely)
+            const filterTabs = document.querySelectorAll('.schedule-filter-tabs .filter-tab');
+            filterTabs.forEach(tab => {
+                tab.onclick = () => {
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    const filter = tab.getAttribute('data-filter');
+                    const rows = document.querySelectorAll('#schedule-table-body tr');
+                    rows.forEach(row => {
+                        const rowStatus = row.getAttribute('data-status');
+                        if (filter === 'all') {
+                            row.style.display = '';
+                        } else if (filter === rowStatus) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                };
             });
         }
 
@@ -426,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'doom_loop': {
             title: '둠루프',
-            subtitle: '에스와르 S. 프라사드 저 | 21세기북스 | 강연: 김광석 실장',
+            subtitle: '에스와르 S. 프라사드 저 | 21세기북스 | 강연: 김광석 교수',
             content: `
                 <h4>1. 경제, 정치, 지정학이 충돌하는 파멸의 고리</h4>
                 <p>미중 갈등, 지정학적 대분열, 자국 우선주의 정책이 얽히고설켜 세계 경제 질서를 어떻게 위기로 몰고 가는지 분석합니다. 패권 경쟁의 소용돌이 속에서 세계 질서가 무너져 가는 거대한 '둠루프(Doom Loop)' 기전을 상세히 들여다봅니다.</p>
@@ -547,11 +574,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const localSummaries = JSON.parse(localStorage.getItem('bbc_summaries') || '{}');
         const data = localSummaries[bookId] || summariesDb[bookId];
 
+        const isCompleted = currentItem.status === 'completed' || currentItem.volume === 1 || currentItem.week <= 4;
+        const volumeBadgeHtml = isCompleted 
+            ? `<span class="modal-status-badge badge-vol1-modal">🔵 [Vol.1] 진행 완료 도서</span>`
+            : `<span class="modal-status-badge badge-vol2-modal">🟢 [Vol.2] 10월 1일(목) 개시 예정 도서</span>`;
+
         const title = data ? data.title : currentItem.book;
-        const subtitle = data ? data.subtitle : `${currentItem.author} | ${currentItem.publisher}`;
+        const subtitle = data ? data.subtitle : `${currentItem.author} | ${currentItem.publisher} | 강연: ${currentItem.lecturer}`;
         const content = data ? data.content : `<p>이 책은 이동우의 비즈니스 북클럽 멤버십의 추천 도서입니다. 매월 4회 세션을 통합한 실물 하드카피 요약본이 모임 현장에서 월 1회 무료 제공됩니다.</p>`;
 
-        document.getElementById('summary-title').textContent = title;
+        document.getElementById('summary-title').innerHTML = `${volumeBadgeHtml}<div style="margin-top:6px;">${title}</div>`;
         document.getElementById('summary-subtitle').textContent = subtitle;
         document.getElementById('summary-content').innerHTML = content;
         
