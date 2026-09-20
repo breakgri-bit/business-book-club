@@ -98,13 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultSchedule = [
         { week: 1, date: "8/27", id: "storm_coming", book: "폭풍이 온다", publisher: "21세기북스", author: "오드 아르네 베스타 (Odd Arne Westad)", lecturer: "이동우", cover: "assets/storm_coming.jpg" },
         { week: 2, date: "9/3", id: "super_abundance", book: "초풍요의 시대", publisher: "비즈니스북스", author: "피터 디아만디스, 스티븐 코틀러", lecturer: "이동우", cover: "assets/super_abundance.jpg" },
-        { week: 3, date: "9/10", id: "pseudo_labor", book: "가짜 노동", publisher: "자음과모음", author: "데니스 뇌르마르크, 아네르스 포그 옌센", lecturer: "장유신", cover: "assets/pseudo_labor.jpg" },
+        { week: 3, date: "9/10", id: "pseudo_labor", book: "가짜 노동", publisher: "자음과모음", author: "데니스 뇌르마르크, 아네르스 포그 옌센", lecturer: "이동우", cover: "assets/pseudo_labor.jpg" },
         { week: 4, date: "9/17", id: "think_like_giant", book: "거인처럼 생각하라", publisher: "비즈니스북스", author: "피터 홀린스", lecturer: "조민호", cover: "assets/think_like_giant.jpg" },
         { week: 5, date: "10/1", id: "doom_loop", book: "둠루프", publisher: "21세기북스", author: "에스와르 S. 프라사드", lecturer: "김광석", cover: "assets/doom_loop.jpg" },
         { week: 6, date: "10/8", id: "great_managing", book: "위대한 경영의 12가지 조건", publisher: "청림출판", author: "갤럽, 짐 하터", lecturer: "이동우", cover: "assets/great_managing.jpg" },
         { week: 7, date: "10/15", id: "quantum_recipe", book: "양자컴퓨터 레시피", publisher: "세종서적", author: "김용수 외", lecturer: "김용수", cover: "assets/quantum_recipe.jpg" },
         { week: 8, date: "10/22", id: "toxic_people", book: "독성인간", publisher: "웅진지식하우스", author: "리앤 텐 브링크", lecturer: "이동우", cover: "assets/toxic_people.jpg" },
-        { week: 9, date: "10/29", id: "dual_brain", book: "듀얼 브레인", publisher: "상상스퀘어", author: "이선 몰릭", lecturer: "김건우", cover: "assets/dual_brain.jpg" },
+        { week: 9, date: "10/29", id: "dual_brain", book: "듀얼 브레인", publisher: "상상스퀘어", author: "이선 몰릭", lecturer: "이동우", cover: "assets/dual_brain.jpg" },
         { week: 10, date: "11/5", id: "tech_illusion", book: "기술이 인류를 구원한다는 착각", publisher: "동아시아", author: "애덤 베커", lecturer: "이동우", cover: "assets/tech_illusion.jpg" }
     ];
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { 
             id: 2, 
             title: "인공지능의 정렬 문제와 인간의 종말", 
-            author: "김건우 교수", 
+            author: "이동우 북멘토", 
             summary: "실리콘밸리의 석학 엘리에저 유드코스키가 경고하는 초지능 정렬 문제와 비즈니스 함의.", 
             date: "2026.06.25",
             content: "인류가 만들어 낸 인공지능이 인간의 제어 범위를 벗어나는 시점, 즉 초지능의 탄생에 대해 유드코스키는 차갑고 경고조의 메시지를 던집니다. AI의 목표를 인류의 복지와 일치시키는 '정렬 문제(Alignment Problem)'가 선제 해결되지 않는다면 혁신 기술은 재앙이 될 수 있습니다. 우리 비즈니스 리더들이 AX(AI 전환)를 외칠 때, 윤리적 기준과 통제 설계를 왜 1순위로 두어야 하는지 다룹니다."
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Initialize mock database
-    const DB_VERSION = 'v2.9';
+    const DB_VERSION = 'v3.0';
     if (localStorage.getItem('bbc_db_version') !== DB_VERSION) {
         localStorage.setItem('bbc_schedule', JSON.stringify(defaultSchedule));
         localStorage.setItem('bbc_columns', JSON.stringify(defaultColumns));
@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'pseudo_labor': {
             title: '가짜 노동 (스스로 만드는 번아웃의 세계)',
-            subtitle: '데니스 뇌르마르크, 아네르스 포그 옌센 저 | 자음과모음 | 강연: 장유신 전무',
+            subtitle: '데니스 뇌르마르크, 아네르스 포그 옌센 저 | 자음과모음 | 강연: 이동우',
             content: `
                 <h4>1. 우리는 왜 아무리 일해도 시간이 부족할까?</h4>
                 <p>분명 기술과 기계화는 발달하는데, 현대 직장인들은 여전히 장시간 노동과 번아웃에 시달립니다. 저자들은 직장 내부에서 실질적인 비즈니스 성과와는 하등 상관없는 보고서 작성, 무의미한 회의, 생존을 위한 '바쁜 척하기' 등에 막대한 시간이 소모되고 있다고 꼬집습니다.</p>
@@ -382,13 +382,13 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'dual_brain': {
             title: '듀얼 브레인',
-            subtitle: '이선 몰릭(Ethan Mollick) 저 | 상상스퀘어 | 강연: 김건우 교수',
+            subtitle: '이선 몰릭(Ethan Mollick) 저 | 상상스퀘어 | 강연: 이동우',
             content: `
                 <h4>1. AI를 든 인간이 지배하는 비즈니스 생태계</h4>
                 <p>생성형 AI 시대에 AI를 단순한 정보 도구(Tool)가 아닌, 비즈니스 성장을 함께 견인하는 공동 지능(Co-Intelligence)의 파트너이자 동료(Co-worker)로 정의하고 이를 조직과 비즈니스에 밀결합하는 최고의 생존 방식을 논합니다.</p>
                 
                 <h4>2. 켄타우로스와 사이보그: 실전 AI 협업 모델</h4>
-                <p>사용자와 AI의 명확한 역할 분담을 통한 켄타우로스 방식, 그리고 경계 없이 융합하여 상호 보완하는 사이보그 방식의 비즈니스 퍼널 적용 사례를 KT AX컨설턴트 김건우 교수의 통찰 깊은 눈으로 들여다봅니다.</p>
+                <p>사용자와 AI의 명확한 역할 분담을 통한 켄타우로스 방식, 그리고 경계 없이 융합하여 상호 보완하는 사이보그 방식의 비즈니스 퍼널 적용 사례를 이동우 북멘토의 명쾌한 통찰로 들여다봅니다.</p>
             `
         },
         'quantum_recipe': {
