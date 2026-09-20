@@ -2528,3 +2528,185 @@ tr:hover .table-book-thumb {
     display: inline-block;
     animation: spin 1.2s linear infinite;
 }
+
+/* ==========================================================================
+   Monthly Summary Booklet Showcase Section
+   ========================================================================== */
+.summary-booklet-section {
+    background: linear-gradient(180deg, var(--bg-color) 0%, var(--bg-secondary) 50%, var(--bg-color) 100%);
+    position: relative;
+    padding: 100px 0;
+}
+
+.booklet-showcase-grid {
+    gap: 36px;
+    margin-bottom: 40px;
+}
+
+.booklet-card {
+    padding: 36px;
+    position: relative;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: rgba(18, 24, 40, 0.75);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    overflow: hidden;
+}
+
+.booklet-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.booklet-badge {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: var(--gradient-gold);
+    color: #002c5f;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.booklet-image-wrap {
+    flex-shrink: 0;
+    width: 165px;
+    perspective: 1000px;
+}
+
+.booklet-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: -8px 12px 24px rgba(0, 0, 0, 0.45), 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.booklet-card:hover .booklet-img {
+    transform: scale(1.03) rotateY(-5deg);
+}
+
+.booklet-info {
+    flex: 1;
+}
+
+.booklet-info h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    font-family: var(--font-heading);
+}
+
+.booklet-sub {
+    font-size: 0.85rem;
+    color: #d4af37;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.booklet-book-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.booklet-book-list li {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+}
+
+.booklet-book-list li strong {
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.booklet-book-list li span {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.booklet-features-row {
+    margin-top: 24px;
+}
+
+.booklet-feat-box {
+    padding: 28px 24px;
+    text-align: center;
+    border: 1px solid var(--card-border);
+}
+
+.booklet-feat-box .feat-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.booklet-feat-box h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.booklet-feat-box p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.faq-booklet-preview {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.faq-booklet-thumb {
+    width: 80px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .booklet-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 20px 24px 20px;
+        gap: 20px;
+    }
+
+    .booklet-image-wrap {
+        width: 140px;
+        margin: 0 auto;
+    }
+
+    .booklet-book-list li {
+        justify-content: center;
+        font-size: 0.82rem;
+    }
+
+    .faq-booklet-preview {
+        justify-content: center;
+    }
+}
+

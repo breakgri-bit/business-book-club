@@ -2558,6 +2558,188 @@ tr:hover .table-book-thumb {
     animation: spin 1.2s linear infinite;
 }
 
+/* ==========================================================================
+   Monthly Summary Booklet Showcase Section
+   ========================================================================== */
+.summary-booklet-section {
+    background: linear-gradient(180deg, var(--bg-color) 0%, var(--bg-secondary) 50%, var(--bg-color) 100%);
+    position: relative;
+    padding: 100px 0;
+}
+
+.booklet-showcase-grid {
+    gap: 36px;
+    margin-bottom: 40px;
+}
+
+.booklet-card {
+    padding: 36px;
+    position: relative;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: rgba(18, 24, 40, 0.75);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    overflow: hidden;
+}
+
+.booklet-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.booklet-badge {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: var(--gradient-gold);
+    color: #002c5f;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.booklet-image-wrap {
+    flex-shrink: 0;
+    width: 165px;
+    perspective: 1000px;
+}
+
+.booklet-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: -8px 12px 24px rgba(0, 0, 0, 0.45), 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.booklet-card:hover .booklet-img {
+    transform: scale(1.03) rotateY(-5deg);
+}
+
+.booklet-info {
+    flex: 1;
+}
+
+.booklet-info h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    font-family: var(--font-heading);
+}
+
+.booklet-sub {
+    font-size: 0.85rem;
+    color: #d4af37;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.booklet-book-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.booklet-book-list li {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+}
+
+.booklet-book-list li strong {
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.booklet-book-list li span {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.booklet-features-row {
+    margin-top: 24px;
+}
+
+.booklet-feat-box {
+    padding: 28px 24px;
+    text-align: center;
+    border: 1px solid var(--card-border);
+}
+
+.booklet-feat-box .feat-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.booklet-feat-box h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.booklet-feat-box p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.faq-booklet-preview {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.faq-booklet-thumb {
+    width: 80px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .booklet-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 20px 24px 20px;
+        gap: 20px;
+    }
+
+    .booklet-image-wrap {
+        width: 140px;
+        margin: 0 auto;
+    }
+
+    .booklet-book-list li {
+        justify-content: center;
+        font-size: 0.82rem;
+    }
+
+    .faq-booklet-preview {
+        justify-content: center;
+    }
+}
+
+
 </style>
 </head>
 <body class="dark-theme">
@@ -2584,6 +2766,7 @@ tr:hover .table-book-thumb {
                 <ul class="nav-list">
                     <li><a href="#about" class="nav-item">북멘토 & 고문단</a></li>
                     <li><a href="#schedule" class="nav-item">도서 라인업</a></li>
+                    <li><a href="#booklet" class="nav-item">월간 요약본</a></li>
                     <li><a href="#lecturers" class="nav-item">강사진</a></li>
                     <li><a href="#pricing" class="nav-item">멤버십</a></li>
                     <li><a href="#faq" class="nav-item">자주 묻는 질문</a></li>
@@ -2954,6 +3137,74 @@ tr:hover .table-book-thumb {
             </div>
         </section>
 
+        <!-- Monthly Summary Booklet Showcase Section -->
+        <section class="summary-booklet-section" id="booklet">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">EXCLUSIVE HARDCOPY BENEFIT</span>
+                    <h2 class="section-title"><span class="keep-phrase">매월 현장에서 제공되는</span> <span class="keep-phrase">실물 통합 요약본</span></h2>
+                    <p class="section-desc"><span class="keep-phrase">바쁜 비즈니스 리더분들을 위해 한 달 4회차 강연 도서의 핵심 에센스와</span> <span class="keep-phrase">실전 경영 프레임워크를 집대성한 실물 인쇄본(Booklet)을 매월 무료 제공합니다.</span></p>
+                </div>
+
+                <div class="booklet-showcase-grid grid-2">
+                    <!-- Vol.1 Card -->
+                    <div class="booklet-card glass-panel">
+                        <div class="booklet-badge">Vol. 1 발간본</div>
+                        <div class="booklet-image-wrap">
+                            <img src="assets/summary_booklet_vol1.png" alt="LBBC 요약본 Vol.1 표지" class="booklet-img">
+                        </div>
+                        <div class="booklet-info">
+                            <h3>LBBC Monthly Summary Vol.1</h3>
+                            <p class="booklet-sub">한 달간 다루는 명저 4권의 핵심 전략 완벽 수록</p>
+                            <ul class="booklet-book-list">
+                                <li><strong>Book 1</strong> 폭풍이 온다 <span>(오드 아르네 베스타)</span></li>
+                                <li><strong>Book 2</strong> 초풍요의 시대 <span>(피터 디아만디스)</span></li>
+                                <li><strong>Book 3</strong> 가짜 노동 <span>(데니스 뇌르마르크)</span></li>
+                                <li><strong>Book 4</strong> 거인처럼 생각하라 <span>(피터 홀린스)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Vol.2 Card -->
+                    <div class="booklet-card glass-panel">
+                        <div class="booklet-badge">Vol. 2 발간본</div>
+                        <div class="booklet-image-wrap">
+                            <img src="assets/summary_booklet_vol2.png" alt="LBBC 요약본 Vol.2 표지" class="booklet-img">
+                        </div>
+                        <div class="booklet-info">
+                            <h3>LBBC Monthly Summary Vol.2</h3>
+                            <p class="booklet-sub">차세대 리더십과 테크·경영 혁신 프레임워크 수록</p>
+                            <ul class="booklet-book-list">
+                                <li><strong>Book 5</strong> 독성 인간 <span>(리앤 텐 브링크)</span></li>
+                                <li><strong>Book 6</strong> 위대한 경영의 12가지 조건 <span>(갤럽)</span></li>
+                                <li><strong>Book 7</strong> 양자컴퓨터 레시피 <span>(김용수 외)</span></li>
+                                <li><strong>Book 8</strong> 둠루프 <span>(에스와르 S. 프라사드)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booklet Value Highlights -->
+                <div class="booklet-features-row grid-3">
+                    <div class="booklet-feat-box glass-panel">
+                        <div class="feat-icon">📖</div>
+                        <h4>고품격 실물 하드카피 인쇄본</h4>
+                        <p>디지털 파일이 아닌 손에 잡히는 정갈한 실물 제본 책자로 매월 모임 현장에서 직접 배부해 드립니다.</p>
+                    </div>
+                    <div class="booklet-feat-box glass-panel">
+                        <div class="feat-icon">⚡</div>
+                        <h4>바쁜 리더를 위한 10분 브리핑</h4>
+                        <p>책 전체를 완독하지 못하고 참석하셔도 핵심 쟁점과 통찰을 단 10분 만에 꿰뚫어 볼 수 있도록 압축 정리했습니다.</p>
+                    </div>
+                    <div class="booklet-feat-box glass-panel">
+                        <div class="feat-icon">💼</div>
+                        <h4>현업 적용 비즈니스 질문 수록</h4>
+                        <p>단순 요약을 넘어 내 기업의 사업 모델과 팀 관리에 즉시 적용할 수 있는 액션 토론 질문을 함께 담았습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Lecturer List Section -->
         <section class="lecturers-section" id="lecturers">
             <div class="container">
@@ -3256,6 +3507,10 @@ tr:hover .table-book-thumb {
                             <p class="faq-answer">
                                 네, 그렇습니다. <strong>매월 1회, 4회차 강의(한 달 분량)를 위한 도서의 핵심 요약본을 통합하여 실물 하드카피(인쇄본)로 모임 현장에서 직접 제공</strong>해 드립니다. 바쁘신 비즈니스 일정 속에서도 핵심 맥락을 빠르게 파악하고 토론에 참여하실 수 있도록 핵심 뼈대와 비즈니스 통찰을 압축하여 구성했습니다.
                             </p>
+                            <div class="faq-booklet-preview">
+                                <img src="assets/summary_booklet_vol1.png" alt="LBBC 요약본 Vol.1" class="faq-booklet-thumb">
+                                <img src="assets/summary_booklet_vol2.png" alt="LBBC 요약본 Vol.2" class="faq-booklet-thumb">
+                            </div>
                         </div>
                     </div>
 
