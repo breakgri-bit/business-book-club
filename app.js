@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Initialize mock database
-    const DB_VERSION = 'v2.7';
+    const DB_VERSION = 'v2.9';
     if (localStorage.getItem('bbc_db_version') !== DB_VERSION) {
         localStorage.setItem('bbc_schedule', JSON.stringify(defaultSchedule));
         localStorage.setItem('bbc_columns', JSON.stringify(defaultColumns));
@@ -295,10 +295,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Render Admin Waitlist (local storage fallback initially)
         renderWaitlistTable(waitlist, false);
 
-        // Update Hero Cover to specific book (초풍요의 시대)
+        // Update Hero Cover to specific book (위대한 경영의 12가지 조건)
         const heroCover = document.getElementById('hero-book-cover');
-        if (heroCover && schedule[1]) {
-            heroCover.src = schedule[1].cover;
+        const greatManagingBook = schedule.find(s => s.id === 'great_managing') || schedule[0];
+        if (heroCover && greatManagingBook) {
+            heroCover.src = greatManagingBook.cover;
+            heroCover.alt = `${greatManagingBook.book} 도서 표지`;
         }
     };
 
