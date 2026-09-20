@@ -487,6 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCloseBtn = document.getElementById('modal-close');
     const successCloseBtn = document.getElementById('success-close-btn');
     const summaryCloseBtn = document.getElementById('summary-close');
+    const summaryFooterCloseBtn = document.getElementById('summary-close-btn');
     const termsCloseBtn = document.getElementById('terms-close');
     const termsConfirmBtn = document.getElementById('terms-confirm-btn');
     const openTermsBtn = document.getElementById('open-terms-btn');
@@ -507,6 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalCloseBtn) modalCloseBtn.addEventListener('click', () => closeModal(applyModal));
     if (successCloseBtn) successCloseBtn.addEventListener('click', () => closeModal(successModal));
     if (summaryCloseBtn) summaryCloseBtn.addEventListener('click', () => closeModal(summaryModal));
+    if (summaryFooterCloseBtn) summaryFooterCloseBtn.addEventListener('click', () => closeModal(summaryModal));
     if (termsCloseBtn) termsCloseBtn.addEventListener('click', () => closeModal(termsModal));
     if (termsConfirmBtn) termsConfirmBtn.addEventListener('click', () => closeModal(termsModal));
     if (privacyCloseBtn) privacyCloseBtn.addEventListener('click', () => closeModal(privacyModal));
@@ -590,17 +592,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalImg = document.getElementById('summary-modal-img');
         if (modalImg) {
             modalImg.src = currentItem.cover;
-        }
-
-        const applyBtn = document.getElementById('summary-apply-btn');
-        if (applyBtn) {
-            applyBtn.onclick = (e) => {
-                e.preventDefault();
-                closeModal(summaryModal);
-                const select = document.getElementById('membership-select');
-                select.value = 'Yearly';
-                openModal(applyModal);
-            };
         }
 
         openModal(summaryModal);
