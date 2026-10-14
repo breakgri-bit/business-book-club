@@ -100,9 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { week: 2, date: "9/3", id: "super_abundance", book: "초풍요의 시대", publisher: "비즈니스북스", author: "피터 디아만디스, 스티븐 코틀러", lecturer: "이동우", cover: "assets/super_abundance.jpg", status: "completed", volume: 1 },
         { week: 3, date: "9/10", id: "pseudo_labor", book: "가짜 노동", publisher: "자음과모음", author: "데니스 뇌르마르크, 아네르스 포그 옌센", lecturer: "이동우", cover: "assets/pseudo_labor.jpg", status: "completed", volume: 1 },
         { week: 4, date: "9/17", id: "think_like_giant", book: "거인처럼 생각하라", publisher: "비즈니스북스", author: "피터 홀린스", lecturer: "조민호", cover: "assets/think_like_giant.jpg", status: "completed", volume: 1 },
-        { week: 5, date: "10/1", id: "toxic_people", book: "독성인간", publisher: "웅진지식하우스", author: "리앤 텐 브링크", lecturer: "이동우", cover: "assets/toxic_people.jpg", status: "upcoming", volume: 2 },
-        { week: 6, date: "10/8", id: "great_managing", book: "위대한 경영의 12가지 조건", publisher: "청림출판", author: "갤럽, 짐 하터", lecturer: "이동우", cover: "assets/great_managing.jpg", status: "upcoming", volume: 2 },
-        { week: 7, date: "10/15", id: "quantum_recipe", book: "양자컴퓨터 레시피", publisher: "세종서적", author: "김용수 외", lecturer: "김용수 단장", cover: "assets/quantum_recipe.jpg", status: "upcoming", volume: 2 },
+        { week: 5, date: "10/1", id: "toxic_people", book: "독성인간", publisher: "웅진지식하우스", author: "리앤 텐 브링크", lecturer: "이동우", cover: "assets/toxic_people.jpg", status: "completed", volume: 2 },
+        { week: 6, date: "10/8", id: "great_managing", book: "위대한 경영의 12가지 조건", publisher: "청림출판", author: "갤럽, 짐 하터", lecturer: "이동우", cover: "assets/great_managing.jpg", status: "completed", volume: 2 },
+        { week: 7, date: "10/15", id: "quantum_recipe", book: "양자컴퓨터 레시피", publisher: "세종서적", author: "김용수 외", lecturer: "김용수 단장", cover: "assets/quantum_recipe.jpg", status: "today", volume: 2 },
         { week: 8, date: "10/22", id: "doom_loop", book: "둠루프", publisher: "21세기북스", author: "에스와르 S. 프라사드", lecturer: "김광석 교수", cover: "assets/doom_loop.jpg", status: "upcoming", volume: 2 }
     ];
 
@@ -133,8 +133,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    // Dynamic Status Evaluator based on Date & Time
+    const getItemStatus = (item) => {
+        try {
+            const [month, day] = item.date.split('/').map(Number);
+            const now = new Date();
+            const year = 2026;
+            const sessionDate = new Date(year, month - 1, day);
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+            if (sessionDate < today) {
+                return 'completed';
+            } else if (sessionDate.getTime() === today.getTime()) {
+                // Thursdays morning session is 7:00 ~ 8:30 AM
+                if (now.getHours() > 8 || (now.getHours() === 8 && now.getMinutes() >= 30)) {
+                    return 'completed';
+                }
+                return 'today';
+            } else {
+                return 'upcoming';
+            }
+        } catch (e) {
+            return item.status || 'upcoming';
+        }
+    };
+
     // Initialize mock database
-    const DB_VERSION = 'v4.0';
+    const DB_VERSION = 'v5.0';
     if (localStorage.getItem('bbc_db_version') !== DB_VERSION) {
         localStorage.setItem('bbc_schedule', JSON.stringify(defaultSchedule));
         localStorage.setItem('bbc_columns', JSON.stringify(defaultColumns));
@@ -210,15 +235,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (tableBody) {
             tableBody.innerHTML = '';
             schedule.forEach(item => {
-                const isCompleted = item.status === 'completed' || item.volume === 1 || item.week <= 4;
+                const itemStatus = getItemStatus(item);
+                const isCompleted = itemStatus === 'completed';
+                const isToday = itemStatus === 'today';
+
                 const tr = document.createElement('tr');
                 tr.setAttribute('data-id', item.id);
                 tr.setAttribute('data-status', isCompleted ? 'completed' : 'upcoming');
-                tr.className = `schedule-row ${isCompleted ? 'row-completed' : 'row-upcoming'}`;
+                tr.className = `schedule-row ${isCompleted ? 'row-completed' : (isToday ? 'row-today' : 'row-upcoming')}`;
                 
-                const statusBadge = isCompleted 
-                    ? `<span class="table-badge badge-status-vol1">Vol.1 완료</span>`
-                    : `<span class="table-badge badge-status-vol2">Vol.2 예정 (10월)</span>`;
+                let statusBadge = '';
+                if (isCompleted) {
+                    statusBadge = item.volume === 1 
+                        ? `<span class="table-badge badge-status-vol1">Vol.1 완료</span>`
+                        : `<span class="table-badge badge-status-vol2-done">Vol.2 완료</span>`;
+                } else if (isToday) {
+                    statusBadge = `<span class="table-badge badge-status-today">Vol.2 오늘 진행</span>`;
+                } else {
+                    statusBadge = `<span class="table-badge badge-status-vol2">Vol.2 예정 (10/22)</span>`;
+                }
 
                 tr.innerHTML = `
                     <td class="table-week-num">${item.week}회차</td>
@@ -576,10 +611,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const localSummaries = JSON.parse(localStorage.getItem('bbc_summaries') || '{}');
         const data = localSummaries[bookId] || summariesDb[bookId];
 
-        const isCompleted = currentItem.status === 'completed' || currentItem.volume === 1 || currentItem.week <= 4;
-        const volumeBadgeHtml = isCompleted 
-            ? `<span class="modal-status-badge badge-vol1-modal">🔵 [Vol.1] 진행 완료 도서</span>`
-            : `<span class="modal-status-badge badge-vol2-modal">🟢 [Vol.2] 10월 1일(목) 개시 예정 도서</span>`;
+        const itemStatus = getItemStatus(currentItem);
+        let volumeBadgeHtml = '';
+        if (itemStatus === 'completed') {
+            volumeBadgeHtml = `<span class="modal-status-badge badge-vol1-modal">🔵 [Vol.${currentItem.volume}] ${currentItem.date}(목) 진행 완료 도서</span>`;
+        } else if (itemStatus === 'today') {
+            volumeBadgeHtml = `<span class="modal-status-badge badge-today-modal">🟡 [Vol.${currentItem.volume}] ${currentItem.date}(목) 오늘 진행 도서</span>`;
+        } else {
+            volumeBadgeHtml = `<span class="modal-status-badge badge-vol2-modal">🟢 [Vol.${currentItem.volume}] ${currentItem.date}(목) 진행 예정 도서</span>`;
+        }
 
         const title = data ? data.title : currentItem.book;
         const subtitle = data ? data.subtitle : `${currentItem.author} | ${currentItem.publisher} | 강연: ${currentItem.lecturer}`;
