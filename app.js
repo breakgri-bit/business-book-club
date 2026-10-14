@@ -357,12 +357,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Render Admin Waitlist (local storage fallback initially)
         renderWaitlistTable(waitlist, false);
 
-        // Update Hero Cover to specific book (위대한 경영의 12가지 조건)
+        // Update Hero Cover to featured book (자유민주주의에 무슨 일이 일어났는가)
         const heroCover = document.getElementById('hero-book-cover');
-        const greatManagingBook = schedule.find(s => s.id === 'great_managing') || schedule[0];
-        if (heroCover && greatManagingBook) {
-            heroCover.src = greatManagingBook.cover;
-            heroCover.alt = `${greatManagingBook.book} 도서 표지`;
+        if (heroCover) {
+            heroCover.src = 'assets/liberal_democracy.jpg';
+            heroCover.alt = '자유민주주의에 무슨 일이 일어났는가 도서 표지';
         }
     };
 
